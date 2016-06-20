@@ -1,0 +1,45 @@
+.sidebar {
+  position: fixed;
+  top: 85px;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: block;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: #f5f5f5;
+  border-right: 1px solid #eee;
+}
+
+.main {
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.navbar-default {
+    background-color: #3575D3;
+    background-image:linear-gradient(to bottom,#3575D3 100%,#3575D3 100%);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar-li {
+  background-color: #3575D3;
+}
+
+.navbar-default .navbar-nav li a {
+  color: #FFF;
+}
+
+.footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: 100px;
+  color: #767676;
+  text-align: center;
+  border-top: 1px solid #e5e5e5;
+  p {
+    margin-bottom: 0;
+    font-size: 12px;
+  }
+}

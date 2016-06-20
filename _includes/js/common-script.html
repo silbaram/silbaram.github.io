@@ -1,0 +1,19 @@
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="https://googledrive.com/host/0B9P_uVbT95u4Y053MGcwQUF2d0k" type="text/javascript"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".nav.navbar-nav.navbar-right li").each(function(index){
+        //상단 메뉴 마우스 오버시 색 변경
+        $(this).mouseenter(function() {
+          j2e(this).move({backgroundColor:"#FFFFFF"}, 0.2);
+        });
+        $(this).mouseleave(function() {
+          j2e(this).move({backgroundColor:"#3575D3"}, 0.2);
+        });
+    });
+  });
+</script>

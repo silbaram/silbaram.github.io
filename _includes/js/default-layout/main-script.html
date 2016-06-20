@@ -1,0 +1,11 @@
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    var documentH = $(document).height()/2;
+    var introCubeH = $(".intro-cube").height()/2;
+    var containerH = (documentH-introCubeH) / 2;
+
+    $(".drawing").css("margin-top", containerH+"px").css("display", "block");
+    j2e("#spinContainer").move({rotateX:"360", rotateY:"360", motiontype:"U", animationIterationCount:"infinite"}, 6);
+  });
+</script>

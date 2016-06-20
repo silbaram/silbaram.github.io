@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+	{% include head.html %}
+
+	<body>
+
+		{% include header.html %}
+
+		<div class="container">
+				{{ content }}
+		</div>
+
+		<!-- <div class="container">
+			{% include footer.html %}
+		</div> -->
+	</body>
+
+
+	{% include js/common-script.html %}
+	{% if page.pageType == 'main' %}
+		{% include js/default-layout/main-script.html %}
+	{% endif %}
+</html>

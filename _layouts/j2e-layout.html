@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+	{% include head.html %}
+
+	<body>
+
+		{% include header.html %}
+
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="col-sm-3 col-md-2 sidebar hidden-xs">
+					<ul class="nav nav-sidebar">
+						{% for j2eLearnList in site.j2eLearn %}
+			      <li>
+			        <a href="{{ j2eLearnList.url }}">{{ j2eLearnList.title }}</a>
+			      </li>
+						{% endfor %}
+          </ul>
+				</div>
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+					{{ content }}
+				</div>
+			</div>
+		</div>
+
+		{% include footer.html %}
+	</body>
+
+	{% include js/common-script.html %}
+
+	{% if page.title == 'left' %}
+		{% include js/j2e-layout/left-script.html %}
+	{% endif %}
+</html>
