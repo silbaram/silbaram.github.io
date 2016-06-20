@@ -2,17 +2,25 @@
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
-        <ul class="nav navbar-nav">
-          <li>
-            <a href="{{ site.baseurl }}">
-              <h4>{{ site.title }}</h4>
-            </a>
-          </li>
-        </ul>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="{{ site.baseurl }}" class="navbar-brand hidden-xs"><h4>{{ site.title }}</h4></a>
+        <a href="{{ site.baseurl }}" class="navbar-brand visible-xs">{{ site.title }}</a>
       </div>
-      <div class="navbar-collapse collapse" id="navbar">
+      <div class="navbar-collapse collapse" id="navbar" aria-expanded="true">
         <ul class="nav navbar-nav navbar-right">
           <li class="navbar-li" ><a href="{{site.baseurl}}j2e-learn/1-j2eLearnLeft/"><h4>j2e Learn</h4></a></li>
+          {% if page.pageType != 'main' %}
+          {% for j2eLearnList in site.j2eLearn %}
+          <li>
+            <a href="{{ j2eLearnList.url }}" class="visible-xs">{{ j2eLearnList.title }}</a>
+          </li>
+          {% endfor %}
+          {% endif %}
         </ul>
       </div>
     </div>
