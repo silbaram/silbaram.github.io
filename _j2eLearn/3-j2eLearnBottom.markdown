@@ -2,6 +2,7 @@
 layout: j2e-layout
 title:  "bottom"
 categories: j2eLearn
+pageType: j2eLearn
 ---
 
 > # **Bottom**

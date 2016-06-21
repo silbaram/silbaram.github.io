@@ -15,5 +15,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 
   <link rel="stylesheet" href="/css/main.css">
+  {% if page.pageType == 'main' %}
   <link rel="stylesheet" href="/css/intro.css">
+  {% endif %}
+  {% if page.pageType == 'j2eLearn' %}
+  <link rel="stylesheet" href="/css/j2e-layout.css">
+  {% endif %}
 </head>
