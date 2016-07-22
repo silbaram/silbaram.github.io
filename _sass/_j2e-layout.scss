@@ -3,6 +3,9 @@ blockquote {
 }
 
 table {
+  border-left: 1px solid #BDBDBD;
+  border-right: 1px solid #BDBDBD;
+  border-bottom: 1px solid #BDBDBD;
   border-collapse: collapse;
   width: 100%;
 }
@@ -15,6 +18,6 @@ th, td {
 tr:nth-child(even){background-color: #f2f2f2}
 
 th {
-  background-color: #4CAF50;
+  background-color: #8C8C8C;
   color: white;
 }
