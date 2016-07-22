@@ -14,6 +14,7 @@
   	position: relative;
   	width: 150px;
   	height: 150px;
+    -webkit-transform-style: preserve-3d;
   	transform-style: preserve-3d;
   }
 
@@ -30,31 +31,43 @@
 
   .front {
   	background: rgba(255, 0, 0, 0.7 );
+    -ms-transform: translateZ(75px);
+    -webkit-transform: translateZ(75px);
     transform: translateZ(75px);
   }
 
   .back {
   	background: rgba(0, 0, 255, 0.7 );
+    -ms-transform: rotateY(180deg) translateZ(75px);
+    -webkit-transform: rotateY(180deg) translateZ(75px);
     transform: rotateY(180deg) translateZ(75px);
   }
 
   .left {
   	background: rgba(255, 255, 0, 0.7 );
+    -ms-transform: rotateY(90deg) translateZ(75px);
+    -webkit-transform: rotateY(90deg) translateZ(75px);
     transform: rotateY(90deg) translateZ(75px);
   }
 
   .right {
   	background: rgba(0, 255, 255, 0.7 );
+    -ms-transform: rotateY(-90deg) translateZ(75px);
+    -webkit-transform: rotateY(-90deg) translateZ(75px);
     transform: rotateY(-90deg) translateZ(75px);
   }
 
   .top {
   	background: rgba(0, 255, 0, 0.7 );
+    -ms-transform: rotateX(90deg) translateZ(75px);
+    -webkit-transform: rotateX(90deg) translateZ(75px);
     transform: rotateX(90deg) translateZ(75px);
   }
 
   .bottom {
   	background: rgba(255, 0, 255, 0.7 );
+    -ms-transform: rotateX(-90deg) translateZ(75px);
+    -webkit-transform: rotateX(-90deg) translateZ(75px);
     transform: rotateX(-90deg) translateZ(75px);
   }
 }
@@ -75,6 +88,7 @@
   	position: relative;
   	width: 300px;
   	height: 300px;
+    -webkit-transform-style: preserve-3d;
   	transform-style: preserve-3d;
   }
 
@@ -91,31 +105,43 @@
 
   .front {
   	background: rgba(255, 0, 0, 0.7 );
+    -ms-transform: translateZ(150px);
+    -webkit-transform: translateZ(150px);
     transform: translateZ(150px);
   }
 
   .back {
   	background: rgba(0, 0, 255, 0.7 );
+    -ms-transform: rotateY(180deg) translateZ(150px);
+    -webkit-transform: rotateY(180deg) translateZ(150px);
     transform: rotateY(180deg) translateZ(150px);
   }
 
   .left {
   	background: rgba(255, 255, 0, 0.7 );
+    -ms-transform: rotateY(90deg) translateZ(150px);
+    -webkit-transform: rotateY(90deg) translateZ(150px);
     transform: rotateY(90deg) translateZ(150px);
   }
 
   .right {
   	background: rgba(0, 255, 255, 0.7 );
+    -ms-transform: rotateY(-90deg) translateZ(150px);
+    -webkit-transform: rotateY(-90deg) translateZ(150px);
     transform: rotateY(-90deg) translateZ(150px);
   }
 
   .top {
   	background: rgba(0, 255, 0, 0.7 );
+    -ms-transform: rotateX(90deg) translateZ(150px);
+    -webkit-transform: rotateX(90deg) translateZ(150px);
     transform: rotateX(90deg) translateZ(150px);
   }
 
   .bottom {
   	background: rgba(255, 0, 255, 0.7 );
+    -ms-transform: rotateX(-90deg) translateZ(150px);
+    -webkit-transform: rotateX(-90deg) translateZ(150px);
     transform: rotateX(-90deg) translateZ(150px);
   }
 }
@@ -137,6 +163,7 @@
   	position: relative;
   	width: 300px;
   	height: 300px;
+    -webkit-transform-style: preserve-3d;
   	transform-style: preserve-3d;
   }
 
@@ -153,31 +180,43 @@
 
   .front {
   	background: rgba(255, 0, 0, 0.7 );
+    -ms-transform: translateZ(150px);
+    -webkit-transform: translateZ(150px);
     transform: translateZ(150px);
   }
 
   .back {
   	background: rgba(0, 0, 255, 0.7 );
+    -ms-transform: rotateY(180deg) translateZ(150px);
+    -webkit-transform: rotateY(180deg) translateZ(150px);
     transform: rotateY(180deg) translateZ(150px);
   }
 
   .left {
   	background: rgba(255, 255, 0, 0.7 );
+    -ms-transform: rotateY(90deg) translateZ(150px);
+    -webkit-transform: rotateY(90deg) translateZ(150px);
     transform: rotateY(90deg) translateZ(150px);
   }
 
   .right {
   	background: rgba(0, 255, 255, 0.7 );
+    -ms-transform: rotateY(-90deg) translateZ(150px);
+    -webkit-transform: rotateY(-90deg) translateZ(150px);
     transform: rotateY(-90deg) translateZ(150px);
   }
 
   .top {
   	background: rgba(0, 255, 0, 0.7 );
+    -ms-transform: rotateX(90deg) translateZ(150px);
+    -webkit-transform: rotateX(90deg) translateZ(150px);
     transform: rotateX(90deg) translateZ(150px);
   }
 
   .bottom {
   	background: rgba(255, 0, 255, 0.7 );
+    -ms-transform: rotateX(-90deg) translateZ(150px);
+    -webkit-transform: rotateX(-90deg) translateZ(150px);
     transform: rotateX(-90deg) translateZ(150px);
   }
 }
