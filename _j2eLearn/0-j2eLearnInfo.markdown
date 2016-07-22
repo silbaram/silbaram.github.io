@@ -67,3 +67,13 @@ j2e(element-selecter).setDuration(t).animate({name:”roleName”});
   * 한번 선언되고 난 후 다른 element에서도 사용할 수 있음
 
 <br />
+
+#### 4. **keyFrame Type role 작성 규칙**
+
+##### ■ **도착 지점만 지정 하기**
+
+| 이       름  |
+| ---
+| [{share: 100, top:”100”, left:”100”}] |
+
+  * 도착 점만 지정 했을 경우엔 현재 위치를 from으로 지정
