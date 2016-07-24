@@ -1,11 +1,15 @@
 
 <script type="text/javascript">
 
-  j2e.addRole({name:"left_1", role:[{share: "0", left:"10"}, {share: "100", left:$("#demo_contain").width()-100+""}]});
+  j2e.addRole({name:"role_1", role:[{share: "0", left:"10"}, {share: "100", left:$("#demo_contain").width()-100+""}]});
 
   $(document).ready(function(){
-    $("#leftButton").click(function(){
-      j2e("#demo_object").setDuration(1).animate({name:"left_1"});
+    $("#keyframeLeftButton").click(function(){
+      j2e("#keyframeLeftButton").setDuration(1).animate({name:"role_1"});
+    });
+
+    $("#trasitionLeftButton").click(function(){
+      j2e("#trasitionLeftButton").animate({role:[{duration: 1, left:$("#demo_contain").width()-100+""}]});
     });
   });
 </script>
