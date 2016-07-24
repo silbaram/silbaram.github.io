@@ -1,11 +1,11 @@
 
 <script type="text/javascript">
 
-  j2e.addRole({name:"left_1", role:[{share: 0, left:"10"}, {share: 100, left:$("#demo_contain").width()-100}]});
+  j2e.addRole({name:"left_1", role:[{share: "0", left:"10"}, {share: "100", left:$("#demo_contain").width()-100+""}]});
 
   $(document).ready(function(){
     $("#leftButton").click(function(){
-      j2e("#demo_object").animate({name:"left_1"}, 1).animationFillMode("forwards");
+      j2e("#demo_object").setDuration(1).animate({name:"left_1"});
     });
   });
 </script>

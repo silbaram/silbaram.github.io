@@ -6,17 +6,17 @@
 
 <script type="text/javascript">
 
-  j2e.addRole({name:"top_menu_role_1", role:[{share: 100, backgroundColor:"#FFFFFF"}]});
-  j2e.addRole({name:"top_menu_role_2", role:[{share: 100, backgroundColor:"#3575D3"}]});
+  j2e.addRole({name:"top_menu_role_1", role:[{share: "100", backgroundColor:"#FFFFFF"}]});
+  j2e.addRole({name:"top_menu_role_2", role:[{share: "100", backgroundColor:"#3575D3"}]});
 
   $(document).ready(function(){
     $(".nav.navbar-nav.navbar-right li").each(function(index){
         //상단 메뉴 마우스 오버시 색 변경
         $(this).mouseenter(function() {
-          j2e(this).animate({name:"top_menu_role_1"}, 0.5).animationFillMode("forwards");
+          j2e(this).setDuration(0.5).setFillMode("forwards").animate({name:"top_menu_role_1"});
         });
         $(this).mouseleave(function() {
-          j2e(this).animate({name:"top_menu_role_2"}, 0.5).animationFillMode("forwards");
+          j2e(this).setDuration(0.5).setFillMode("forwards").animate({name:"top_menu_role_2"});
         });
     });
   });

@@ -14,20 +14,19 @@ pageType: j2eLearn
 <br />
 <br />
 
-> ### **Syntax**
+> ### **keyFrame Type Syntax**
 
-```{.javascript}
-j2m(elements).move({left:100, 1});
+```.javascript
+j2e.addRole({name:"left_1", role:[{share: 0, left:"10"}, {share: 100, left:$("#demo_contain").width()-100}]});
+j2e(elements).setDuration(t).animate({name:"role name"});
 ```
 * j2m(elements) 부분에서 효과를 주고싶은 element선택합니다.  
   방법은 jQuery와 같습니다.  
 
   ###### 예) id로 할경우 j2m("#elementID"), class로 할경우 j2m(".elementClass")
+* j2e.addRole 부분은 신규 role을 추가
+* animate({name:"role name"}) 부분에서 name은 사용 할려는 role name을 작성
 
-* move({left:100, 1}) 부분에서 left:100은 선택한 element를 오른쪽으로 100px만큼 이동 뒤에 1은 1초동안 입니다.
-
-<br />
-<br />
 <br />
 
 > ### **Example**

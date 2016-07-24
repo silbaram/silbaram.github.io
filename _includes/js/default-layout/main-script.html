@@ -7,7 +7,7 @@
 
     $(".drawing").css("margin-top", containerH+"px").css("display", "block");
 
-    j2e.addRole({name:"role_1", role:[{share: 0, translateZ:"-100", rotateX:"0deg", rotateY:"0deg"}, {share: 100, translateZ:"-100px", rotateX:"360deg", rotateY:"360deg"}]});
-  	j2e("#spinContainer").animate({name:"role_1"}, 5).animationIterationCount("infinite");
+    j2e.addRole({name:"role_1", role:[{share: "0", translateZ:"-100", rotateX:"0deg", rotateY:"0deg"}, {share: "100", translateZ:"-100px", rotateX:"360deg", rotateY:"360deg"}]});
+  	j2e("#spinContainer").setIterationCount("infinite").setDuration(5).animate({name:"role_1"});
   });
 </script>
