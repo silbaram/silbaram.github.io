@@ -1,0 +1,15 @@
+
+<script type="text/javascript">
+
+  j2e.addRole({name:"role_1", role:[{share: "0", bottom:"20"}, {share: "100", bottom:"450"}]});
+
+  $(document).ready(function(){
+    $("#keyframeBottomButton").click(function(){
+      j2e("#keyframeBottomButton").setDuration(1).animate({name:"role_1"});
+    });
+
+    $("#trasitionBottomButton").click(function(){
+      j2e("#trasitionBottomButton").animate({role:[{duration: 1, bottom:"450"}]});
+    });
+  });
+</script>
