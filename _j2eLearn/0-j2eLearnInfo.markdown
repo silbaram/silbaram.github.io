@@ -88,9 +88,10 @@ j2e(element-selecter).setDuration(t).animate({name:”roleName”});
 
 <br />
 
-#### 4. **keyFrame Type role 작성 규칙**
+#### 4. **keyFrame Type role 작성 규칙**  
 
 ##### 4.1 **도착 지점만 지정 하기**
+
 
 | 규       칙 |
 | ---

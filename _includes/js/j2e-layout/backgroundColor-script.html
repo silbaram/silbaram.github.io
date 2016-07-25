@@ -1,0 +1,24 @@
+
+<script type="text/javascript">
+
+  j2e.addRole({name:"role_1", role:[{share: "100", backgroundColor:"#0054FF"}]});
+
+  $(document).ready(function(){
+    $("#demo_contain").click(function(){
+      j2e("#demo_contain").setDuration(1).animate({name:"role_1"});
+    });
+
+    var checkValue = 0;
+    $("#demo_contain2").click(function(){
+      let backgroundColorValue = "";
+      if(checkValue == 0) {
+        backgroundColorValue = "#0054FF";
+        checkValue = 1;
+      } else if (checkValue == 1) {
+        backgroundColorValue = "#FFFFFF";
+        checkValue = 0;
+      }
+      j2e("#demo_contain2").animate({role:[{duration: 1, backgroundColor:backgroundColorValue}]});
+    });
+  });
+</script>

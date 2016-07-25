@@ -5,7 +5,7 @@ categories: j2eLearn
 pageType: j2eLearn
 ---
 
-> # **Top**
+> # **top**
 > 애니메이션 효과를 주기 위해 선택된 element를  현 지점을 기준으로 +면 아래쪽으로 -면 위쪽으로 이동 시킵니다.
 
 -----------------------------------
@@ -17,15 +17,16 @@ pageType: j2eLearn
 
 > ### **keyFrame Type Syntax**
 
-```.javascript
-j2e.addRole({name:"role_1", role:[{share: 0, top:"시작점"}, {share: 100, top:"종착점"}]});
+<pre class="prettyprint linenums:1">
+j2e.addRole({name:"role_1", role:[{share: 0, top:"시작점"}, {share: 100, top:"이동점"}]});
 j2e(elements).setDuration(t).animate({name:"role_1"});
-```
+</pre>
 * j2e(elements) 부분에서 효과를 주고싶은 element선택합니다.  
   방법은 jQuery와 같습니다.  
 
-  ###### 예) id로 할경우 j2e("#elementID"), class로 할경우 j2e(".elementClass")
+###### 예) id로 할경우 j2e("#elementID"), class로 할경우 j2e(".elementClass")
 * j2e.addRole 부분은 신규 role을 추가
+* j2e.addRole 에서 role에 share:0을 뺄시엔 현제 위치를 share:0로 자동으로 만듬
 * animate({name:"role name"}) 부분에서 name은 사용 할려는 role name을 작성
 
 <br />
@@ -44,9 +45,9 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 
 > ### **trasition Type Syntax**
 
-```.javascript
-j2e(elements).animate({role:[{duration: 1, top:”종착점”}]});
-```
+<pre class="prettyprint linenums:1">
+j2e(elements).animate({role:[{duration: 1, top:"이동점"}]});
+</pre>
 * j2e(elements) 부분에서 효과를 주고싶은 element선택합니다.  
   방법은 jQuery와 같습니다.  
 
