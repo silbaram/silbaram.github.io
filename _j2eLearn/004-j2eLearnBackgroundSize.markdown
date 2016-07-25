@@ -53,7 +53,8 @@ j2e(elements).animate({role:[{duration: 1, backgroundSize:"변경값"}]});
 
   ###### 예) id로 할경우 j2e("#elementID"), class로 할경우 j2e(".elementClass")
 
-CSS background-size 값을 명시 하지 않을 경우 올바른 동작 안될 수 있음
+* CSS background-size 값을 명시 하지 않을 경우 올바른 동작 안될 수 있음
+
 <br />
 
 > ### **Example**
