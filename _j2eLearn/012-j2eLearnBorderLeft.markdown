@@ -1,12 +1,12 @@
 ---
 layout: j2e-layout
-title:  "borderBottom"
+title:  "borderLeft"
 categories: j2eLearn
 pageType: j2eLearn
 ---
 
-> # **borderBottom**
-> CSS border-bottom 속성에 애니메이션 적용
+> # **borderLeft**
+> CSS border-left 속성에 애니메이션 적용
 
 -----------------------------------
 
@@ -16,14 +16,18 @@ pageType: j2eLearn
 
 > ### **role Syntax**
 
+
 ```
-borderBottom: borderWidth borderColor
+borderLeft: borderWidth borderColor
 ```
 
 | 속 성 | 형 식|
 |---|---|
 | borderWidth | Xpx |
-| borderColor | red, #000000, rgb(255,255,255) |
+| borderColor | red |
+| borderColor | #000000 |
+| borderColor | rgb(255,255,255) |
+
 
 <br />
 <br />
@@ -31,7 +35,7 @@ borderBottom: borderWidth borderColor
 > ### **keyFrame Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e.addRole({name:"role_1", role:[{share: 100, borderBottom:"변경값"}]});
+j2e.addRole({name:"role_1", role:[{share: 100, borderLeft:"변경값"}]});
 j2e(elements).setDuration(t).animate({name:"role_1"});
 </pre>
 
@@ -54,7 +58,7 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 > ### **trasition Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e(elements).animate({role:[{duration: 1, borderBottom:"변경값"}]});
+j2e(elements).animate({role:[{duration: 1, borderLeft:"변경값"}]});
 </pre>
 
 <br />

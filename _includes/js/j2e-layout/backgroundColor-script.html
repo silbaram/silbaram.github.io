@@ -10,15 +10,15 @@
 
     var checkValue = 0;
     $("#demo_contain2").click(function(){
-      let backgroundColorValue = "";
+      let value = "";
       if(checkValue == 0) {
-        backgroundColorValue = "#0054FF";
+        value = "#0054FF";
         checkValue = 1;
       } else if (checkValue == 1) {
-        backgroundColorValue = "#FFFFFF";
+        value = "#FFFFFF";
         checkValue = 0;
       }
-      j2e("#demo_contain2").animate({role:[{duration: 1, backgroundColor:backgroundColorValue}]});
+      j2e("#demo_contain2").animate({role:[{duration: 1, backgroundColor:value}]});
     });
   });
 </script>

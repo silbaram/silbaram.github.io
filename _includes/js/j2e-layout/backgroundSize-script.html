@@ -10,15 +10,15 @@
 
     var checkValue = 0;
     $("#demo_contain2").click(function(){
-      let backgroundPositionValue = "";
+      let value = "";
       if(checkValue == 0) {
-        backgroundPositionValue = "100px 100px";
+        value = "100px 100px";
         checkValue = 1;
       } else if (checkValue == 1) {
-        backgroundPositionValue = "15px 15px";
+        value = "15px 15px";
         checkValue = 0;
       }
-      j2e("#demo_contain2").animate({role:[{duration: 1, backgroundSize:backgroundPositionValue}]});
+      j2e("#demo_contain2").animate({role:[{duration: 1, backgroundSize:value}]});
     });
   });
 </script>

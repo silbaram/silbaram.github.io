@@ -1,12 +1,12 @@
 ---
 layout: j2e-layout
-title:  "borderBottom"
+title:  "borderLeftWidth"
 categories: j2eLearn
 pageType: j2eLearn
 ---
 
-> # **borderBottom**
-> CSS border-bottom 속성에 애니메이션 적용
+> # **borderLeftWidth**
+> CSS border-left-width 속성에 애니메이션 적용
 
 -----------------------------------
 
@@ -16,14 +16,14 @@ pageType: j2eLearn
 
 > ### **role Syntax**
 
+
 ```
-borderBottom: borderWidth borderColor
+borderLeftWidth: length
 ```
 
 | 속 성 | 형 식|
 |---|---|
-| borderWidth | Xpx |
-| borderColor | red, #000000, rgb(255,255,255) |
+| length | Xpx |
 
 <br />
 <br />
@@ -31,7 +31,7 @@ borderBottom: borderWidth borderColor
 > ### **keyFrame Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e.addRole({name:"role_1", role:[{share: 100, borderBottom:"변경값"}]});
+j2e.addRole({name:"role_1", role:[{share: 100, borderLeftWidth:"변경값"}]});
 j2e(elements).setDuration(t).animate({name:"role_1"});
 </pre>
 
@@ -42,7 +42,7 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 > ### **Example**
 
 <div id="demo_contain" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; margin:10px; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
-  <div id="keyframeBottomButton" style="width:100px; height:100px; position:absolute; top:20px; left:10px; background-color:#D941C5;">
+  <div id="keyframeButton" style="width:100px; height:100px; position:absolute; top:20px; left:10px; background-color:#D941C5; border:1px solid black;">
     <span>click me</span>
   </div>
 </div>
@@ -54,7 +54,7 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 > ### **trasition Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e(elements).animate({role:[{duration: 1, borderBottom:"변경값"}]});
+j2e(elements).animate({role:[{duration: 1, borderLeftWidth:"변경값"}]});
 </pre>
 
 <br />
@@ -62,7 +62,7 @@ j2e(elements).animate({role:[{duration: 1, borderBottom:"변경값"}]});
 > ### **Example**
 
 <div id="demo_contain" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; margin:10px; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
-<div id="trasitionBottomButton" style="width:100px; height:100px; position:absolute; top:20px; left:10px; background-color:#D941C5;">
-  <span>click me</span>
-</div>
+  <div id="trasitionButton" style="width:100px; height:100px; position:absolute; top:20px; left:10px; background-color:#D941C5; border:1px solid black;">
+    <span>click me</span>
+    </div>
 </div>

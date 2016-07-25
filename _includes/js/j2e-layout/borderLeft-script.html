@@ -1,7 +1,7 @@
 
 <script type="text/javascript">
 
-  j2e.addRole({name:"role_1", role:[{share: "100", borderBottom:"15px solid red"}]});
+  j2e.addRole({name:"role_1", role:[{share: "100", borderLeft:"15px solid red"}]});
 
   $(document).ready(function(){
     $("#keyframeBottomButton").click(function(){
@@ -18,7 +18,7 @@
         value = "0px solid red";
         checkValue = 0;
       }
-      j2e("#trasitionBottomButton").animate({role:[{duration: 1, borderBottom:value}]});
+      j2e("#trasitionBottomButton").animate({role:[{duration: 1, borderLeft:value}]});
     });
   });
 </script>
