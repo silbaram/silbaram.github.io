@@ -20,6 +20,25 @@ pageType: j2eLearn
 <br />
 <br />
 
+> ## **설  치**
+
+<div id="j2eDownloadBtn" style="border: 0px; background-color: #6799FF; height:60px; width:200px; padding-top:10px; text-align: center;">
+  <a href="https://github.com/silbaram/j2e/archive/master.zip" style="text-decoration:none">
+    <span style="font-size: 200%; color:#fff;">Download ZIP</span>
+  </a>
+</div>
+
+<br />
+
+#### 1. **페이지 적용**
+```
+<script src="../src/j2e.js"></script>
+```
+* 다운받은 zip파일 압축을 풀고 src/j2e.js 파일을 사용
+
+<br />
+<br />
+
 > ### **keyFrame Type**
 
 * css3 keyframe 기반으로 동작

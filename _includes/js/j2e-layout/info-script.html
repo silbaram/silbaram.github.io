@@ -1,0 +1,18 @@
+
+<script type="text/javascript">
+
+  j2e.addRole({name:"role_1", role:[{share: "100", boxShadow: "5px, 5px, 15px, grey"}]});
+  j2e.addRole({name:"role_2", role:[{share: "100", boxShadow: "0px, 0px, 0px, grey"}]});
+
+  $(document).ready(function(){
+
+    $('#j2eDownloadBtn').mouseenter(function(){
+      j2e("#j2eDownloadBtn").setDuration(0.2).setFillMode("forwards").animate({name:"role_1"});
+    });
+
+    $('#j2eDownloadBtn').mouseleave(function(){
+      j2e("#j2eDownloadBtn").setDuration(0.4).setFillMode("forwards").animate({name:"role_2"});
+    });
+
+  });
+</script>

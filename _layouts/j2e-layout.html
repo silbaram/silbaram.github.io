@@ -29,6 +29,9 @@
 
 	{% include js/common-script.html %}
 
+	{% if page.title == '소개' %}
+		{% include js/j2e-layout/info-script.html %}
+	{% endif %}
 	{% if page.title == 'left' %}
 		{% include js/j2e-layout/left-script.html %}
 	{% endif %}
