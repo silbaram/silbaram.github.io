@@ -6,7 +6,7 @@ pageType: j2eLearn
 ---
 
 > # **backgroundPosition**
-> 배경 이미지의 위치값에 애니메이션 효과를 줌
+> CSS background-position 속성에 애니메이션 적용
 
 -----------------------------------
 
@@ -28,8 +28,8 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
   ###### 예) id로 할경우 j2e("#elementID"), class로 할경우 j2e(".elementClass")
 
 * j2e.addRole 부분은 신규 role을 추가
-* j2e.addRole 에서 role에 share:0을 뺄시엔 현제 위치를 share:0로 자동으로 만듬
 * animate({name:"role_1"}) 부분에서 name은 사용 할려는 role name을 사용
+* CSS background-position 값을 명시 하지 않을 경우 올바른 동작 안될 수 있음
 
 <br />
 
@@ -52,6 +52,8 @@ j2e(elements).animate({role:[{duration: 1, backgroundColor:"변경값"}]});
   방법은 jQuery와 같습니다.  
 
   ###### 예) id로 할경우 j2e("#elementID"), class로 할경우 j2e(".elementClass")
+
+* CSS background-position 값을 명시 하지 않을 경우 올바른 동작 안될 수 있음
 
 <br />
 
