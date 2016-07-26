@@ -145,6 +145,10 @@
 		{% include js/j2e-layout/height-script.html %}
 	{% endif %}
 
+	{% if page.title == 'left' %}
+		{% include js/j2e-layout/left-script.html %}
+	{% endif %}
+
 	{% if page.title == 'margin' %}
 		{% include js/j2e-layout/margin-script.html %}
 	{% endif %}
@@ -165,8 +169,36 @@
 		{% include js/j2e-layout/marginTop-script.html %}
 	{% endif %}
 
-	{% if page.title == 'left' %}
-		{% include js/j2e-layout/left-script.html %}
+	{% if page.title == 'opacity' %}
+		{% include js/j2e-layout/opacity-script.html %}
+	{% endif %}
+
+	{% if page.title == 'outline' %}
+		{% include js/j2e-layout/outline-script.html %}
+	{% endif %}
+
+	{% if page.title == 'outlineColor' %}
+		{% include js/j2e-layout/outlineColor-script.html %}
+	{% endif %}
+
+	{% if page.title == 'outlineOffset' %}
+		{% include js/j2e-layout/outlineOffset-script.html %}
+	{% endif %}
+
+	{% if page.title == 'outlineWidth' %}
+		{% include js/j2e-layout/outlineWidth-script.html %}
+	{% endif %}
+
+	{% if page.title == 'padding' %}
+		{% include js/j2e-layout/padding-script.html %}
+	{% endif %}
+
+	{% if page.title == 'paddingBottom' %}
+		{% include js/j2e-layout/paddingBottom-script.html %}
+	{% endif %}
+
+	{% if page.title == 'paddingLeft' %}
+		{% include js/j2e-layout/paddingLeft-script.html %}
 	{% endif %}
 
 	{% if page.title == 'top' %}
