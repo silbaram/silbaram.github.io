@@ -229,6 +229,18 @@
 		{% include js/j2e-layout/top-script.html %}
 	{% endif %}
 
-	<!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?lang=javascript&skin=Sons-Of-Obsidian"></script> -->
+	{% if page.title == 'translate' %}
+		{% include js/j2e-layout/translate-script.html %}
+	{% endif %}
+
+	{% if page.title == 'translateX' %}
+		{% include js/j2e-layout/translateX-script.html %}
+	{% endif %}
+
+	{% if page.title == 'translateY' %}
+		{% include js/j2e-layout/translateY-script.html %}
+	{% endif %}
+
+
 	<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </html>
