@@ -15,26 +15,36 @@ pageType: j2eLearn
 <br />
 <br />
 
+> ### **role Syntax**
+
+
+```
+bottom: length
+```
+
+| 속 성 | 형 식|
+|---|---|
+| length | Xpx |
+| length | X% |
+
+<br />
+<br />
+
 > ### **keyFrame Type Syntax**
 
 <pre class="prettyprint linenums:1">
 j2e.addRole({name:"role_1", role:[{share: 0, bottom:"시작점"}, {share: 100, bottom:"이동점"}]});
 j2e(elements).setDuration(t).animate({name:"role_1"});
 </pre>
-* j2e(elements) 부분에서 효과를 주고싶은 element선택합니다.  
-  방법은 jQuery와 같습니다.  
 
-  ###### 예) id로 할경우 j2e("#elementID"), class로 할경우 j2e(".elementClass")
-* j2e.addRole 부분은 신규 role을 추가
-* j2e.addRole 에서 role에 share:0을 뺄시엔 현제 위치를 share:0로 자동으로 만듬
-* animate({name:"role name"}) 부분에서 name은 사용 할려는 role name을 작성
+* j2e.addRole 생성 시 share:0 생략 가능
 
 <br />
 
 > ### **Example**
 
 <div id="demo_contain" style="height:600px; width:100%; background-color:#FFFFFF; border:0.5px solid black; margin:10px; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
-  <div id="keyframeBottomButton" style="width:100px; height:100px; position:absolute; bottom:20px; left:10px; background-color:#D941C5;">
+  <div id="keyframeButton" style="width:100px; height:100px; position:absolute; bottom:20px; left:10px; background-color:#D941C5;">
     <span>click me</span>
   </div>
 </div>
@@ -48,17 +58,13 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 <pre class="prettyprint linenums:1">
 j2e(elements).animate({role:[{duration: 1, bottom:"이동점"}]});
 </pre>
-* j2e(elements) 부분에서 효과를 주고싶은 element선택합니다.  
-  방법은 jQuery와 같습니다.  
-
-  ###### 예) id로 할경우 j2e("#elementID"), class로 할경우 j2e(".elementClass")
 
 <br />
 
 > ### **Example**
 
 <div id="demo_contain2" style="height:600px; width:100%; background-color:#FFFFFF; border:0.5px solid black; margin:10px; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
-  <div id="trasitionBottomButton" style="width:100px; height:100px; position:absolute; bottom:20px; left:10px; background-color:#D941C5;">
+  <div id="trasitionButton" style="width:100px; height:100px; position:absolute; bottom:20px; left:10px; background-color:#D941C5;">
     <span>click me</span>
   </div>
 </div>

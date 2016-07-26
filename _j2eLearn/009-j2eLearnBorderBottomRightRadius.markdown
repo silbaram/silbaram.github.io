@@ -23,10 +23,10 @@ borderBottomRightRadius: length|% [length|%]
 
 | 속 성 | 형 식|
 |---|---|
-| length|% [length|%] | Xpx |
-| length|% [length|%] | Xpx Ypx |
-| length|% [length|%] | X% |
-| length|% [length|%] | X% Y% |
+| length, % [length, %] | Xpx Ypx |
+| length, % [length, %] | Xpx |
+| length, % [length, %] | X% |
+| length, % [length, %] | X% Y% |
 
 <br />
 <br />

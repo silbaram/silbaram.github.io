@@ -4,12 +4,12 @@
   j2e.addRole({name:"role_1", role:[{share: "100", borderBottom:"15px solid red"}]});
 
   $(document).ready(function(){
-    $("#keyframeBottomButton").click(function(){
-      j2e("#keyframeBottomButton").setDuration(1).animate({name:"role_1"});
+    $("#keyframeButton").click(function(){
+      j2e("#keyframeButton").setDuration(1).animate({name:"role_1"});
     });
 
     var checkValue = 0;
-    $("#trasitionBottomButton").click(function(){
+    $("#trasitionButton").click(function(){
       let value = "";
       if(checkValue == 0) {
         value = "15px solid red";
@@ -18,7 +18,7 @@
         value = "0px solid red";
         checkValue = 0;
       }
-      j2e("#trasitionBottomButton").animate({role:[{duration: 1, borderBottom:value}]});
+      j2e("#trasitionButton").animate({role:[{duration: 1, borderBottom:value}]});
     });
   });
 </script>

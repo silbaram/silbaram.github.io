@@ -46,7 +46,7 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 > ### **Example**
 
 <div id="demo_contain" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; margin:10px; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
-  <div id="keyframeBottomButton" style="width:100px; height:100px; position:absolute; top:20px; left:10px; background-color:#D941C5;">
+  <div id="keyframeButton" style="width:100px; height:100px; position:absolute; top:20px; left:10px; background-color:#D941C5;">
     <span>click me</span>
   </div>
 </div>
@@ -66,7 +66,7 @@ j2e(elements).animate({role:[{duration: 1, borderLeft:"변경값"}]});
 > ### **Example**
 
 <div id="demo_contain" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; margin:10px; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
-<div id="trasitionBottomButton" style="width:100px; height:100px; position:absolute; top:20px; left:10px; background-color:#D941C5;">
+<div id="trasitionButton" style="width:100px; height:100px; position:absolute; top:20px; left:10px; background-color:#D941C5;">
   <span>click me</span>
 </div>
 </div>

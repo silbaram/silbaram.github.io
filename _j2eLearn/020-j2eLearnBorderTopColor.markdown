@@ -1,12 +1,12 @@
 ---
 layout: j2e-layout
-title:  "borderBottomLeftRadius"
+title:  "borderTopColor"
 categories: j2eLearn
 pageType: j2eLearn
 ---
 
-> # **borderBottomLeftRadius**
-> CSS border-bottom-left-radius 속성에 애니메이션 적용
+> # **borderTopColor**
+> CSS border-top-color 속성에 애니메이션 적용
 
 -----------------------------------
 
@@ -18,15 +18,14 @@ pageType: j2eLearn
 
 
 ```
-borderBottomLeftRadius: length|% [length|%]
+borderTopColor: color
 ```
 
 | 속 성 | 형 식|
 |---|---|
-| length, % [length, %] | Xpx |
-| length, % [length, %] | Xpx Ypx |
-| length, % [length, %] | X% |
-| length, % [length, %] | X% Y% |
+| color | red |
+| color | #000000 |
+| color | rgb(255,255,255) |
 
 <br />
 <br />
@@ -34,7 +33,7 @@ borderBottomLeftRadius: length|% [length|%]
 > ### **keyFrame Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e.addRole({name:"role_1", role:[{share: 100, borderBottomLeftRadius:"변경값"}]});
+j2e.addRole({name:"role_1", role:[{share: 100, borderTopColor:"변경값"}]});
 j2e(elements).setDuration(t).animate({name:"role_1"});
 </pre>
 
@@ -57,7 +56,7 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 > ### **trasition Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e(elements).animate({role:[{duration: 1, borderBottomLeftRadius:"변경값"}]});
+j2e(elements).animate({role:[{duration: 1, borderTopColor:"변경값"}]});
 </pre>
 
 <br />

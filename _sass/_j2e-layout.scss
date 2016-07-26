@@ -21,3 +21,11 @@ th {
   background-color: #8C8C8C;
   color: white;
 }
+tr th:first-child,
+tr td:first-child {
+  width:20%;
+}
+tr th:last-child
+tr td:last-child {
+  width:80%;
+}

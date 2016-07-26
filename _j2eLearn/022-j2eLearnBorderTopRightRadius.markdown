@@ -1,12 +1,12 @@
 ---
 layout: j2e-layout
-title:  "borderBottomLeftRadius"
+title:  "borderTopRightRadius"
 categories: j2eLearn
 pageType: j2eLearn
 ---
 
-> # **borderBottomLeftRadius**
-> CSS border-bottom-left-radius 속성에 애니메이션 적용
+> # **borderTopRightRadius**
+> CSS border-top-right-radius 속성에 애니메이션 적용
 
 -----------------------------------
 
@@ -18,7 +18,7 @@ pageType: j2eLearn
 
 
 ```
-borderBottomLeftRadius: length|% [length|%]
+borderTopRightRadius: length|% [length|%]
 ```
 
 | 속 성 | 형 식|
@@ -34,7 +34,7 @@ borderBottomLeftRadius: length|% [length|%]
 > ### **keyFrame Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e.addRole({name:"role_1", role:[{share: 100, borderBottomLeftRadius:"변경값"}]});
+j2e.addRole({name:"role_1", role:[{share: 100, borderTopRightRadius:"변경값"}]});
 j2e(elements).setDuration(t).animate({name:"role_1"});
 </pre>
 
@@ -57,7 +57,7 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 > ### **trasition Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e(elements).animate({role:[{duration: 1, borderBottomLeftRadius:"변경값"}]});
+j2e(elements).animate({role:[{duration: 1, borderTopRightRadius:"변경값"}]});
 </pre>
 
 <br />
