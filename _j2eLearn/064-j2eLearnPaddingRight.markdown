@@ -1,12 +1,12 @@
 ---
 layout: j2e-layout
-title:  "paddingLeft"
+title:  "paddingRight"
 categories: j2eLearn
 pageType: j2eLearn
 ---
 
-> # **paddingLeft**
-> CSS padding-left 속성에 애니메이션 적용
+> # **paddingRight**
+> CSS padding-right 속성에 애니메이션 적용
 
 -----------------------------------
 
@@ -18,7 +18,7 @@ pageType: j2eLearn
 
 
 ```
-paddingLeft: length
+paddingRight: length
 ```
 
 | 속 성 | 형 식|
@@ -32,7 +32,7 @@ paddingLeft: length
 > ### **keyFrame Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e.addRole({name:"role_1", role:[{share: 100, paddingLeft:"이동점"}]});
+j2e.addRole({name:"role_1", role:[{share: 100, paddingRight:"이동점"}]});
 j2e(elements).setDuration(t).animate({name:"role_1"});
 </pre>
 
@@ -53,7 +53,7 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 > ### **trasition Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e(elements).animate({role:[{duration: 1, paddingLeft:"이동점"}]});
+j2e(elements).animate({role:[{duration: 1, paddingRight:"이동점"}]});
 </pre>
 
 <br />
