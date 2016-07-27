@@ -3,6 +3,8 @@ layout: j2e-layout
 title:  "borderBottom"
 categories: j2eLearn
 pageType: j2eLearn
+date: 2016-07-25 18:24:44 +0900
+lastmod: 2016-07-25 18:24:44 +0900
 ---
 
 > # **borderBottom**

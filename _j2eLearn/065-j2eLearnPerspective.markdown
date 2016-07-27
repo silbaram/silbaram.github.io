@@ -3,6 +3,8 @@ layout: j2e-layout
 title:  "perspective"
 categories: j2eLearn
 pageType: j2eLearn
+date: 2016-07-27 18:10:58 +0900
+lastmod: 2016-07-27 18:10:58 +0900
 ---
 
 > # **perspective**

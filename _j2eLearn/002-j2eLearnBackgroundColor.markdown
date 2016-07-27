@@ -3,6 +3,8 @@ layout: j2e-layout
 title:  "backgroundColor"
 categories: j2eLearn
 pageType: j2eLearn
+date: 2016-07-25 14:36:21 +0900
+lastmod: 2016-07-25 14:36:21 +0900
 ---
 
 > # **backgroundColor**

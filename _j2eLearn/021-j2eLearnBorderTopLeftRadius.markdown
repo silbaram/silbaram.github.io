@@ -3,6 +3,8 @@ layout: j2e-layout
 title:  "borderTopLeftRadius"
 categories: j2eLearn
 pageType: j2eLearn
+date: 2016-07-26 12:48:18 +0900
+lastmod: 2016-07-26 12:48:18 +0900
 ---
 
 > # **borderTopLeftRadius**

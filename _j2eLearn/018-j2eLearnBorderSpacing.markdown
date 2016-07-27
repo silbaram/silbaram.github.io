@@ -3,6 +3,8 @@ layout: j2e-layout
 title:  "borderSpacing"
 categories: j2eLearn
 pageType: j2eLearn
+date: 2016-07-26 11:47:08 +0900
+lastmod: 2016-07-26 11:47:08 +0900
 ---
 
 > # **borderSpacing**

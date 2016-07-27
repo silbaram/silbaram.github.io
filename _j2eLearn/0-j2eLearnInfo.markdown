@@ -3,6 +3,8 @@ layout: j2e-layout
 title:  "소개"
 categories: j2eLearn
 pageType: j2eLearn
+date: 2016-07-22 17:45:19 +0900
+lastmod: 2016-07-22 17:45:19 +0900
 ---
 
 > # **j2e 라이브러리**
@@ -20,7 +22,7 @@ pageType: j2eLearn
 <br />
 <br />
 
-> ## **설  치**
+> ## **설  치  (베타 버전)**
 
 <div id="j2eDownloadBtn" style="border: 0px; background-color: #6799FF; height:60px; width:200px; padding-top:10px; text-align: center;">
   <a href="https://github.com/silbaram/j2e/archive/master.zip" style="text-decoration:none">
@@ -34,7 +36,9 @@ pageType: j2eLearn
 ```
 <script src="../src/j2e.js"></script>
 ```
+
 * 다운받은 zip파일 압축을 풀고 src/j2e.js 파일을 사용
+* 소스가 수시로 변경 되고 있습니다.
 
 <br />
 <br />

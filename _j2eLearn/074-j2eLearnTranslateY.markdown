@@ -3,6 +3,8 @@ layout: j2e-layout
 title:  "translateY"
 categories: j2eLearn
 pageType: j2eLearn
+date: 2016-07-27 18:30:01 +0900
+lastmod: 2016-07-27 18:30:01 +0900
 ---
 
 > # **translateY**

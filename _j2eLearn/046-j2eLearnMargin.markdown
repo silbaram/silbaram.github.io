@@ -3,6 +3,8 @@ layout: j2e-layout
 title:  "margin"
 categories: j2eLearn
 pageType: j2eLearn
+date: 2016-07-26 15:44:38 +0900
+lastmod: 2016-07-26 15:44:38 +0900
 ---
 
 > # **margin**

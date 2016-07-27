@@ -3,6 +3,8 @@ layout: j2e-layout
 title:  "textIndent"
 categories: j2eLearn
 pageType: j2eLearn
+date: 2016-07-27 18:14:58 +0900
+lastmod: 2016-07-27 18:14:58 +0900
 ---
 
 > # **textIndent**

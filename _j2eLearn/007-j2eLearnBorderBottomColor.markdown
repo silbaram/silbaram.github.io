@@ -1,11 +1,10 @@
----| 속 성 | 설 명|
-|---|---|
-| borderWidth | 작성중 |
-| borderColor | 작성중 |
+---
 layout: j2e-layout
 title:  "borderBottomColor"
 categories: j2eLearn
 pageType: j2eLearn
+date: 2016-07-26 10:07:08 +0900
+lastmod: 2016-07-26 10:07:08 +0900
 ---
 
 > # **borderBottom**

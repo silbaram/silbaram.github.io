@@ -3,6 +3,8 @@ layout: j2e-layout
 title:  "font"
 categories: j2eLearn
 pageType: j2eLearn
+date: 2016-07-26 13:20:28 +0900
+lastmod: 2016-07-26 13:20:28 +0900
 ---
 
 > # **font**

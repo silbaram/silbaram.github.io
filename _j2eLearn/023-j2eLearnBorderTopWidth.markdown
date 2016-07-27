@@ -3,6 +3,8 @@ layout: j2e-layout
 title:  "borderTopWidth"
 categories: j2eLearn
 pageType: j2eLearn
+date: 2016-07-26 13:58:18 +0900
+lastmod: 2016-07-26 13:58:18 +0900
 ---
 
 > # **borderTopWidth**

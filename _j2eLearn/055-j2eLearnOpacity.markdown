@@ -3,6 +3,8 @@ layout: j2e-layout
 title:  "opacity"
 categories: j2eLearn
 pageType: j2eLearn
+date: 2016-07-26 18:45:58 +0900
+lastmod: 2016-07-26 18:45:58 +0900
 ---
 
 > # **opacity**

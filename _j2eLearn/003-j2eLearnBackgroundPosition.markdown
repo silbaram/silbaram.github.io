@@ -3,6 +3,8 @@ layout: j2e-layout
 title:  "backgroundPosition"
 categories: j2eLearn
 pageType: j2eLearn
+date: 2016-07-25 14:46:00 +0900
+lastmod: 2016-07-25 14:46:00 +0900
 ---
 
 > # **backgroundPosition**

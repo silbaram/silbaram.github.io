@@ -3,6 +3,8 @@ layout: j2e-layout
 title:  "right"
 categories: j2eLearn
 pageType: j2eLearn
+date: 2016-07-27 18:12:58 +0900
+lastmod: 2016-07-27 18:12:58 +0900
 ---
 
 > # **right**

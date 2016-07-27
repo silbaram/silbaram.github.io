@@ -3,6 +3,8 @@ layout: j2e-layout
 title:  "fontSize"
 categories: j2eLearn
 pageType: j2eLearn
+date: 2016-07-26 13:22:38 +0900
+lastmod: 2016-07-26 13:22:38 +0900
 ---
 
 > # **fontSize**
