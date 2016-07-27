@@ -4,7 +4,7 @@ title:  "backgroundColor"
 categories: j2eLearn
 pageType: j2eLearn
 date: 2016-07-25 14:36:21 +0900
-lastmod: 2016-07-25 14:36:21 +0900
+lastmod: 2016-07-27 22:47:21 +0900
 ---
 
 > # **backgroundColor**
@@ -25,9 +25,9 @@ backgroundColor: color
 
 | 속 성 | 형 식|
 |---|---|
-| color | red |
-| color | #000000 |
-| color | rgb(255,255,255) |
+| color | backgroundColor: "red" |
+| color | backgroundColor: "#000000" |
+| color | backgroundColor: "rgb(255,255,255)" |
 
 <br />
 <br />
@@ -35,7 +35,7 @@ backgroundColor: color
 > ### **keyFrame Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e.addRole({name:"role_1", role:[{share: 100, backgroundColor:"변경값"}]});
+j2e.addRole({name:"role_1", role:[{share: 100, backgroundColor:"color"}]});
 j2e(elements).setDuration(t).animate({name:"role_1"});
 </pre>
 
@@ -45,7 +45,21 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 
 > ### **Example**
 
-<div id="keyframeButton" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; margin:10px; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
+* #### 예제소스
+<pre class="prettyprint linenums:1">
+j2e.addRole({name:"role_1", role:[{share: "100", backgroundColor:"#0054FF"}]});
+
+$(document).ready(function(){
+  $("#keyframeButton").click(function(){
+    j2e("#keyframeButton").setDuration(1).animate({name:"role_1"});
+  });
+});
+</pre>
+
+<br />
+
+* #### 결과
+<div id="keyframeButton" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
     <span>click me</span>
 </div>
 
@@ -56,13 +70,35 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 > ### **trasition Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e(elements).animate({role:[{duration: 1, backgroundColor:"변경값"}]});
+j2e(elements).animate({role:[{duration: 1, backgroundColor:"color"}]});
 </pre>
 
 <br />
 
 > ### **Example**
 
-<div id="trasitionButton" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; margin:10px; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
+* #### 예제소스
+<pre class="prettyprint linenums:1">
+$(document).ready(function(){
+  var checkValue = 0;
+  $("#trasitionButton").click(function(){
+    let value = "";
+    if(checkValue == 0) {
+      value = "#0054FF";
+      checkValue = 1;
+    } else if (checkValue == 1) {
+      value = "#FFFFFF";
+      checkValue = 0;
+    }
+
+    j2e("#trasitionButton").animate({role:[{duration: 1, backgroundColor:value}]});
+  }
+});
+</pre>
+
+<br />
+
+* #### 결과
+<div id="trasitionButton" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
   <span>click me</span>
 </div>
