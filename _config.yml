@@ -8,9 +8,9 @@
 # Site settings
 title: javascript 애니메이터
 email: silbaram79@gmail.com
-description: 아직 개발 중입니다.
+description: keyframe과 transition을 활용한 자바스크립트 라이브러리.
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "https://silbaram.github.io" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
 
