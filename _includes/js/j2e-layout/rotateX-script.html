@@ -1,0 +1,24 @@
+
+<script type="text/javascript">
+
+  j2e.addRole({name:"role_1", role:[{share: "0", perspective: 500}, {share: "100", perspective: 500, rotateX:"180"}]});
+
+  $(document).ready(function(){
+    $("#keyframeButton").click(function(){
+      j2e("#keyframeButton").setDuration(1).animate({name:"role_1"});
+    });
+
+    var checkValue = 0;
+    $("#trasitionButton").click(function(){
+      let value = "";
+      if(checkValue == 0) {
+        value = "180";
+        checkValue = 1;
+      } else if (checkValue == 1) {
+        value = "0";
+        checkValue = 0;
+      }
+      j2e("#trasitionButton").animate({role:[{duration: 1, perspective: 500, rotateX:value}]});
+    });
+  });
+</script>

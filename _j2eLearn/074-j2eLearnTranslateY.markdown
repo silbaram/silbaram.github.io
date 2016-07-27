@@ -6,7 +6,7 @@ pageType: j2eLearn
 ---
 
 > # **translateY**
-> CSS translateY 속성에 애니메이션 적용
+> CSS Transform translateY 속성에 애니메이션 적용
 
 -----------------------------------
 

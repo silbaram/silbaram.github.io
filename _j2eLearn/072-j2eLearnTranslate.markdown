@@ -6,7 +6,7 @@ pageType: j2eLearn
 ---
 
 > # **translate**
-> CSS translate 속성에 애니메이션 적용
+> CSS Transform translate 속성에 애니메이션 적용
 
 -----------------------------------
 
