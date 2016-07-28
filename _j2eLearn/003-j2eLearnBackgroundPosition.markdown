@@ -4,7 +4,7 @@ title:  "backgroundPosition"
 categories: j2eLearn
 pageType: j2eLearn
 date: 2016-07-25 14:46:00 +0900
-lastmod: 2016-07-27 23:07:00 +0900
+lastmod: 2016-07-28 14:18:00 +0900
 ---
 
 > # **backgroundPosition**
@@ -21,22 +21,22 @@ lastmod: 2016-07-27 23:07:00 +0900
 
 
 ```
-backgroundPosition: value
+backgroundPosition: Keyword | length | percentage
 ```
 
 | 속 성 | 형 식|
 |---|---|
-| value | backgroundPosition: "left [top]" |
-| value | backgroundPosition: "left [center]" |
-| value | backgroundPosition: "left [bottom]" |
-| value | backgroundPosition: "right [top]" |
-| value | backgroundPosition: "right [center]" |
-| value | backgroundPosition: "right [bottom]" |
-| value | backgroundPosition: "center [top]" |
-| value | backgroundPosition: "center [center]" |
-| value | backgroundPosition: "center [bottom]" |
-| value | backgroundPosition: "X% [Y%]" |
-| value | backgroundPosition: "Xpx [Ypx]" |
+| keyword | backgroundPosition: "left [top]" |
+| keyword | backgroundPosition: "left [center]" |
+| keyword | backgroundPosition: "left [bottom]" |
+| keyword | backgroundPosition: "right [top]" |
+| keyword | backgroundPosition: "right [center]" |
+| keyword | backgroundPosition: "right [bottom]" |
+| keyword | backgroundPosition: "center [top]" |
+| keyword | backgroundPosition: "center [center]" |
+| keyword | backgroundPosition: "center [bottom]" |
+| length | backgroundPosition: "Xpx [Ypx]" |
+| percentage | backgroundPosition: "X% [Y%]" |
 
 <br />
 <br />
@@ -44,7 +44,7 @@ backgroundPosition: value
 > ### **keyFrame Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e.addRole({name:"role_1", role:[{share: 100, backgroundPosition:"value"}]});
+j2e.addRole({name:"role_1", role:[{share: 100, backgroundPosition:"Keyword | length | percentage"}]});
 j2e(elements).setDuration(t).animate({name:"role_1"});
 </pre>
 
@@ -79,7 +79,7 @@ $(document).ready(function(){
 > ### **trasition Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e(elements).animate({role:[{duration: 1, backgroundPosition:"value"}]});
+j2e(elements).animate({role:[{duration: 1, backgroundPosition:"Keyword | length | percentage"}]});
 </pre>
 
 <br />

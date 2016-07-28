@@ -189,14 +189,14 @@ j2e(element-selecter).setDuration(t).animate({name:”roleName”});
 > ### **role css property**
 
   * background
-  * background-color
-  * background-position
-  * background-size
+  * [background-color]({{ site.url }}/j2e-learn/002-j2eLearnBackgroundColor/ "background-color")
+  * [background-position]({{ site.url }}/j2e-learn/003-j2eLearnBackgroundPosition/ "background-position")
+  * [background-size]({{ site.url }}/j2e-learn/004-j2eLearnBackgroundSize/ "background-size")
   * border
-  * border-bottom
-  * border-bottom-color
-  * border-bottom-left-radius
-  * border-bottom-right-radius
+  * [border-bottom]({{ site.url }}/j2e-learn/004-j2eLearnBackgroundSize/ "border-bottom")
+  * [border-bottom-color]({{ site.url }}/j2e-learn/007-j2eLearnBorderBottomColor/ "border-bottom-color")
+  * [border-bottom-left-radius]({{ site.url }}/j2e-learn/008-j2eLearnBorderBottomLeftRadius/ "border-bottom-left-radius")
+  * [border-bottom-right-radius]({{ site.url }}/j2e-learn/008-j2eLearnBorderBottomLeftRadius/ "border-bottom-right-radius")
   * border-bottom-width
   * border-color
   * border-left

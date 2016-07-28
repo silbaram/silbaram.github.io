@@ -4,7 +4,7 @@ title:  "backgroundColor"
 categories: j2eLearn
 pageType: j2eLearn
 date: 2016-07-25 14:36:21 +0900
-lastmod: 2016-07-27 22:47:21 +0900
+lastmod: 2016-07-28 14:54:21 +0900
 ---
 
 > # **backgroundColor**
@@ -20,14 +20,14 @@ lastmod: 2016-07-27 22:47:21 +0900
 > ### **role Syntax**
 
 ```
-backgroundColor: color
+backgroundColor: color_name | hex_number | rgb_number
 ```
 
 | 속 성 | 형 식|
 |---|---|
-| color | backgroundColor: "red" |
-| color | backgroundColor: "#000000" |
-| color | backgroundColor: "rgb(255,255,255)" |
+| color_name | backgroundColor: "red" |
+| hex_number | backgroundColor: "#ff0000" |
+| rgb_number | backgroundColor: "rgb(255,0,0)" |
 
 <br />
 <br />
@@ -35,7 +35,7 @@ backgroundColor: color
 > ### **keyFrame Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e.addRole({name:"role_1", role:[{share: 100, backgroundColor:"color"}]});
+j2e.addRole({name:"role_1", role:[{share: 100, backgroundColor:"color_name | hex_number | rgb_number"}]});
 j2e(elements).setDuration(t).animate({name:"role_1"});
 </pre>
 
@@ -70,7 +70,7 @@ $(document).ready(function(){
 > ### **trasition Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e(elements).animate({role:[{duration: 1, backgroundColor:"color"}]});
+j2e(elements).animate({role:[{duration: 1, backgroundColor:"color_name | hex_number | rgb_number"}]});
 </pre>
 
 <br />
