@@ -25,9 +25,9 @@ borderColor: top-color right-color bottom-color left-color
 
 | 속 성 | 형 식|
 |---|---|
-| color | red |
-| color | #000000 |
-| color | rgb(255,255,255) |
+| color | "red" |
+| color | "#000000" |
+| color | "rgb(255,255,255)" |
 
 * color : top & bottom & right & left
 * color color : (top & bottom) (right & left)

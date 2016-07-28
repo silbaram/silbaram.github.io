@@ -25,7 +25,7 @@ borderLeftWidth: length
 
 | 속 성 | 형 식|
 |---|---|
-| length | borderLeftWidth: Xpx |
+| length | borderLeftWidth: "Xpx" |
 
 <br />
 <br />

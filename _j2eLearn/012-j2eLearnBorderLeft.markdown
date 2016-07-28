@@ -32,7 +32,6 @@ borderLeft: borderWidth border-style [borderColor]
 * 현재 borderWidth 단위 지정 필수(차후 단위 생략시 기본으로 px단위가 붙도록 계획 중)
 * 현재 borderColor는 style에 선언 했다면 생략 가능(차후 borderColor 생략시 기본으로 solid keyword가 붙도록 계획 중)
 
-
 <br />
 <br />
 
