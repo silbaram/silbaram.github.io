@@ -25,9 +25,9 @@ borderBottomColor: color_name|hex_number|rgb_number
 
 | 속 성 | 형 식|
 |---|---|
-| color_name | backgroundColor: "red" |
-| hex_number | backgroundColor: "#ff0000" |
-| rgb_number | backgroundColor: "rgb(255,0,0)" |
+| color_name | borderBottomColor: "red" |
+| hex_number | borderBottomColor: "#ff0000" |
+| rgb_number | borderBottomColor: "rgb(255,0,0)" |
 
 <br />
 <br />

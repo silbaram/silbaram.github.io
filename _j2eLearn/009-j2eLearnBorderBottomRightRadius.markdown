@@ -78,6 +78,7 @@ j2e(elements).animate({role:[{duration: 1, borderBottomRightRadius:"length [leng
 
 > ### **Example**
 
+* #### 예제소스
 <pre class="prettyprint linenums:1">
 $(document).ready(function(){
   var checkValue = 0;
