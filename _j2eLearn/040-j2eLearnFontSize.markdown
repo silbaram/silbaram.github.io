@@ -4,7 +4,7 @@ title:  "fontSize"
 categories: j2eLearn
 pageType: j2eLearn
 date: 2016-07-26 13:22:38 +0900
-lastmod: 2016-07-26 13:22:38 +0900
+lastmod: 2016-07-29 15:08:24 +0900
 ---
 
 > # **fontSize**
@@ -21,12 +21,14 @@ lastmod: 2016-07-26 13:22:38 +0900
 
 
 ```
-fontSize: medium | xx-small | x-small | small | large | x-large | xx-large | smaller | larger | length
+fontSize: keywords | length | percentage
 ```
 
 | 속 성 | 형 식|
 |---|---|
-| fontSize | xx-small, x-small, small, medium, large, x-large, xx-large, smaller, larger, Xpx, X% |
+| keywords | length | percentage | fontSize: "xx-small\|Xpx\|X%" |
+
+* keywords : xx-small, x-small, small, large, x-large, xx-large, smaller, larger
 
 <br />
 <br />
@@ -34,7 +36,7 @@ fontSize: medium | xx-small | x-small | small | large | x-large | xx-large | sma
 > ### **keyFrame Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e.addRole({name:"role_1", role:[{share: 100, fontSize:"이동점"}]});
+j2e.addRole({name:"role_1", role:[{share: 100, fontSize:"keywords | length | percentage"}]});
 j2e(elements).setDuration(t).animate({name:"role_1"});
 </pre>
 
@@ -44,7 +46,21 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 
 > ### **Example**
 
-<div id="demo_contain" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; margin:10px; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
+* #### 예제소스
+<pre class="prettyprint linenums:1">
+j2e.addRole({name:"role_1", role:[{share: "100", fontSize:"40px"}]});
+
+$(document).ready(function(){
+  $("#keyframeButton").click(function(){
+    j2e("#keyframeButton").setDuration(1).animate({name:"role_1"});
+  });
+});
+</pre>
+
+<br />
+
+* #### 결과
+<div id="demo_contain" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
   <div id="keyframeButton" style="width:200px; height:100px; position:absolute; too:10px; left:10px; border: 1px solid black">
     <p>click me</p>
   </div>
@@ -57,14 +73,36 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 > ### **trasition Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e(elements).animate({role:[{duration: 1, fontSize:"이동점"}]});
+j2e(elements).animate({role:[{duration: 1, fontSize:"keywords | length | percentage"}]});
 </pre>
 
 <br />
 
 > ### **Example**
 
-<div id="demo_contain2" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; margin:10px; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
+* #### 예제소스
+<pre class="prettyprint linenums:1">
+$(document).ready(function(){
+  var checkValue = 0;
+  $("#trasitionButton").click(function(){
+    let value = "";
+    if(checkValue == 0) {
+      value = "40px";
+      checkValue = 1;
+    } else if (checkValue == 1) {
+      value = "10px";
+      checkValue = 0;
+    }
+
+    j2e("#trasitionButton").animate({role:[{duration: 1, fontSize:value}]});
+  }
+});
+</pre>
+
+<br />
+
+* #### 결과
+<div id="demo_contain2" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
   <div id="trasitionButton" style="width:200px; height:100px; position:absolute; top:10px; left:10px; border: 1px solid black">
     <span>click me</span>
   </div>

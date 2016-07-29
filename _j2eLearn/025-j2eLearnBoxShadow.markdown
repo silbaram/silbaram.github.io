@@ -1,14 +1,14 @@
 ---
 layout: j2e-layout
-title:  "color"
+title:  "boxShadow"
 categories: j2eLearn
 pageType: j2eLearn
-date: 2016-07-26 12:20:28 +0900
-lastmod: 2016-07-29 14:46:35 +0900
+date: 2016-07-26 12:18:28 +0900
+lastmod: 2016-07-29 14:41:35 +0900
 ---
 
-> # **color**
-> CSS color 속성에 애니메이션 적용
+> # **boxShadow**
+> CSS box-shadow 속성에 애니메이션 적용
 
 -----------------------------------
 
@@ -21,14 +21,14 @@ lastmod: 2016-07-29 14:46:35 +0900
 
 
 ```
-color: color
+box-shadow: h-shadow v-shadow [blur] [spread] color
 ```
 
 | 속 성 | 형 식|
 |---|---|
-| color | color: "red" |
-| color | color: "#ff0000" |
-| color | color: "rgb(255,0,0)" |
+| h-shadow v-shadow [blur] [spread] color | boxShadow: "Hpx Vpx [Bpx] [spx] [red)]" |
+| h-shadow v-shadow [blur] [spread] color | boxShadow: "Hpx Vpx [Bpx] [spx] [#ff0000]" |
+| h-shadow v-shadow [blur] [spread] color | boxShadow: "Hpx Vpx [Bpx] [spx] [rgb(255,0,0)]" |
 
 <br />
 <br />
@@ -36,7 +36,7 @@ color: color
 > ### **keyFrame Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e.addRole({name:"role_1", role:[{share: 100, color:"color"}]});
+j2e.addRole({name:"role_1", role:[{share: 100, boxShadow:"h-shadow v-shadow [blur] [spread] color"}]});
 j2e(elements).setDuration(t).animate({name:"role_1"});
 </pre>
 
@@ -48,7 +48,7 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 
 * #### 예제소스
 <pre class="prettyprint linenums:1">
-j2e.addRole({name:"role_1", role:[{share: "100", color:"blue"}]});
+j2e.addRole({name:"role_1", role:[{share: "100", boxShadow:"10px 20px 30px blue"}]});
 
 $(document).ready(function(){
   $("#keyframeButton").click(function(){
@@ -61,8 +61,8 @@ $(document).ready(function(){
 
 * #### 결과
 <div id="demo_contain" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
-  <div id="keyframeButton" style="width:200px; height:100px; position:absolute; too:10px; left:10px; border: 1px solid black">
-    <h1>click me</h1>
+  <div id="keyframeButton" style="width:100px; height:100px; position:absolute; too:10px; left:10px; background-color:#D941C5;">
+    <span>click me</span>
   </div>
 </div>
 
@@ -73,7 +73,7 @@ $(document).ready(function(){
 > ### **trasition Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e(elements).animate({role:[{duration: 1, color:"color"}]});
+j2e(elements).animate({role:[{duration: 1, boxShadow:"h-shadow v-shadow [blur] [spread] color"}]});
 </pre>
 
 <br />
@@ -87,14 +87,14 @@ $(document).ready(function(){
   $("#trasitionButton").click(function(){
     let value = "";
     if(checkValue == 0) {
-      value = "blue";
+      value = "10px 20px 30px blue";
       checkValue = 1;
     } else if (checkValue == 1) {
-      value = "red";
+      value = "0 0 0";
       checkValue = 0;
     }
 
-    j2e("#trasitionButton").animate({role:[{duration: 1, color:value}]});
+    j2e("#trasitionButton").animate({role:[{duration: 1, boxShadow:value}]});
   }
 });
 </pre>
@@ -103,7 +103,7 @@ $(document).ready(function(){
 
 * #### 결과
 <div id="demo_contain2" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
-  <div id="trasitionButton" style="width:200px; height:100px; position:absolute; top:10px; left:10px; border: 1px solid black">
-    <h1>click me</h1>
+  <div id="trasitionButton" style="width:100px; height:100px; position:absolute; top:10px; left:10px; background-color:#D941C5;">
+    <span>click me</span>
   </div>
 </div>
