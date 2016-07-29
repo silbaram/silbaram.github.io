@@ -4,7 +4,7 @@ title:  "borderTop"
 categories: j2eLearn
 pageType: j2eLearn
 date: 2016-07-26 11:47:18 +0900
-lastmod: 2016-07-28 16:49:42 +0900
+lastmod: 2016-07-29 18:06:42 +0900
 ---
 
 > # **borderTop**
@@ -26,7 +26,7 @@ borderTop: borderWidth border-style [borderColor]
 | 속 성 | 형 식|
 |---|---|
 | borderWidth border-style [borderColor] | borderTop: "Xpx solid [red]" |
-| borderWidth border-style [borderColor] | borderTop: "Xpx solid []#ff0000]" |
+| borderWidth border-style [borderColor] | borderTop: "Xpx solid [#ff0000]" |
 | borderWidth border-style [borderColor] | borderTop: "Xpx solid [rgb(255,0,0)]" |
 
 * 현재 borderWidth 단위 지정 필수(차후 단위 생략시 기본으로 px단위가 붙도록 계획 중)
