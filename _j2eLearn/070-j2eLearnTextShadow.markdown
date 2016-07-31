@@ -4,7 +4,7 @@ title:  "textShadow"
 categories: j2eLearn
 pageType: j2eLearn
 date: 2016-07-27 18:17:58 +0900
-lastmod: 2016-07-27 18:17:58 +0900
+lastmod: 2016-07-30 17:15:22 +0900
 ---
 
 > # **textShadow**
@@ -20,16 +20,12 @@ lastmod: 2016-07-27 18:17:58 +0900
 > ### **role Syntax**
 
 ```
-box-shadow: none | h-shadow v-shadow [blur-radius] color
+box-shadow: h-shadow v-shadow [blur-radius] color
 ```
 
 | 속 성 | 형 식|
 |---|---|
-| h-shadow | Xpx |
-| v-shadow | Xpx |
-| blur-radius | Xpx |
-| color | #000000 |
-| color | rgb(255,255,255) |
+| h-shadow v-shadow [blur-radius] color | textShadow: "Xpx Xpx [Xpx] red \| #ff0000 \| rgb(255,0,0)" |
 
 <br />
 <br />
@@ -37,7 +33,7 @@ box-shadow: none | h-shadow v-shadow [blur-radius] color
 > ### **keyFrame Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e.addRole({name:"role_1", role:[{share: 100, textShadow:"이동점"}]});
+j2e.addRole({name:"role_1", role:[{share: 100, textShadow:"h-shadow v-shadow [blur-radius] color"}]});
 j2e(elements).setDuration(t).animate({name:"role_1"});
 </pre>
 
@@ -47,7 +43,21 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 
 > ### **Example**
 
-<div id="demo_contain" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; margin:10px; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
+* #### 예제소스
+<pre class="prettyprint linenums:1">
+j2e.addRole({name:"role_1", role:[{share: "100", textShadow:"10px 20px 30px blue"}]});
+
+$(document).ready(function(){
+  $("#keyframeButton").click(function(){
+    j2e("#keyframeButton").setDuration(1).animate({name:"role_1"});
+  });
+});
+</pre>
+
+<br />
+
+* #### 결과
+<div id="demo_contain" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
   <div id="keyframeButton" style="width:100px; height:100px; position:absolute; too:10px; left:10px; background-color:#D941C5;">
     <h3>click me</h3>
   </div>
@@ -60,14 +70,36 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 > ### **trasition Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e(elements).animate({role:[{duration: 1, textShadow:"이동점"}]});
+j2e(elements).animate({role:[{duration: 1, textShadow:"h-shadow v-shadow [blur-radius] color"}]});
 </pre>
 
 <br />
 
 > ### **Example**
 
-<div id="demo_contain2" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; margin:10px; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
+* #### 예제소스
+<pre class="prettyprint linenums:1">
+$(document).ready(function(){
+  var checkValue = 0;
+  $("#trasitionButton").click(function(){
+    let value = "";
+    if(checkValue == 0) {
+      value = "10px 20px 30px blue";
+      checkValue = 1;
+    } else if (checkValue == 1) {
+      value = "0 0 0";
+      checkValue = 0;
+    }
+
+    j2e("#trasitionButton").animate({role:[{duration: 1, textShadow:value}]});
+  }
+});
+</pre>
+
+<br />
+
+* #### 결과
+<div id="demo_contain2" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
   <div id="trasitionButton" style="width:100px; height:100px; position:absolute; top:10px; left:10px; background-color:#D941C5;">
     <h3>click me</h3>
   </div>

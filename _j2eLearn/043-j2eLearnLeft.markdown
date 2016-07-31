@@ -4,7 +4,7 @@ title:  "left"
 categories: j2eLearn
 pageType: j2eLearn
 date: 2016-07-26 15:33:38 +0900
-lastmod: 2016-07-29 15:30:44 +0900
+lastmod: 2016-07-30 17:.4:44 +0900
 ---
 
 > # **left**
@@ -25,7 +25,7 @@ left: length | percentage
 
 | 속 성 | 형 식|
 |---|---|
-| length \| percentage | height: "Xpx\|X%" |
+| length \| percentage | left: "Xpx\|X%" |
 
 <br />
 <br />

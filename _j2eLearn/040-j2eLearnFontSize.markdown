@@ -26,9 +26,9 @@ fontSize: keywords | length | percentage
 
 | 속 성 | 형 식|
 |---|---|
-| keywords | length | percentage | fontSize: "xx-small\|Xpx\|X%" |
+| keyword | length | percentage | fontSize: "xx-small\|Xpx\|X%" |
 
-* keywords : xx-small, x-small, small, large, x-large, xx-large, smaller, larger
+* keyword : xx-small, x-small, small, large, x-large, xx-large, smaller, larger
 
 <br />
 <br />

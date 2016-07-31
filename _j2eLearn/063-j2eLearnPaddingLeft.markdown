@@ -4,7 +4,7 @@ title:  "paddingLeft"
 categories: j2eLearn
 pageType: j2eLearn
 date: 2016-07-26 18:55:58 +0900
-lastmod: 2016-07-26 18:55:58 +0900
+lastmod: 2016-07-30 16:47:21 +0900
 ---
 
 > # **paddingLeft**
@@ -20,13 +20,12 @@ lastmod: 2016-07-26 18:55:58 +0900
 
 
 ```
-paddingLeft: length
+paddingLeft: length | percentage
 ```
 
 | 속 성 | 형 식|
 |---|---|
-| length | Xpx |
-| length | X% |
+| length \| percentage | paddingLeft: "Xpx \| X%" |
 
 <br />
 <br />
@@ -34,7 +33,7 @@ paddingLeft: length
 > ### **keyFrame Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e.addRole({name:"role_1", role:[{share: 100, paddingLeft:"이동점"}]});
+j2e.addRole({name:"role_1", role:[{share: 100, paddingLeft:"length | percentage"}]});
 j2e(elements).setDuration(t).animate({name:"role_1"});
 </pre>
 
@@ -44,7 +43,21 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 
 > ### **Example**
 
-<div id="keyframeButton" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; margin:10px; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
+* #### 예제소스
+<pre class="prettyprint linenums:1">
+j2e.addRole({name:"role_1", role:[{share: "100", paddingLeft:"50%"}]});
+
+$(document).ready(function(){
+  $("#keyframeButton").click(function(){
+    j2e("#keyframeButton").setDuration(1).animate({name:"role_1"});
+  });
+});
+</pre>
+
+<br />
+
+* #### 결과
+<div id="keyframeButton" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
   click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me
 </div>
 
@@ -55,13 +68,35 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 > ### **trasition Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e(elements).animate({role:[{duration: 1, paddingLeft:"이동점"}]});
+j2e(elements).animate({role:[{duration: 1, paddingLeft:"length | percentage"}]});
 </pre>
 
 <br />
 
 > ### **Example**
 
-<div id="trasitionButton" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; margin:10px; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
+* #### 예제소스
+<pre class="prettyprint linenums:1">
+$(document).ready(function(){
+  var checkValue = 0;
+  $("#trasitionButton").click(function(){
+    let value = "";
+    if(checkValue == 0) {
+      value = "50%";
+      checkValue = 1;
+    } else if (checkValue == 1) {
+      value = "0%";
+      checkValue = 0;
+    }
+
+    j2e("#trasitionButton").animate({role:[{duration: 1, paddingLeft:value}]});
+  }
+});
+</pre>
+
+<br />
+
+* #### 결과
+<div id="trasitionButton" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
   click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me click me
 </div>

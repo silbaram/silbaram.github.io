@@ -4,7 +4,7 @@ title:  "top"
 categories: j2eLearn
 pageType: j2eLearn
 date: 2016-07-27 18:27:58 +0900
-lastmod: 2016-07-27 18:27:58 +0900
+lastmod: 2016-07-30 17:20:32 +0900
 ---
 
 > # **top**
@@ -19,12 +19,12 @@ lastmod: 2016-07-27 18:27:58 +0900
 > ### **role Syntax**
 
 ```
-top: length
+top: length | percentage
 ```
 
 | 속 성 | 형 식|
 |---|---|
-| length | Xpx, X% |
+| length \| percentage | top: "Xpx \| X%" |
 
 <br />
 <br />
@@ -32,7 +32,7 @@ top: length
 > ### **keyFrame Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e.addRole({name:"role_1", role:[{share: 0, top:"시작점"}, {share: 100, top:"이동점"}]});
+j2e.addRole({name:"role_1", role:[{share: 100, top:"length | percentage"}]});
 j2e(elements).setDuration(t).animate({name:"role_1"});
 </pre>
 
@@ -42,7 +42,21 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 
 > ### **Example**
 
-<div id="demo_contain" style="height:600px; width:100%; background-color:#FFFFFF; border:0.5px solid black; margin:10px; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
+* #### 예제소스
+<pre class="prettyprint linenums:1">
+j2e.addRole({name:"role_1", role:[{share: "100", top:"90"}]});
+
+$(document).ready(function(){
+  $("#keyframeButton").click(function(){
+    j2e("#keyframeButton").setDuration(1).animate({name:"role_1"});
+  });
+});
+</pre>
+
+<br />
+
+* #### 결과
+<div id="demo_contain" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
   <div id="keyframeButton" style="width:100px; height:100px; position:absolute; top:20px; left:10px; background-color:#D941C5;">
     <span>click me</span>
   </div>
@@ -55,14 +69,36 @@ j2e(elements).setDuration(t).animate({name:"role_1"});
 > ### **trasition Type Syntax**
 
 <pre class="prettyprint linenums:1">
-j2e(elements).animate({role:[{duration: 1, top:"이동점"}]});
+j2e(elements).animate({role:[{duration: 1, top:"length | percentage"}]});
 </pre>
 
 <br />
 
 > ### **Example**
 
-<div id="demo_contain2" style="height:600px; width:100%; background-color:#FFFFFF; border:0.5px solid black; margin:10px; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
+* #### 예제소스
+<pre class="prettyprint linenums:1">
+$(document).ready(function(){
+  var checkValue = 0;
+  $("#trasitionButton").click(function(){
+    let value = "";
+    if(checkValue == 0) {
+      value = "90";
+      checkValue = 1;
+    } else if (checkValue == 1) {
+      value = "20";
+      checkValue = 0;
+    }
+
+    j2e("#trasitionButton").animate({role:[{duration: 1, top:value}]});
+  }
+});
+</pre>
+
+<br />
+
+* #### 결과
+<div id="demo_contain2" style="height:200px; width:100%; background-color:#FFFFFF; border:0.5px solid black; position:relative; padding:10px; box-shadow: 2px 2px 1px grey;">
   <div id="trasitionButton" style="width:100px; height:100px; position:absolute; top:20px; left:10px; background-color:#D941C5;">
     <span>click me</span>
   </div>
