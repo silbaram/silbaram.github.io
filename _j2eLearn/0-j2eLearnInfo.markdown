@@ -53,7 +53,7 @@ lastmod: 2016-07-22 17:45:19 +0900
 > ### **Demo**
 
 
-* [demo 페이지 이동]({{ site.url }}/j2e-learn/j2eDemo01/ "demo")
+* [demo 페이지 이동]({{ site.url }}/j2e-learn/900-j2e-demo/ "demo01")
 
 <br />
 <br />
