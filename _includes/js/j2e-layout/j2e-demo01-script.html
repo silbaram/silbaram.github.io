@@ -1,0 +1,50 @@
+
+<script type="text/javascript">
+
+	j2e.addRole({name:"role_1", role:[{share: "10", backgroundColor:"#FF0000"},
+																	  {share: "20", backgroundColor:"#FF5E00"},
+		                                {share: "30", backgroundColor:"#FFBB00"},
+																		{share: "40", backgroundColor:"#ABF200"},
+																		{share: "50", backgroundColor:"#00D8FF"},
+																		{share: "60", backgroundColor:"#0054FF"},
+																		{share: "70", backgroundColor:"#5F00FF"},
+																		{share: "80", backgroundColor:"#FF00DD"},
+																		{share: "90", backgroundColor:"#FF007F"},
+	                                  {share: "100", backgroundColor:"#FFF"}]});
+
+
+  $(document).ready(function(){
+		var objectWidthHight = 120;
+		var wLength = parseInt($(window).width()/objectWidthHight);
+		var hLength = parseInt($(window).height()/objectWidthHight);
+
+		var delaySpace = 0.01;
+		var delayTemp = 0;
+
+		$("#container").click(function(e){
+			delayTemp = 0;
+			for(let i = 0, j = 0; i < wLength; i++) {
+				for(let k = 0, l = hLength; k < l; k++) {
+					delayTemp = delayTemp + delaySpace;
+
+					j2e('#object_id_' + i + "_" + k).setDelay(delayTemp).animate({role:[
+						{duration: 0.8, left:e.pageX, top:e.pageY}
+					]});
+
+					j2e('#object_id_' + i + "_" + k).setDuration(0.8).animate({name:"role_1"});
+				}
+			}
+		});
+
+		$("#container").css("height", $(window).height());
+
+		for(let i = 0, j = 0; i < wLength; i++) {
+			for(let k = 0, l = hLength; k < l; k++) {
+				$("#container").append('<div class="demo_object" id="object_id_'+i+'_'+k+'" style="z-index:'+j+';"></div>');
+				j++;
+			}
+		}
+		$(".demo_object").css("top", ($(window).height() / 2) - 50);
+		$(".demo_object").css("left", ($(window).width() / 2) - 50);
+	});
+</script>
