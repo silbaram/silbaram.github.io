@@ -11,7 +11,11 @@
 				{{ content }}
 		</div>
 
-		{% include footer.html %}
 	</body>
 
+
+	{% include js/common-script.html %}
+	{% if page.pageType == 'main' %}
+		{% include js/default-layout/main-script.html %}
+	{% endif %}
 </html>
