@@ -8,12 +8,21 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
+
+        {% if page.pageType == 'blog' %}
+        <a href="{{site.baseurl}}blog/" class="navbar-brand hidden-xs"><h4>생각 정리</h4></a>
+        <a href="{{site.baseurl}}blog/" class="navbar-brand visible-xs">생각 정리</a>
+        {% endif %}
+        {% if page.pageType == 'j2eLearn' %}
         <a href="{{ site.baseurl }}" class="navbar-brand hidden-xs"><h4>{{ site.title }}</h4></a>
         <a href="{{ site.baseurl }}" class="navbar-brand visible-xs">{{ site.title }}</a>
+        {% endif %}
+
       </div>
       <div class="navbar-collapse collapse" id="navbar" aria-expanded="true">
         <ul class="nav navbar-nav navbar-right">
           <li class="navbar-li" ><a href="{{site.baseurl}}j2e-learn/0-j2eLearnInfo/"><h4>j2e Learn</h4></a></li>
+          <!-- <li class="navbar-li" ><a href="{{site.baseurl}}blog/"><h4>blog</h4></a></li> -->
           {% if page.pageType != 'main' %}
           {% for j2eLearnList in site.j2eLearn %}
           <li>

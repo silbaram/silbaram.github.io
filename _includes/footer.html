@@ -1,6 +1,11 @@
 <footer class="footer">
   <div class="container-fluid">
+    {% if page.pageType == 'blog' %}
+    <div>
+    {% endif %}
+    {% if page.pageType == 'j2eLearn' %}
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    {% endif %}
       <p>현제 작업 중인 사이트 입니다.</p>
       <p>github : https://github.com/silbaram</p>
       <p>silbaram79@gmail.com</p>

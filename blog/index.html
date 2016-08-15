@@ -1,0 +1,20 @@
+---
+layout: blog-main
+pageType: "blog"
+---
+
+{% for postsList in site.posts %}
+<div class="post_list_div">
+  <ul class="post_list_ul">
+    <li class="post_list_left_li">
+      <span class="post_list_left_span">{{ postsList.date | date: "%Y-%m-%d" }}</span>
+    </li>
+    <li class="post_list_middle_li">
+
+    </li>
+    <li class="post_list_right_li">
+      <span class="post_list_right_span"><a href="{{ postsList.url }}">{{ postsList.title }}</a> <span class="post_list_label">{{postsList.tags}}</span> </span>
+    </li>
+  </ul>
+</div>
+{% endfor %}
