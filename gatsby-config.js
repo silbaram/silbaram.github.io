@@ -8,7 +8,7 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  pathPrefix: "/app",
+  pathPrefix: "/",
   siteMetadata: {
     title: `Web Application`,
     description: `This is a space that displays simple applications used in real life and games to kill time.`,
