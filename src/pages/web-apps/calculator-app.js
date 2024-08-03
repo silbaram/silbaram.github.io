@@ -1,4 +1,3 @@
-// import * as React from "react"
 import React, { useState, useEffect } from 'react';
 import { Link } from "gatsby"
 
@@ -283,9 +282,11 @@ const styles = `
 `;
 
 // Add styles to the document
-const styleElement = document.createElement('style');
-styleElement.textContent = styles;
-document.head.appendChild(styleElement);
+if (typeof window !== "undefined") {
+  const styleElement = document.createElement('style');
+  styleElement.textContent = styles;
+  document.head.appendChild(styleElement);
+}
 
 export const Head = () => <Seo title="Simple calculator for use in your web browser" />
 
