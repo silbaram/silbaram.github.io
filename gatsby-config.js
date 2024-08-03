@@ -10,8 +10,8 @@
 module.exports = {
   pathPrefix: "/app",
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Web Application`,
+    description: `This is a space that displays simple applications used in real life and games to kill time.`,
     author: `@gatsbyjs`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
