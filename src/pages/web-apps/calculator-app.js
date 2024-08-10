@@ -149,7 +149,8 @@ const CalculatorApp = () => (
       <h1>React Calculator</h1>
       <Calculator />
     </div>
-
+    
+    <br />
     <Link to="/">Go back to the homepage</Link>
   </Layout>
 )
