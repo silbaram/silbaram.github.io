@@ -12,6 +12,12 @@ const links = [
     description:
       "웹 브라우저에서 바로 사용할수 있는 간단한 기능을 제공하는 계산기 입니다.",
   },
+  {
+    text: "json viweer",
+    url: "/web-apps/json-viewer-app",
+    description:
+      "보기 힘든 json 형태의 문자열을 보기 편하게 줄바꿈을 해주는 json viewer 입니다.",
+  },
 ]
 
 const IndexPage = () => (
