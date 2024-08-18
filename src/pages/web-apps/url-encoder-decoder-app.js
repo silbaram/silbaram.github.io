@@ -29,46 +29,109 @@ const URLEncoderDecoder = () => {
         setDecodedText('');
     };
 
+    const styles = {
+        container: {
+        maxWidth: '800px',
+        margin: '40px auto',
+        padding: '20px',
+        backgroundColor: '#f0f0f0',
+        borderRadius: '8px',
+        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+        fontFamily: 'Arial, sans-serif',
+        },
+        title: {
+        fontSize: '24px',
+        fontWeight: 'bold',
+        marginBottom: '20px',
+        color: '#333',
+        },
+        textarea: {
+        width: '100%',
+        height: '100px',
+        padding: '10px',
+        marginBottom: '20px',
+        borderRadius: '4px',
+        border: '1px solid #ccc',
+        fontSize: '14px',
+        },
+        buttonContainer: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        marginBottom: '20px',
+        },
+        button: {
+        padding: '10px 20px',
+        borderRadius: '4px',
+        border: 'none',
+        color: 'white',
+        cursor: 'pointer',
+        fontSize: '14px',
+        fontWeight: 'bold',
+        },
+        encodeButton: {
+        backgroundColor: '#4CAF50',
+        },
+        decodeButton: {
+        backgroundColor: '#2196F3',
+        },
+        resetButton: {
+        backgroundColor: '#f44336',
+        },
+        resultContainer: {
+        marginBottom: '20px',
+        },
+        resultTitle: {
+        fontSize: '16px',
+        fontWeight: 'bold',
+        marginBottom: '10px',
+        color: '#333',
+        },
+        resultText: {
+        backgroundColor: 'white',
+        padding: '10px',
+        borderRadius: '4px',
+        border: '1px solid #ccc',
+        minHeight: '50px',
+        wordBreak: 'break-all',
+        },
+    };
+
     return (
-        <div className="max-w-2xl mx-auto mt-10 p-6 bg-white rounded-lg shadow-xl">
-        <h1 className="text-2xl font-bold mb-4">URL Encoder / Decoder</h1>
+        <div style={styles.container}>
+        <h1 style={styles.title}>URL Encoder / Decoder</h1>
         <textarea
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="w-full px-3 py-2 border rounded-md mb-4 h-24 resize-y"
+            style={styles.textarea}
             placeholder="Enter text here"
         />
-        <div className="flex space-x-2 mb-4">
+        <div style={styles.buttonContainer}>
             <button
             onClick={encodeText}
-            className="flex-1 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+            style={{...styles.button, ...styles.encodeButton}}
             >
             Encode
             </button>
             <button
             onClick={decodeText}
-            className="flex-1 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"
+            style={{...styles.button, ...styles.decodeButton}}
             >
             Decode
             </button>
             <button
             onClick={resetAll}
-            className="flex-1 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600"
+            style={{...styles.button, ...styles.resetButton}}
             >
             Reset
             </button>
         </div>
-        <div className="mb-4">
-            <h2 className="font-semibold mb-2">Encoded Result:</h2>
-            <div className="bg-gray-100 p-2 rounded-md overflow-x-auto">
-            <pre className="whitespace-pre-wrap break-all">{encodedText}</pre>
-            </div>
+        <div style={styles.resultContainer}>
+            <h2 style={styles.resultTitle}>Encoded Result:</h2>
+            <div style={styles.resultText}>{encodedText}</div>
         </div>
-        <div>
-            <h2 className="font-semibold mb-2">Decoded Result:</h2>
-            <div className="bg-gray-100 p-2 rounded-md overflow-x-auto">
-            <pre className="whitespace-pre-wrap break-all">{decodedText}</pre>
-            </div>
+        <div style={styles.resultContainer}>
+            <h2 style={styles.resultTitle}>Decoded Result:</h2>
+            <div style={styles.resultText}>{decodedText}</div>
         </div>
         </div>
     );
