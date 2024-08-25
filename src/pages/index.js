@@ -26,12 +26,38 @@ const appLinks = [
   },
 ]
 
+const gameLinks = [
+  {
+    text: "지뢰 찾기 게임",
+    url: "/web-games/minesweeper-game",
+    description:
+      "웹 브라우저에서 심심할때 간편하게 해볼수 있는 지뢰찾기 게임 입니다.",
+  },
+]
+
 const IndexPage = () => (
   <Layout>
     <section>
       <h2>웹 어플리케이션</h2>
       <ul className={styles.list}>
         {appLinks.map(link => (
+          <li key={link.url} className={styles.listItem}>
+            <Link
+              className={styles.listItemLink}
+              to={link.url}
+            >
+              {link.text}
+            </Link>
+            <p className={styles.listItemDescription}>{link.description}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section>
+      <h2>게임</h2>
+      <ul className={styles.list}>
+        {gameLinks.map(link => (
           <li key={link.url} className={styles.listItem}>
             <Link
               className={styles.listItemLink}
