@@ -13,35 +13,42 @@ const MinesweeperGame = ({ onGameOver }) => {
   const gameInstanceRef = useRef(null);
 
   useEffect(() => {
-    const config = {
-      type: Phaser.AUTO,
-      width: 400,
-      height: 450,
-      parent: gameRef.current,
-      scene: {
-        preload: preload,
-        create: create,
-        update: update
+    useEffect(() => {
+      if (typeof window !== 'undefined') {
+        import('phaser').then(Phaser => {
+          const config = {
+            type: Phaser.AUTO,
+            width: 400,
+            height: 450,
+            parent: gameRef.current,
+            scene: {
+              preload: preload,
+              create: create,
+              update: update
+            }
+          };
+      
+          const game = new Phaser.Game(config);
+          gameInstanceRef.current = game;
+      
+          const preventContextMenu = (e) => {
+            e.preventDefault();
+          };
+      
+          if (gameRef.current) {
+            gameRef.current.addEventListener('contextmenu', preventContextMenu);
+          }
+      
+          return () => {
+            game.destroy(true);
+            if (gameRef.current) {
+              gameRef.current.removeEventListener('contextmenu', preventContextMenu);
+            }
+          };
+        })
       }
-    };
-
-    const game = new Phaser.Game(config);
-    gameInstanceRef.current = game;
-
-    const preventContextMenu = (e) => {
-      e.preventDefault();
-    };
-
-    if (gameRef.current) {
-      gameRef.current.addEventListener('contextmenu', preventContextMenu);
-    }
-
-    return () => {
-      game.destroy(true);
-      if (gameRef.current) {
-        gameRef.current.removeEventListener('contextmenu', preventContextMenu);
-      }
-    };
+    }, [])
+    
   }, []);
 
   function preload() {
