@@ -12,8 +12,8 @@ module.exports = {
   siteMetadata: {
     title: `Web Application`,
     description: `This is a space that displays simple applications used in real life and games to kill time.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    author: `sangjin park`,
+    siteUrl: `https://silbaram.github.io/`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -46,5 +46,14 @@ module.exports = {
         trackingIds: ["G-NBVB1MYHY3"],
       },
     },
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        host: 'https://silbaram.github.io/',
+        sitemap: 'https://silbaram.github.io/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    }
   ],
 }

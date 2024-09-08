@@ -28,6 +28,7 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
     </div>
+    <meta name="google-site-verification" content="wg-ONgbuHGSWXfx53JZPkFrmyKqPONIUdnzCVvw1hCY" />
   </header>
 )
 
