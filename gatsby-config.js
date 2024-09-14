@@ -51,7 +51,7 @@ module.exports = {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
         host: 'https://silbaram.github.io/',
-        sitemap: 'https://silbaram.github.io/sitemap.xml',
+        sitemap: 'https://silbaram.github.io/sitemap-index.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
     }

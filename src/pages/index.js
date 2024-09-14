@@ -33,6 +33,12 @@ const gameLinks = [
     description:
       "웹 브라우저에서 심심할때 간편하게 해볼수 있는 지뢰찾기 게임 입니다.",
   },
+  {
+    text: "테트리스 게임",
+    url: "/web-games/tetris-game/",
+    description:
+      "웹 브라우저에서 심심할때 간편하게 해볼수 있는 테트리스 게임 입니다.",
+  },
 ]
 
 const IndexPage = () => (
