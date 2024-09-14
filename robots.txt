@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://silbaram.github.io/sitemap.xml
+Sitemap: https://silbaram.github.io/sitemap-index.xml
 Host: https://silbaram.github.io
