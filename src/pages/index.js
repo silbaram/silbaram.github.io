@@ -44,8 +44,8 @@ const gameLinks = [
 const IndexPage = () => (
   <Layout>
     <section>
-      <h2>웹 어플리케이션</h2>
-      <ul className={styles.list}>
+      <h2 style={{ marginBottom: '10px', marginTop: '0' }}>개발도구</h2>
+      <ul className={styles.list} style={{ marginTop: '0' }}>
         {appLinks.map(link => (
           <li key={link.url} className={styles.listItem}>
             <Link
@@ -54,15 +54,15 @@ const IndexPage = () => (
             >
               {link.text}
             </Link>
-            <p className={styles.listItemDescription}>{link.description}</p>
+            <p className={styles.listItemDescription} style={{ marginTop: '5px' }}>{link.description}</p>
           </li>
         ))}
       </ul>
     </section>
 
     <section>
-      <h2>게임</h2>
-      <ul className={styles.list}>
+      <h2 style={{ marginBottom: '10px', marginTop: '0' }}>게임</h2>
+      <ul className={styles.list} style={{ marginTop: '0' }}>
         {gameLinks.map(link => (
           <li key={link.url} className={styles.listItem}>
             <Link
@@ -71,7 +71,7 @@ const IndexPage = () => (
             >
               {link.text}
             </Link>
-            <p className={styles.listItemDescription}>{link.description}</p>
+            <p className={styles.listItemDescription} style={{ marginTop: '5px' }}>{link.description}</p>
           </li>
         ))}
       </ul>
