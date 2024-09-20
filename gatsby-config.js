@@ -30,7 +30,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
-        short_name: `starter`,
+        short_name: `WebApp`,
         start_url: `/`,
         background_color: `#663399`,
         // This will impact how browsers show your PWA/website
@@ -44,6 +44,9 @@ module.exports = {
       resolve: "gatsby-plugin-google-gtag",
       options: {
         trackingIds: ["G-NBVB1MYHY3"],
+        pluginConfig: {
+          head: true,
+        },
       },
     },
     `gatsby-plugin-sitemap`,
