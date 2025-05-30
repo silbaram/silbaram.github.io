@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from "gatsby";
 
-import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 import URLEncoderDecoderComponent from "../../components/urlencoderdecoder-app/URLEncoderDecoderComponent";
+import Layout from "../../components/layout/layout"
 
 //TODO 여기를 템플릿으로 변경 하기
 const URLEncoderDecoderrApp = () => (

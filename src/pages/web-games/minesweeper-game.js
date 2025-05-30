@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "gatsby";
-import Layout from "../../components/layout";
+
 import Seo from "../../components/seo";
 import MinesweeperGame from "../../components/minesweeper-game/MinesweeperGame";
+import Layout from "../../components/layout/layout"
 
 const MinesweeperGameApp = () => {
   return (
-    <Layout>
+    <Layout isFullscreen={true}>
       <div>
         <h1>지뢰 게임</h1>
         <MinesweeperGame />

@@ -8,19 +8,23 @@
     "gatsby": "^5.13.5",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-postcss": "^6.14.0",
     "gatsby-plugin-robots-txt": "^1.8.0",
     "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-sharp": "^5.13.1",
+    "phaser": "^3.80.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "phaser": "^3.80.1"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
     "gatsby-plugin-google-gtag": "^5.13.1",
     "gatsby-plugin-sitemap": "^6.13.1",
     "gh-pages": "^6.1.1",
-    "prettier": "^2.8.8"
+    "postcss": "^8.5.3",
+    "prettier": "^2.8.8",
+    "tailwindcss": "^3.4.17"
   },
   "keywords": [
     "gatsby"

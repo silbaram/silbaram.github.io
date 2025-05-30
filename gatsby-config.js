@@ -57,6 +57,7 @@ module.exports = {
         sitemap: 'https://silbaram.github.io/sitemap-index.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
-    }
+    },
+    `gatsby-plugin-postcss`
   ],
 }
