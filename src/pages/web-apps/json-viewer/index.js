@@ -114,6 +114,11 @@ const JsonViewerApp = ({ location }) => {
   );
 };
 
-export const Head = () => <Seo title="A service that provides features that make it easier to view JSON formats." />
-
+export const Head = () => (
+  <Seo
+    title="JSON Formatter – JSON 뷰어"
+    description="Quickly paste JSON and explore its structure with expand/collapse functionality."
+    keywords={["JSON 뷰어", "JSON 포매터", "Webtool", "개발 도구", "JSON Viewer", "JSON Formatter", "Webtool", "Developer Tool"]}
+  />
+)
 export default JsonViewerApp

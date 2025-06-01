@@ -153,6 +153,11 @@ const CalculatorApp = ({ location }) => {
   );
 };
 
-export const Head = () => <Seo title="Simple calculator for use in your web browser" />
-
+export const Head = () => (
+  <Seo
+    title="Simple Calculator"
+    description="A simple calculator app usable directly in your web browser."
+    keywords={["calculator", "web calculator", "React", "Developer Tool"]}
+  />
+)
 export default CalculatorApp
