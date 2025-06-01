@@ -1,38 +1,42 @@
-import { ArrowLeftIcon } from "./icons"
+import { ArrowLeftIcon, MotionGraphicsIcon } from "./icons"
 import React from "react"
 import { Link } from "gatsby"
+import Layout from "./layout/layout"
 
-const ProjectDetail = ({ title, isFullscreen, children }) => {
+const ProjectDetail = ({ title, isFullscreen = true, children }) => {
 
   return (
-    <div className={`container mx-auto px-4 sm:px-6 lg:px-8 ${isFullscreen ? 'py-0' : 'py-8 sm:py-12'}`}>
-      {!isFullscreen && (
-        <div className="flex justify-between items-center mb-8">
-          <button className="px-4 py-2 bg-blue-500 text-white rounded-md flex items-center hover:bg-blue-600">
-            <ArrowLeftIcon />
-            <Link to="/">
-              <span className="group-hover:underline">Back to Projects</span>
-            </Link>
-          </button>
+    <>
+      {isFullscreen ? (
+        <div className="flex flex-col h-screen">
+          <header className="bg-slate-700 text-white text-2xl font-semibold p-4 text-center">
+            {title}
+          </header>
+          <main className="flex-grow bg-slate-100 p-4 overflow-auto">
+            {children}
+          </main>
         </div>
+      ) : (
+        <Layout>
+          <div className="flex flex-col h-screen pt-8">
+            <header className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white p-4 rounded-t-lg shadow-lg relative mb-4">
+              <Link to="/" className="absolute left-4 flex items-center space-x-2 text-white hover:opacity-80">
+                <ArrowLeftIcon className="w-5 h-5" />
+                <span className="text-base font-medium">Projects</span>
+              </Link>
+              <div className="flex items-center justify-center space-x-2">
+                <MotionGraphicsIcon className="w-6 h-6" />
+                <span className="text-2xl font-semibold">{title}</span>
+              </div>
+            </header>
+
+            <main className="flex-grow bg-slate-100 p-4 pt-8 overflow-auto">
+              {children}
+            </main>
+          </div>
+        </Layout>
       )}
-
-      <div
-        className={`bg-slate-700 rounded-xl shadow-2xl relative
-            ${isFullscreen
-          ? 'fixed inset-0 z-[9999] p-0 m-0 overflow-hidden bg-black flex flex-col items-center justify-center' // w-screen h-screen 제거
-          : 'p-4 mb-8'}`
-        }
-      >
-        <h3 className={`text-2xl font-semibold text-white mb-4 text-center ${isFullscreen ? 'mt-12 sm:mt-8' : ''}`}>
-          {title}
-        </h3>
-
-        <div id="phaser-game-container" className={`w-full bg-slate-800 rounded-lg border-2 border-purple-500 flex items-center justify-center text-gray-500 ${isFullscreen ? 'flex-grow max-h-[calc(100%-6rem)] aspect-video' : 'h-[400px] sm:h-[500px] md:h-[600px]'}`}>
-          {children}
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -141,13 +141,17 @@ const CalculatorComponent = () => {
   );
 };
 
-const CalculatorApp = () => (
-  <ProjectDetail title={"계산기"} isFullscreen={false}>
-    <div className="calculatorAppStyles.app">
-      <CalculatorComponent />
-    </div>
-  </ProjectDetail>
-)
+const CalculatorApp = ({ location }) => {
+  const isFullscreen = location?.state?.isFullscreen ?? true;
+
+  return (
+    <ProjectDetail title={"계산기"} isFullscreen={isFullscreen}>
+      <div className="calculatorAppStyles.app">
+        <CalculatorComponent />
+      </div>
+    </ProjectDetail>
+  );
+};
 
 export const Head = () => <Seo title="Simple calculator for use in your web browser" />
 

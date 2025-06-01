@@ -24,6 +24,7 @@ const ProjectCard = ({ project }) => (
       </div>
       <Link
         to={`${project.demoUrl}`}
+        state={{ isFullscreen: false }}
         className="block text-center mt-auto w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-3 px-4 rounded-lg transition-all duration-300 ease-in-out shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-opacity-75"
         role="button"
         aria-label={`View details for ${project.title}`}

@@ -20,7 +20,8 @@ h1 {
 
 .calculatorContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .calculator {

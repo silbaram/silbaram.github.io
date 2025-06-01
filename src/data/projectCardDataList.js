@@ -6,21 +6,17 @@ const projectCardDataList = [
     description: 'A calculator app that provides simple functions that can be used right in your web browser.',
     imageUrl: 'https://placehold.co/600x400/2d3748/e2e8f0?text=simple+calculator',
     tags: ['app'],
-    demoUrl: '/web-apps/calculator',
-    sourceUrl: '#',
-    details: 'Built with Phaser 3 and React. Features multiple levels, power-ups, and challenging boss fights. Optimized for desktop and mobile play.'
+    demoUrl: '/web-apps/calculator'
   },
-  // {
-  //   id: 'app-2',
-  //   type: 'app',
-  //   title: 'Pixel Art Editor',
-  //   description: 'A simple tool to create and edit pixel art. Export your creations easily.',
-  //   imageUrl: 'https://placehold.co/600x400/4a5568/e2e8f0?text=Pixel+Art+Editor',
-  //   tags: ['React', 'Utility', 'Creative'],
-  //   demoUrl: '/web-games/minesweeper-game/',
-  //   sourceUrl: '#',
-  //   details: 'This application allows users to draw pixel art on a configurable grid. Features include color palettes, undo/redo, and image export.'
-  // },
+  {
+    id: 'app-2',
+    type: 'app',
+    title: 'Json Viewer',
+    description: 'A service that provides features that make it easier to view JSON formats.',
+    imageUrl: 'https://placehold.co/600x400/4a5568/e2e8f0?text=Json+Viewer',
+    tags: ['app'],
+    demoUrl: '/web-apps/json-viewer'
+  },
   // {
   //   id: 'game-1',
   //   title: 'Puzzle Quest Saga',
