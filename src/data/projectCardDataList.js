@@ -17,6 +17,15 @@ const projectCardDataList = [
     tags: ['app'],
     demoUrl: '/web-apps/json-viewer'
   },
+  {
+    id: 'app-3',
+    type: 'app',
+    title: 'Url Encoder Decoder',
+    description: 'A service that provides features that make it easier to view JSON formats.',
+    imageUrl: 'https://placehold.co/600x400/4a5568/e2e8f0?text=Url+Encoder+Decoder',
+    tags: ['app'],
+    demoUrl: '/web-apps/url-encoder-decoder'
+  },
   // {
   //   id: 'game-1',
   //   title: 'Puzzle Quest Saga',
