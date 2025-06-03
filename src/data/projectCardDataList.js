@@ -26,17 +26,15 @@ const projectCardDataList = [
     tags: ['app'],
     demoUrl: '/web-apps/url-encoder-decoder'
   },
-  // {
-  //   id: 'game-1',
-  //   title: 'Puzzle Quest Saga',
-  //   type: 'game',
-  //   description: 'Embark on an epic journey solving intricate puzzles and battling mythical creatures.',
-  //   imageUrl: 'https://placehold.co/600x400/2c5282/e2e8f0?text=Puzzle+Quest',
-  //   tags: ['Phaser', 'Puzzle', 'Adventure'],
-  //   demoUrl: '#',
-  //   sourceUrl: '#',
-  //   details: 'A story-driven puzzle adventure game. Uses Phaser for dynamic puzzle mechanics and character animations. Includes over 50 unique puzzles.'
-  // },
+  {
+    id: 'game-1',
+    title: 'Tetris Game',
+    type: 'game',
+    description: 'A Tetris game that you can easily enjoy when you\'re bored.',
+    imageUrl: 'https://placehold.co/600x400/2c5282/e2e8f0?text=Tetris+Game',
+    tags: ['Phaser', 'Puzzle', 'Adventure'],
+    demoUrl: '/web-games/tetris'
+  },
   // {
   //   id: 'motion-1',
   //   type: 'motion',
