@@ -13,7 +13,7 @@ const Header = () => (
         </div>
       </Link>
       <nav className="flex items-center space-x-4 sm:space-x-6">
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center space-x-2 transition-colors duration-200">
+        <a href="https://github.com/silbaram/" target="_blank" rel="noopener noreferrer" className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center space-x-2 transition-colors duration-200">
           <GithubIcon />
           <span>GitHub</span>
         </a>
