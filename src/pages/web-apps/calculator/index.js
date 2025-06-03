@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 
-import Seo from "../../../components/seo";
+import Seo from "../../../components/Seo";
 import ProjectDetail from "../../../components/ProjectDetail"
 import * as calculatorAppStyles from "./css/calculator-app.module.css"
 

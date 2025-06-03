@@ -1,9 +1,9 @@
 import React from "react"
 import projectCardDataList from "../data/projectCardDataList"
 
-import Layout from "../components/layout/layout"
+import Layout from "../components/layout/Layout"
 import ProjectList from "../components/ProjectList"
-import Seo from "../components/seo"
+import Seo from "../components/Seo"
 
 function IndexPage() {
   return (

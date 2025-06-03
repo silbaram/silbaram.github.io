@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-import Seo from "../../../components/seo";
+import Seo from "../../../components/Seo";
 import ProjectDetail from "../../../components/ProjectDetail"
 
 const URLEncoderDecoderComponent = () => {

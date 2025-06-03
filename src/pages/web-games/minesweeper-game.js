@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import Seo from "../../components/seo";
+import Seo from "../../components/Seo";
 import MinesweeperGame from "../../components/minesweeper-game/MinesweeperGame";
-import Layout from "../../components/layout/layout"
+import Layout from "../../components/layout/Header"
 
 const MinesweeperGameApp = () => {
   return (

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
-import Seo from "../../components/seo";
+import Seo from "../../components/Seo";
 import TetrisGame from "../../components/tetris-game/TetrisGame";
-import Layout from "../../components/layout/layout"
+import Layout from "../../components/layout/Layout"
 
 const TetrisGameApp = () => {
     return (

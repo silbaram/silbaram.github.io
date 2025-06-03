@@ -1,7 +1,7 @@
 import { ArrowLeftIcon, MotionGraphicsIcon } from "./icons"
 import React from "react"
 import { Link } from "gatsby"
-import Layout from "./layout/layout"
+import Layout from "./layout/Layout"
 
 const ProjectDetail = ({ title, isFullscreen = true, children }) => {
 
