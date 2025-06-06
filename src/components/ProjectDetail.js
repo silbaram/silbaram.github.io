@@ -3,7 +3,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Layout from "./layout/Layout"
 
-const ProjectDetail = ({ title, isFullscreen = true, children }) => {
+const ProjectDetail = ({ title, isFullscreen = true, mainClassName = 'bg-slate-100', children }) => {
 
   return (
     <>
@@ -12,7 +12,7 @@ const ProjectDetail = ({ title, isFullscreen = true, children }) => {
           <header className="bg-slate-700 text-white text-2xl font-semibold p-4 text-center">
             {title}
           </header>
-          <main className="flex-grow bg-slate-100 p-4 overflow-auto">
+          <main className={`flex-grow p-4 overflow-auto ${mainClassName}`}>
             {children}
           </main>
         </div>
@@ -30,7 +30,7 @@ const ProjectDetail = ({ title, isFullscreen = true, children }) => {
               </div>
             </header>
 
-            <main className="flex-grow bg-slate-100 p-4 pt-8 overflow-auto">
+            <main className={`flex-grow p-4 pt-8 overflow-auto ${mainClassName}`}>
               {children}
             </main>
           </div>
