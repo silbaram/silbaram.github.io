@@ -1,4 +1,4 @@
-import { CodeBracketIcon, GamepadIcon, MotionGraphicsIcon } from "./icons"
+import { CodeBracketIcon, GamepadIcon, MotionGraphicsIcon } from "./Icons"
 import React from "react"
 import { Link } from "gatsby"
 

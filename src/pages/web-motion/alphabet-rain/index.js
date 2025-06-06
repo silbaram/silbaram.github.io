@@ -55,7 +55,7 @@ const AlphabetRainCanvas = () => {
 const AlphabetRainMotion = ({ location }) => {
   const isFullscreen = location?.state?.isFullscreen ?? true
   return (
-    <ProjectDetail title={"Alphabet Rain"} isFullscreen={isFullscreen}>
+    <ProjectDetail title={"Alphabet Rain"} isFullscreen={isFullscreen} mainClassName="bg-transparent">
       <div className="relative h-full">
         <AlphabetRainCanvas />
       </div>
