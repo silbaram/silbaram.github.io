@@ -35,6 +35,15 @@ const projectCardDataList = [
     tags: ['Phaser', 'Puzzle', 'Adventure'],
     demoUrl: '/web-games/tetris'
   },
+  {
+    id: 'motion-1',
+    type: 'motion',
+    title: 'Alphabet Rain',
+    description: 'Motion graphic effect where alphabet letters fall like rain.',
+    imageUrl: 'https://placehold.co/600x400/22543d/e2e8f0?text=Alphabet+Rain',
+    tags: ['motion'],
+    demoUrl: '/web-motion/alphabet-rain'
+  },
   // {
   //   id: 'motion-1',
   //   type: 'motion',
