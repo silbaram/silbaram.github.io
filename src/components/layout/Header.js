@@ -1,5 +1,5 @@
 import React from "react"
-import { GamepadIcon, GithubIcon } from "../icons"
+import { GamepadIcon, GithubIcon } from "../Icons"
 import { Link } from "gatsby"
 
 const Header = () => (

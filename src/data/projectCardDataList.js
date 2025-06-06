@@ -32,20 +32,18 @@ const projectCardDataList = [
     type: 'game',
     description: 'A Tetris game that you can easily enjoy when you\'re bored.',
     imageUrl: 'https://placehold.co/600x400/2c5282/e2e8f0?text=Tetris+Game',
-    tags: ['Phaser', 'Puzzle', 'Adventure'],
+    tags: ['game'],
     demoUrl: '/web-games/tetris'
   },
-  // {
-  //   id: 'motion-1',
-  //   type: 'motion',
-  //   title: 'Markdown Notes',
-  //   description: 'A lightweight note-taking app with Markdown support and cloud sync.',
-  //   imageUrl: 'https://placehold.co/600x400/5a6578/e2e8f0?text=Markdown+Notes',
-  //   tags: ['React', 'Productivity', 'Utility'],
-  //   demoUrl: '#',
-  //   sourceUrl: '#',
-  //   details: 'Features real-time Markdown preview, tag-based organization, and optional synchronization with a cloud backend (not implemented in this demo).'
-  // },
+  {
+    id: 'motion-1',
+    type: 'motion',
+    title: 'Alphabet Rain',
+    description: 'Motion graphic effect where alphabet letters fall like rain.',
+    imageUrl: 'https://placehold.co/600x400/22543d/e2e8f0?text=Alphabet+Rain',
+    tags: ['motion'],
+    demoUrl: '/web-motion/alphabet-rain'
+  },
 ];
 
 export default projectCardDataList;
