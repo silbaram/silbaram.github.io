@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react"
 import ProjectDetail from "../../../components/ProjectDetail"
 import Seo from "../../../components/Seo"
 
-const ShapeSnowCanvas = ({ speed }) => {
+const ShapeSnowCanvas = ({ speed, density }) => {
   const canvasRef = useRef(null)
 
   useEffect(() => {
@@ -74,7 +74,9 @@ const ShapeSnowCanvas = ({ speed }) => {
     const update = time => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       if (time - lastSpawn > spawnInterval) {
-        spawnShape(time)
+        for (let i = 0; i < density; i++) {
+          spawnShape(time)
+        }
         lastSpawn = time
       }
       shapes.forEach(shape => {
@@ -116,7 +118,7 @@ const ShapeSnowCanvas = ({ speed }) => {
       window.removeEventListener("resize", resize)
       cancelAnimationFrame(animationFrameId)
     }
-  }, [speed])
+  }, [speed, density])
 
   return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 }
@@ -124,6 +126,7 @@ const ShapeSnowCanvas = ({ speed }) => {
 const ShapeSnowMotion = ({ location }) => {
   const isFullscreen = location?.state?.isFullscreen ?? true
   const [speed, setSpeed] = useState(1)
+  const [density, setDensity] = useState(1)
   return (
     <ProjectDetail
       title={"Shape Snow"}
@@ -131,7 +134,7 @@ const ShapeSnowMotion = ({ location }) => {
       mainClassName="bg-transparent overflow-hidden p-0"
     >
       <div className="relative h-full">
-        <ShapeSnowCanvas speed={speed} />
+        <ShapeSnowCanvas speed={speed} density={density} />
         <div className="absolute top-4 right-4 space-y-2 bg-white/70 p-4 rounded shadow text-sm">
           <label className="block">
             Speed:{" "}
@@ -142,6 +145,18 @@ const ShapeSnowMotion = ({ location }) => {
               step="0.5"
               value={speed}
               onChange={e => setSpeed(parseFloat(e.target.value))}
+              className="w-32"
+            />
+          </label>
+          <label className="block">
+            Amount:{" "}
+            <input
+              type="range"
+              min="1"
+              max="5"
+              step="1"
+              value={density}
+              onChange={e => setDensity(parseInt(e.target.value, 10))}
               className="w-32"
             />
           </label>
