@@ -20,7 +20,7 @@ const ShapeSnowCanvas = ({ speed }) => {
     const resize = () => {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
-      columns = Math.floor(canvas.width / baseSize)
+      columns = Math.max(1, Math.floor(canvas.width / baseSize))
       stacks = Array(columns).fill(0)
       shapes = []
     }
@@ -124,7 +124,7 @@ const ShapeSnowMotion = ({ location }) => {
   const isFullscreen = location?.state?.isFullscreen ?? true
   const [speed, setSpeed] = useState(1)
   return (
-    <ProjectDetail title={"Shape Snow"} isFullscreen={isFullscreen} mainClassName="bg-transparent">
+    <ProjectDetail title={"Shape Snow"} isFullscreen={isFullscreen} mainClassName="bg-transparent overflow-hidden p-0">
       <div className="relative h-full">
         <ShapeSnowCanvas speed={speed} />
         <div className="absolute top-4 right-4 space-y-2 bg-white/70 p-4 rounded shadow text-sm">
