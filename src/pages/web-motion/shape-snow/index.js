@@ -18,8 +18,9 @@ const ShapeSnowCanvas = ({ speed }) => {
     const shapeTypes = ["circle", "square", "triangle"]
 
     const resize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
+      const parent = canvas.parentElement
+      canvas.width = parent ? parent.clientWidth : window.innerWidth
+      canvas.height = parent ? parent.clientHeight : window.innerHeight
       columns = Math.max(1, Math.floor(canvas.width / baseSize))
       stacks = Array(columns).fill(0)
       shapes = []
@@ -44,7 +45,8 @@ const ShapeSnowCanvas = ({ speed }) => {
     }
 
     const drawShape = shape => {
-      const size = shape.size * (1 - shape.melt)
+      const size = Math.max(0, shape.size * (1 - shape.melt))
+      if (size <= 0) return
       const half = size / 2
       ctx.save()
       ctx.translate(shape.x, shape.y + (shape.size - size))
@@ -78,8 +80,7 @@ const ShapeSnowCanvas = ({ speed }) => {
       shapes.forEach(shape => {
         if (shape.state === "falling") {
           shape.y += speed
-          const groundY =
-            canvas.height - (stacks[shape.col] + 1) * baseSize
+          const groundY = canvas.height - (stacks[shape.col] + 1) * baseSize
           if (shape.y >= groundY) {
             shape.y = groundY
             shape.state = "landed"
@@ -124,12 +125,25 @@ const ShapeSnowMotion = ({ location }) => {
   const isFullscreen = location?.state?.isFullscreen ?? true
   const [speed, setSpeed] = useState(1)
   return (
-    <ProjectDetail title={"Shape Snow"} isFullscreen={isFullscreen} mainClassName="bg-transparent overflow-hidden p-0">
+    <ProjectDetail
+      title={"Shape Snow"}
+      isFullscreen={isFullscreen}
+      mainClassName="bg-transparent overflow-hidden p-0"
+    >
       <div className="relative h-full">
         <ShapeSnowCanvas speed={speed} />
         <div className="absolute top-4 right-4 space-y-2 bg-white/70 p-4 rounded shadow text-sm">
           <label className="block">
-            Speed: <input type="range" min="0.5" max="3" step="0.5" value={speed} onChange={e => setSpeed(parseFloat(e.target.value))} className="w-32" />
+            Speed:{" "}
+            <input
+              type="range"
+              min="0.5"
+              max="3"
+              step="0.5"
+              value={speed}
+              onChange={e => setSpeed(parseFloat(e.target.value))}
+              className="w-32"
+            />
           </label>
         </div>
       </div>
