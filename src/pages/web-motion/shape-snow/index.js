@@ -80,6 +80,8 @@ const ShapeSnowCanvas = ({ speed, density }) => {
         state: "falling",
         landedAt: 0,
         melt: 0,
+        angle: Math.random() * Math.PI * 2,
+        spin: (Math.random() - 0.5) * 0.1,
       })
     }
 
@@ -88,10 +90,14 @@ const ShapeSnowCanvas = ({ speed, density }) => {
       if (size <= 0) return
       ctx.save()
       ctx.translate(shape.x, shape.y + (shape.size - size))
-      ctx.fillStyle = "rgba(255,255,255,0.8)"
+      ctx.rotate(shape.angle)
+      ctx.fillStyle = "#ffffff"
+      ctx.strokeStyle = "rgba(0,0,0,0.4)"
+      ctx.lineWidth = 1
       ctx.font = `${size}px sans-serif`
       ctx.textAlign = "center"
       ctx.textBaseline = "bottom"
+      ctx.strokeText(shape.char, 0, size)
       ctx.fillText(shape.char, 0, size)
       ctx.restore()
     }
@@ -110,12 +116,14 @@ const ShapeSnowCanvas = ({ speed, density }) => {
       shapes.forEach(shape => {
         if (shape.state === "falling") {
           shape.y += speed
+          shape.angle += shape.spin
           const groundY = canvas.height - (stacks[shape.col] + 1) * baseSize
           if (shape.y >= groundY) {
             shape.y = groundY
             shape.state = "landed"
             shape.landedAt = time
             stacks[shape.col]++
+            shape.spin = 0
           }
         } else if (shape.state === "landed") {
           if (time - shape.landedAt > 2000) {
