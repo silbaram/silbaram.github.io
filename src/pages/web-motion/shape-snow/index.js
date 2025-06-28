@@ -9,6 +9,7 @@ const ShapeSnowCanvas = ({ speed, density }) => {
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext("2d")
+    canvas.style.backgroundColor = "#1e293b"
     let animationFrameId
 
     let shapes = []
