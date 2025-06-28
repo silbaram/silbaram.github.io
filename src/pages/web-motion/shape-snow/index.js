@@ -15,7 +15,46 @@ const ShapeSnowCanvas = ({ speed, density }) => {
     const baseSize = 30
     let columns = 0
     let stacks = []
-    const shapeTypes = ["circle", "square", "triangle"]
+    const letters = [
+      ..."ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""),
+      "\u3131",
+      "\u3132",
+      "\u3134",
+      "\u3137",
+      "\u3138",
+      "\u3139",
+      "\u3141",
+      "\u3142",
+      "\u3145",
+      "\u3147",
+      "\u3148",
+      "\u314A",
+      "\u314B",
+      "\u314C",
+      "\u314D",
+      "\u314E",
+      "\u314F",
+      "\u3150",
+      "\u3151",
+      "\u3152",
+      "\u3153",
+      "\u3154",
+      "\u3155",
+      "\u3156",
+      "\u3157",
+      "\u3158",
+      "\u3159",
+      "\u315A",
+      "\u315B",
+      "\u315C",
+      "\u315D",
+      "\u315E",
+      "\u315F",
+      "\u3160",
+      "\u3161",
+      "\u3162",
+      "\u3163",
+    ]
 
     const resize = () => {
       const parent = canvas.parentElement
@@ -31,13 +70,13 @@ const ShapeSnowCanvas = ({ speed, density }) => {
     const spawnShape = time => {
       const col = Math.floor(Math.random() * columns)
       const x = col * baseSize + baseSize / 2
-      const type = shapeTypes[Math.floor(Math.random() * shapeTypes.length)]
+      const char = letters[Math.floor(Math.random() * letters.length)]
       shapes.push({
         col,
         x,
         y: -baseSize,
         size: baseSize,
-        type,
+        char,
         state: "falling",
         landedAt: 0,
         melt: 0,
@@ -47,24 +86,13 @@ const ShapeSnowCanvas = ({ speed, density }) => {
     const drawShape = shape => {
       const size = Math.max(0, shape.size * (1 - shape.melt))
       if (size <= 0) return
-      const half = size / 2
       ctx.save()
       ctx.translate(shape.x, shape.y + (shape.size - size))
       ctx.fillStyle = "rgba(255,255,255,0.8)"
-      if (shape.type === "circle") {
-        ctx.beginPath()
-        ctx.arc(0, half, half, 0, Math.PI * 2)
-        ctx.fill()
-      } else if (shape.type === "square") {
-        ctx.fillRect(-half, 0, size, size)
-      } else if (shape.type === "triangle") {
-        ctx.beginPath()
-        ctx.moveTo(-half, size)
-        ctx.lineTo(0, 0)
-        ctx.lineTo(half, size)
-        ctx.closePath()
-        ctx.fill()
-      }
+      ctx.font = `${size}px sans-serif`
+      ctx.textAlign = "center"
+      ctx.textBaseline = "bottom"
+      ctx.fillText(shape.char, 0, size)
       ctx.restore()
     }
 
@@ -169,7 +197,7 @@ const ShapeSnowMotion = ({ location }) => {
 export const Head = () => (
   <Seo
     title="Shape Snow Motion"
-    description="Motion graphic of falling shapes that pile up and melt away."
+    description="Motion graphic of falling letters that pile up and melt away."
     keywords={["Motion", "Shape Snow", "Canvas"]}
   />
 )

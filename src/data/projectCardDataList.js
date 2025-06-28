@@ -48,7 +48,7 @@ const projectCardDataList = [
     id: 'motion-2',
     type: 'motion',
     title: 'Shape Snow',
-    description: 'Shapes fall like snow, pile up on the ground and melt away.',
+    description: 'Letters fall like snow, pile up on the ground and melt away.',
     imageUrl: 'https://placehold.co/600x400/2f855a/e2e8f0?text=Shape+Snow',
     tags: ['motion'],
     demoUrl: '/web-motion/shape-snow'
