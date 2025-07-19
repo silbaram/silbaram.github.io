@@ -36,6 +36,15 @@ const projectCardDataList = [
     demoUrl: '/web-games/tetris'
   },
   {
+    id: 'game-2',
+    title: 'Jump Game',
+    type: 'game',
+    description: 'A simple game of jumping over obstacles.',
+    imageUrl: 'https://placehold.co/600x400/805ad5/e2e8f0?text=Jump+Game',
+    tags: ['game'],
+    demoUrl: '/web-games/jump-game'
+  },
+  {
     id: 'motion-1',
     type: 'motion',
     title: 'Alphabet Rain',
