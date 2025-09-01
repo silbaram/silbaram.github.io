@@ -36,6 +36,15 @@ const projectCardDataList = [
     demoUrl: '/web-games/tetris'
   },
   {
+    id: 'game-2',
+    title: 'Platformer Game',
+    type: 'game',
+    description: 'A Super Mario-like platformer game built with Phaser.',
+    imageUrl: 'https://placehold.co/600x400/c0392b/e2e8f0?text=Platformer+Game',
+    tags: ['game'],
+    demoUrl: '/web-games/platformer'
+  },
+  {
     id: 'motion-1',
     type: 'motion',
     title: 'Alphabet Rain',
