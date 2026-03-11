@@ -3,10 +3,9 @@ import Seo from "../../../components/Seo"
 import ProjectDetail from "../../../components/ProjectDetail"
 import PlatformerGame from "../../../components/platformer-game/PlatformerGame"
 
-const PlatformerGamePage = ({ location }) => {
-  const isFullscreen = location?.state?.isFullscreen ?? true
+const PlatformerGamePage = () => {
   return (
-    <ProjectDetail title={"플랫포머 게임"} isFullscreen={isFullscreen}>
+    <ProjectDetail mainClassName="bg-neutral-900">
       <div>
         <PlatformerGame />
       </div>

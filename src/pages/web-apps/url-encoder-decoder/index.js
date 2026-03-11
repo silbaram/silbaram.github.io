@@ -135,11 +135,9 @@ const URLEncoderDecoderComponent = () => {
   );
 };
 
-const URLEncoderDecoderApp = ({ location }) => {
-  const isFullscreen = location?.state?.isFullscreen ?? true;
-
+const URLEncoderDecoderApp = () => {
   return (
-    <ProjectDetail title={"URL Encoder Decoder"} isFullscreen={isFullscreen}>
+    <ProjectDetail mainClassName="bg-neutral-50">
       <div>
         <URLEncoderDecoderComponent />
       </div>

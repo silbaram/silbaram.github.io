@@ -1,42 +1,43 @@
-import { ArrowLeftIcon, MotionGraphicsIcon } from "./Icons"
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
-import Layout from "./layout/Layout"
 
-const ProjectDetail = ({ title, isFullscreen = true, mainClassName = 'bg-slate-100', children }) => {
+const HomeButton = () => {
+  const [hovered, setHovered] = useState(false);
 
   return (
-    <>
-      {isFullscreen ? (
-        <div className="flex flex-col h-screen">
-          <header className="bg-slate-700 text-white text-2xl font-semibold p-4 text-center">
-            {title}
-          </header>
-          <main className={`flex-grow p-4 overflow-auto ${mainClassName}`}>
-            {children}
-          </main>
-        </div>
-      ) : (
-        <Layout>
-          <div className="flex flex-col h-screen pt-8">
-            <header className="bg-gradient-to-r from-purple-500 to-indigo-500 text-white p-4 rounded-t-lg shadow-lg relative mb-4">
-              <Link to="/" className="absolute left-4 flex items-center space-x-2 text-white hover:opacity-80">
-                <ArrowLeftIcon className="w-5 h-5" />
-                <span className="text-base font-medium">Projects</span>
-              </Link>
-              <div className="flex items-center justify-center space-x-2">
-                <MotionGraphicsIcon className="w-6 h-6" />
-                <span className="text-2xl font-semibold">{title}</span>
-              </div>
-            </header>
-
-            <main className={`flex-grow p-4 pt-8 overflow-auto ${mainClassName}`}>
-              {children}
-            </main>
-          </div>
-        </Layout>
+    <Link
+      to="/"
+      className="fixed top-4 left-4 z-50 flex items-center justify-center rounded-full backdrop-blur-md border transition-all duration-300 ease-in-out"
+      style={{
+        width: hovered ? 'auto' : '36px',
+        height: '36px',
+        padding: hovered ? '0 14px' : '0',
+        backgroundColor: hovered ? 'rgba(0,0,0,0.6)' : 'rgba(128,128,128,0.2)',
+        borderColor: hovered ? 'rgba(255,255,255,0.3)' : 'rgba(128,128,128,0.2)',
+        color: hovered ? '#fff' : 'rgba(180,180,180,0.7)',
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      aria-label="Back to projects"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 flex-shrink-0">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+      </svg>
+      {hovered && (
+        <span className="text-xs font-medium ml-1.5 whitespace-nowrap">
+          Home
+        </span>
       )}
-    </>
+    </Link>
+  );
+};
+
+const ProjectDetail = ({ title, mainClassName = '', children }) => {
+  return (
+    <div className={`h-screen w-screen overflow-auto ${mainClassName}`}>
+      <HomeButton />
+      {children}
+    </div>
   );
 };
 
