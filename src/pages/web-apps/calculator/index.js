@@ -141,11 +141,9 @@ const CalculatorComponent = () => {
   );
 };
 
-const CalculatorApp = ({ location }) => {
-  const isFullscreen = location?.state?.isFullscreen ?? true;
-
+const CalculatorApp = () => {
   return (
-    <ProjectDetail title={"계산기"} isFullscreen={isFullscreen}>
+    <ProjectDetail mainClassName="bg-neutral-50">
       <div className="calculatorAppStyles.app">
         <CalculatorComponent />
       </div>

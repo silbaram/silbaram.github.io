@@ -502,10 +502,9 @@ const TetrisGame = () => {
   )
 }
 
-const TetrisGameApp = ({ location }) => {
-  const isFullscreen = location?.state?.isFullscreen ?? true
+const TetrisGameApp = () => {
   return (
-    <ProjectDetail title={"테트리스 게임"} isFullscreen={isFullscreen}>
+    <ProjectDetail mainClassName="bg-neutral-900">
       <div>
         <TetrisGame />
       </div>

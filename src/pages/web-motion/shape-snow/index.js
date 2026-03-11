@@ -160,16 +160,11 @@ const ShapeSnowCanvas = ({ speed, density }) => {
   return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 }
 
-const ShapeSnowMotion = ({ location }) => {
-  const isFullscreen = location?.state?.isFullscreen ?? true
+const ShapeSnowMotion = () => {
   const [speed, setSpeed] = useState(1)
   const [density, setDensity] = useState(1)
   return (
-    <ProjectDetail
-      title={"Shape Snow"}
-      isFullscreen={isFullscreen}
-      mainClassName="bg-transparent overflow-hidden p-0"
-    >
+    <ProjectDetail mainClassName="bg-[#1e293b] overflow-hidden">
       <div className="relative h-full">
         <ShapeSnowCanvas speed={speed} density={density} />
         <div className="absolute top-4 right-4 space-y-2 bg-white/70 p-4 rounded shadow text-sm">

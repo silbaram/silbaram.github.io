@@ -14,14 +14,12 @@ const ProjectList = ({ projects }) => {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <div className="my-8 sm:my-12 flex flex-col sm:flex-row justify-between items-center gap-4">
         <div className="relative w-full sm:w-2/3 md:w-1/2">
-          {/* 검색창 스타일 변경 */}
-          <input type="text" placeholder="Search projects..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="w-full pl-10 pr-4 py-3 bg-white text-gray-800 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 outline-none transition-colors" />
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg className="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path></svg></div>
+          <input type="text" placeholder="Search projects..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="w-full pl-10 pr-4 py-2.5 bg-white text-neutral-800 border border-neutral-200 rounded-md focus:ring-2 focus:ring-neutral-400 focus:border-neutral-400 outline-none transition-colors text-sm" />
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg className="w-4 h-4 text-neutral-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path></svg></div>
         </div>
-        {/* 필터 버튼 스타일 변경 */}
-        <div className="flex space-x-2 p-1 bg-gray-100 rounded-lg border border-gray-200">
+        <div className="flex space-x-1 p-1 bg-neutral-100 rounded-md">
           {['all', 'games', 'apps', 'motion'].map(filter => (
-            <button key={filter} onClick={() => setActiveFilter(filter)} className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 capitalize ${activeFilter === filter ? 'bg-purple-500 text-white' : 'text-gray-600 hover:bg-gray-200 hover:text-gray-800'}`}>{filter}</button>))
+            <button key={filter} onClick={() => setActiveFilter(filter)} className={`px-3 py-1.5 rounded text-sm font-medium transition-colors duration-200 capitalize ${activeFilter === filter ? 'bg-neutral-900 text-white' : 'text-neutral-500 hover:text-neutral-800'}`}>{filter}</button>))
           }
         </div>
       </div>

@@ -51,15 +51,14 @@ const AlphabetRainCanvas = ({ speed, fontSize, letterCount }) => {
   return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
 }
 
-const AlphabetRainMotion = ({ location }) => {
+const AlphabetRainMotion = () => {
 
-  const isFullscreen = location?.state?.isFullscreen ?? true
   const [speed, setSpeed] = useState(1)
   const [fontSize, setFontSize] = useState(16)
   const [letterCount, setLetterCount] = useState(150)
 
   return (
-    <ProjectDetail title={"Alphabet Rain"} isFullscreen={isFullscreen} mainClassName="bg-transparent">
+    <ProjectDetail mainClassName="bg-black">
       <div className="relative h-full">
         <AlphabetRainCanvas speed={speed} fontSize={fontSize} letterCount={letterCount} />
         <div className="absolute top-4 right-4 space-y-2 bg-white/70 p-4 rounded shadow text-sm">

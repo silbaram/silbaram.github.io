@@ -102,11 +102,9 @@ const JSONFormatterComponent = () => {
   );
 };
 
-const JsonViewerApp = ({ location }) => {
-  const isFullscreen = location?.state?.isFullscreen ?? true;
-
+const JsonViewerApp = () => {
   return (
-    <ProjectDetail title={"JSON Formatter"} isFullscreen={isFullscreen}>
+    <ProjectDetail mainClassName="bg-neutral-50">
       <div>
           <JSONFormatterComponent />
       </div>
