@@ -20,9 +20,9 @@ const projectCardDataList = [
   {
     id: 'app-3',
     type: 'app',
-    title: 'Url Encoder Decoder',
-    description: 'A service that provides features that make it easier to view JSON formats.',
-    imageUrl: 'https://placehold.co/600x400/4a5568/e2e8f0?text=Url+Encoder+Decoder',
+    title: 'URL Encoder Decoder',
+    description: 'Encode query strings, paths, and multilingual text into URL-safe values, then decode them back instantly.',
+    imageUrl: 'https://placehold.co/600x400/22303d/f2e7d5?text=URL+Encoder+Decoder',
     tags: ['app'],
     demoUrl: '/web-apps/url-encoder-decoder'
   },
@@ -34,15 +34,6 @@ const projectCardDataList = [
     imageUrl: 'https://placehold.co/600x400/2c5282/e2e8f0?text=Tetris+Game',
     tags: ['game'],
     demoUrl: '/web-games/tetris'
-  },
-  {
-    id: 'game-2',
-    title: 'Platformer Game',
-    type: 'game',
-    description: 'A Super Mario-like platformer game built with Phaser.',
-    imageUrl: 'https://placehold.co/600x400/c0392b/e2e8f0?text=Platformer+Game',
-    tags: ['game'],
-    demoUrl: '/web-games/platformer'
   },
   {
     id: 'motion-1',

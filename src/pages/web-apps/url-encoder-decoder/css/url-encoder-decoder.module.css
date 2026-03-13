@@ -1,0 +1,321 @@
+.page {
+  min-height: 100%;
+  background: #f5f7fb;
+}
+
+.app {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 88px 24px 40px;
+}
+
+.shell {
+  width: min(1040px, 100%);
+  display: grid;
+  gap: 16px;
+}
+
+.header {
+  display: grid;
+  gap: 12px;
+}
+
+.title,
+.panelTitle {
+  margin: 0;
+  color: #0f172a;
+  font-family: "Avenir Next", "Pretendard Variable", "SUIT Variable",
+    "Noto Sans KR", sans-serif;
+  letter-spacing: -0.04em;
+}
+
+.title {
+  font-size: clamp(32px, 5vw, 46px);
+  line-height: 1;
+}
+
+.headerRow,
+.toolbar,
+.panelHeader,
+.resultCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.metaList,
+.sampleList,
+.actionRow,
+.resultActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.statusBadge,
+.metaChip,
+.sampleChip,
+.resetButton,
+.encodeButton,
+.decodeButton,
+.miniAction {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 12px;
+  font-family: "Pretendard Variable", "SUIT Variable", "Noto Sans KR",
+    sans-serif;
+  font-weight: 600;
+}
+
+.statusBadge,
+.metaChip {
+  min-height: 34px;
+  padding: 0 12px;
+  font-size: 13px;
+}
+
+.statusBadge {
+  color: #fff;
+}
+
+.statusReady {
+  background: #64748b;
+}
+
+.statusActive {
+  background: #2563eb;
+}
+
+.statusError {
+  background: #dc2626;
+}
+
+.metaChip {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.toolbar {
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.sampleChip,
+.resetButton,
+.encodeButton,
+.decodeButton,
+.miniAction {
+  min-height: 40px;
+  padding: 0 14px;
+  cursor: pointer;
+  transition: background 0.18s ease, transform 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.sampleChip:hover,
+.resetButton:hover,
+.encodeButton:hover,
+.decodeButton:hover,
+.miniAction:hover {
+  transform: translateY(-1px);
+}
+
+.sampleChip:active,
+.resetButton:active,
+.encodeButton:active,
+.decodeButton:active,
+.miniAction:active {
+  transform: translateY(1px);
+}
+
+.sampleChip,
+.resetButton,
+.miniAction {
+  border: 1px solid #dbe3ee;
+  background: #fff;
+  color: #334155;
+}
+
+.sampleChipActive {
+  border-color: #93c5fd;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.encodeButton {
+  background: #16a34a;
+  color: #fff;
+}
+
+.decodeButton {
+  background: #2563eb;
+  color: #fff;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  gap: 16px;
+}
+
+.panel {
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 10px 30px -24px rgba(15, 23, 42, 0.24);
+}
+
+.panelTitle {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 420px;
+  margin-top: 14px;
+  resize: vertical;
+  border: 1px solid #dbe3ee;
+  border-radius: 16px;
+  padding: 16px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: "SFMono-Regular", "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.textarea::placeholder {
+  color: #94a3b8;
+}
+
+.textarea:focus-visible {
+  outline: none;
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.25);
+}
+
+.resultGrid {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.resultCard {
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+}
+
+.encodedCard {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.decodedCard {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.resultCardError {
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.resultLabel,
+.resultMeta,
+.resultEmpty,
+.errorMessage {
+  margin: 0;
+  font-family: "Pretendard Variable", "SUIT Variable", "Noto Sans KR",
+    sans-serif;
+}
+
+.resultLabel {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.resultMeta {
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.resultSurface {
+  min-height: 120px;
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.resultSurfaceFilled {
+  color: #0f172a;
+}
+
+.resultSurfaceEmpty {
+  display: grid;
+  align-content: center;
+}
+
+.resultCode {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: #0f172a;
+  font-family: "SFMono-Regular", "IBM Plex Mono", "Roboto Mono", monospace;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.resultEmpty {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.errorMessage {
+  margin-top: 10px;
+  color: #dc2626;
+  font-size: 12px;
+}
+
+.miniAction:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 900px) {
+  .headerRow,
+  .toolbar,
+  .panelHeader,
+  .resultCardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .workspace {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .app {
+    padding: 72px 16px 32px;
+  }
+
+  .textarea {
+    min-height: 320px;
+  }
+}
