@@ -1,0 +1,76 @@
+.page {
+  min-height: 100%;
+  background: linear-gradient(180deg, #020611 0%, #081221 100%);
+}
+
+.scene {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  cursor: ew-resize;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.controls {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: grid;
+  gap: 12px;
+  width: min(280px, calc(100vw - 32px));
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(4, 10, 20, 0.64);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 24px 44px -34px rgba(2, 6, 23, 0.86);
+}
+
+.control {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 12px;
+  align-items: center;
+}
+
+.controlLabel,
+.controlValue,
+.hint {
+  color: #deedff;
+  font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.controlValue {
+  color: #9bc9ff;
+}
+
+.slider {
+  grid-column: 1 / -1;
+  width: 100%;
+  accent-color: #7cb7ff;
+}
+
+.hint {
+  margin: 0;
+  color: rgba(222, 237, 255, 0.72);
+}
+
+@media (max-width: 640px) {
+  .controls {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    width: auto;
+    padding: 14px;
+  }
+}
