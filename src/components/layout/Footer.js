@@ -1,12 +1,12 @@
 import React from "react"
 
 const Footer = () => (
-  <footer className="text-neutral-400 py-8 mt-auto border-t border-neutral-200">
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs">
-      &copy; {new Date().getFullYear()} Silbaram. All rights reserved.
-      <p className="mt-1">Powered by React, Phaser & Gatsby.</p>
+  <footer className="mt-auto border-t border-[var(--border)] py-6 text-[11px] text-[var(--fg-3)]">
+    <div className="mx-auto flex max-w-[var(--container)] flex-col gap-2 px-[var(--page-pad)] font-mono sm:flex-row sm:items-center sm:justify-between">
+      <span>{new Date().getFullYear()} · silbaram.github.io</span>
+      <span>made in seoul · gatsby / react / phaser</span>
     </div>
   </footer>
-);
+)
 
 export default Footer

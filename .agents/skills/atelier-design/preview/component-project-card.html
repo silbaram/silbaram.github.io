@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Project card</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 16px; }
+  .pc-thumb { aspect-ratio: 4 / 3; background: #0E0E0C; position: relative; overflow: hidden; }
+  .pc-thumb.hover { box-shadow: 0 1px 2px rgb(14 14 12 / 0.04); }
+  .pc-thumb .scene {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 30% 40%, #FF5B2E 0, transparent 40%),
+      radial-gradient(circle at 70% 70%, #F6F4EE 0, transparent 30%),
+      #0E0E0C;
+  }
+  .pc-thumb .grid-bg {
+    background:
+      repeating-linear-gradient(0deg, rgba(246,244,238,0.12) 0 1px, transparent 1px 32px),
+      repeating-linear-gradient(90deg, rgba(246,244,238,0.12) 0 1px, transparent 1px 32px),
+      #0E0E0C;
+  }
+  .pc-meta { display: flex; justify-content: space-between; align-items: baseline; margin-top: 10px; gap: 10px; }
+  .pc-title { font-size: 16px; font-weight: 700; }
+  .pc-num { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); }
+  .pc-cap { font-size: 12px; color: var(--fg-3); margin-top: 2px; }
+  .pc-thumb.hover .scene { transform: scale(1.02); transition: transform 280ms cubic-bezier(0.2,0.7,0.1,1); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="label">project card — at rest · hover</div>
+  <div class="grid">
+    <div>
+      <div class="pc-thumb"><div class="scene"></div></div>
+      <div class="pc-meta"><div class="pc-title">wave field</div><div class="pc-num">003</div></div>
+      <div class="pc-cap">webgl · 60fps · 2026.04</div>
+    </div>
+    <div>
+      <div class="pc-thumb hover"><div class="scene grid-bg"></div></div>
+      <div class="pc-meta"><div class="pc-title" style="color: #FF5B2E;">grid pulse</div><div class="pc-num">004</div></div>
+      <div class="pc-cap">canvas · audio-reactive</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

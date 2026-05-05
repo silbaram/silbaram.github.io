@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>atelier — works</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<link rel="stylesheet" href="kit.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="mockProjects.jsx"></script>
+<script type="text/babel" src="Header.jsx"></script>
+<script type="text/babel" src="Hero.jsx"></script>
+<script type="text/babel" src="Filters.jsx"></script>
+<script type="text/babel" src="Grid.jsx"></script>
+<script type="text/babel" src="ProjectDetail.jsx"></script>
+<script type="text/babel" src="Footer.jsx"></script>
+<script type="text/babel">
+  const { useState, useEffect } = React;
+  const TAGS = ["all", "motion", "webgl", "audio", "type", "ui"];
+
+  function App() {
+    const [page, setPage] = useState("works");
+    const [tag, setTag] = useState("all");
+    const [open, setOpen] = useState(null);
+
+    useEffect(() => {
+      const onKey = (e) => { if (e.key === "Escape") setOpen(null); };
+      window.addEventListener("keydown", onKey);
+      return () => window.removeEventListener("keydown", onKey);
+    }, []);
+
+    const filtered = tag === "all"
+      ? window.mockProjects
+      : window.mockProjects.filter((p) => p.tags.includes(tag));
+
+    return (
+      <div className="ds-app">
+        <Header current={page} onNav={setPage} />
+        <main className="ds-main">
+          {page === "works" && (
+            <>
+              <Hero />
+              <div className="ds-section-head">
+                <span className="ds-section-label">recent / 최근</span>
+                <Filters tags={TAGS} active={tag} onChange={setTag} />
+              </div>
+              <Grid projects={filtered} onOpen={setOpen} />
+            </>
+          )}
+          {page === "about" && (
+            <section className="ds-about">
+              <h1>소개 / about</h1>
+              <p>
+                서울에서 작업합니다. 짧은 실험들을 만들고 여기에 모아둡니다.
+                대부분 늦은 밤에 한 것입니다.
+              </p>
+              <p>
+                I make small visual experiments — mostly motion, mostly at night.
+                this site collects them. say hi: <a>hello@atelier.kr</a>
+              </p>
+            </section>
+          )}
+          {page === "index" && (
+            <section className="ds-index">
+              <h1>목록 / index</h1>
+              <ul className="ds-index-list">
+                {window.mockProjects.map((p, i) => (
+                  <li key={p.id} className="ds-index-row" onClick={() => setOpen(p)}>
+                    <span className="ds-index-num">{String(i + 1).padStart(3, "0")}</span>
+                    <span className="ds-index-title">{p.title}</span>
+                    <span className="ds-index-meta">{p.caption}</span>
+                    <span className="ds-index-arrow">→</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+        </main>
+        <Footer />
+        <ProjectDetail project={open} onClose={() => setOpen(null)} />
+      </div>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Topbar</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .topbar { margin-top: 16px; height: 56px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 24px; background: var(--bg-1); }
+  .brand { display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 300; letter-spacing: -0.01em; }
+  .brand img { width: 26px; height: 26px; }
+  .nav { display: flex; gap: 28px; font-size: 14px; }
+  .nav .current { color: #FF5B2E; position: relative; }
+  .nav .current::before { content: ""; position: absolute; left: -10px; top: 50%; transform: translateY(-50%); width: 5px; height: 5px; background: #FF5B2E; border-radius: 50%; }
+  .nav .other { color: var(--fg-3); }
+  .meta { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); }
+</style>
+</head>
+<body>
+<div class="card compact">
+  <div class="label">topbar — 56h · paper bg · hairline only on scroll</div>
+  <div class="topbar">
+    <div class="brand">
+      <img src="../assets/logo-mark.svg" alt="">
+      <span>atelier</span>
+    </div>
+    <div class="nav">
+      <span class="current">works</span>
+      <span class="other">about</span>
+      <span class="other">index</span>
+    </div>
+    <div class="meta">2026 · 03 / 24</div>
+  </div>
+</div>
+</body>
+</html>

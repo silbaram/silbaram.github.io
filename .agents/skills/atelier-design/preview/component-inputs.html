@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Inputs</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .stack { display: flex; flex-direction: column; gap: 14px; margin-top: 16px; max-width: 360px; }
+  .field { display: flex; flex-direction: column; gap: 4px; }
+  .lab { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.06em; }
+  input, textarea { padding: 10px 0; border: 0; border-bottom: 1px solid var(--border); background: transparent; font-size: 16px; color: var(--fg-1); outline: none; }
+  input:focus, textarea:focus { border-bottom-color: #FF5B2E; }
+  input::placeholder { color: var(--fg-4); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="label">inputs — underline only</div>
+  <div class="stack">
+    <div class="field"><span class="lab">name</span><input value="아무개"></div>
+    <div class="field"><span class="lab">email · focused</span><input style="border-bottom-color: #FF5B2E;" placeholder="hello@example.com"></div>
+    <div class="field"><span class="lab">message</span><input placeholder="say something nice…"></div>
+  </div>
+</div>
+</body>
+</html>

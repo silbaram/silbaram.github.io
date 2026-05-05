@@ -53,6 +53,15 @@ const projectCardDataList = [
     tags: ['motion'],
     demoUrl: '/web-motion/shape-snow'
   },
+  {
+    id: 'motion-3',
+    type: 'motion',
+    title: 'Ripple Surface',
+    description: 'A dawn water surface motion where raindrops bloom into layered ripples.',
+    imageUrl: 'https://placehold.co/600x400/0b1628/dbeafe?text=Ripple+Surface',
+    tags: ['motion'],
+    demoUrl: '/web-motion/ripple-type'
+  },
 ];
 
 export default projectCardDataList;

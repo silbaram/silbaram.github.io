@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Tags & meta</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row3 { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; align-items: center; }
+  .tag { padding: 4px 10px; border: 1px solid var(--border); border-radius: 999px; font-family: var(--font-mono); font-size: 11px; color: var(--fg-2); }
+  .tag.on { background: #0E0E0C; color: #F6F4EE; border-color: transparent; }
+  .meta { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="label">tags · filters</div>
+  <div class="row3">
+    <span class="tag on">all</span>
+    <span class="tag">motion</span>
+    <span class="tag">webgl</span>
+    <span class="tag">audio</span>
+    <span class="tag">ui</span>
+    <span class="tag">type</span>
+  </div>
+  <div class="label" style="margin-top: 18px;">meta — index · timestamp · separator</div>
+  <div class="row3" style="margin-top: 10px;">
+    <span class="meta">03 / 24</span>
+    <span class="meta" style="color: var(--fg-4);">·</span>
+    <span class="meta">2026.04.26</span>
+    <span class="meta" style="color: var(--fg-4);">·</span>
+    <span class="meta">3일 전</span>
+    <span class="meta" style="color: var(--fg-4);">·</span>
+    <span class="meta">seoul</span>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" width="240" height="64">
+  <g fill="#0E0E0C" font-family="-apple-system, BlinkMacSystemFont, system-ui, sans-serif">
+    
+    <g transform="translate(8 8)">
+      <circle cx="24" cy="24" r="23" fill="none" stroke="#0E0E0C" stroke-width="2"></circle>
+      <path d="M14 36 L24 12 L34 36 M18.5 28 L29.5 28" fill="none" stroke="#0E0E0C" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"></path>
+    </g>
+    
+    <text x="68" y="42" font-size="28" font-weight="300" letter-spacing="-0.5">atelier</text>
+  </g>
+</svg>

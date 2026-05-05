@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Core palette</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .swatch {
+    flex: 1;
+    height: 132px;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 12px;
+    border: 1px solid var(--border);
+  }
+  .swatch .name { font-size: 13px; font-weight: 700; }
+  .swatch .hex { font-family: var(--font-mono); font-size: 11px; color: inherit; opacity: 0.6; margin-top: 2px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="label">core — ink · paper · accent</div>
+  <div class="row" style="margin-top: 16px;">
+    <div class="swatch" style="background: #0E0E0C; color: #F6F4EE; border-color: transparent;">
+      <div class="name">ink</div>
+      <div class="hex">#0E0E0C</div>
+    </div>
+    <div class="swatch" style="background: #F6F4EE; color: #0E0E0C;">
+      <div class="name">paper</div>
+      <div class="hex">#F6F4EE</div>
+    </div>
+    <div class="swatch" style="background: #FCFBF7; color: #0E0E0C;">
+      <div class="name">paper-pure</div>
+      <div class="hex">#FCFBF7</div>
+    </div>
+    <div class="swatch" style="background: #FF5B2E; color: #0E0E0C; border-color: transparent;">
+      <div class="name">accent</div>
+      <div class="hex">#FF5B2E</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

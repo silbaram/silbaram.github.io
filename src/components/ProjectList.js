@@ -1,35 +1,119 @@
-import React, { useState } from "react"
+import React, { useMemo, useState } from "react"
 import ProjectCard from "./ProjectCard"
 
+const filters = [
+  { key: "all", label: "all" },
+  { key: "game", label: "games" },
+  { key: "app", label: "apps" },
+  { key: "motion", label: "motion" },
+]
+
 const ProjectList = ({ projects }) => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [activeFilter, setActiveFilter] = useState('all');
-  const filteredProjects = projects.filter(project => {
-    const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) || project.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesFilter = activeFilter === 'all' || (activeFilter === 'games' && project.type === 'game') || (activeFilter === 'apps' && project.type === 'app') || (activeFilter === 'motion' && project.type === 'motion');
-    return matchesSearch && matchesFilter;
-  });
+  const [searchTerm, setSearchTerm] = useState("")
+  const [activeFilter, setActiveFilter] = useState("all")
+
+  const filteredProjects = useMemo(() => {
+    const query = searchTerm.trim().toLowerCase()
+
+    return projects.filter(project => {
+      const haystack = [
+        project.title,
+        project.description,
+        project.type,
+        ...project.tags,
+      ]
+        .join(" ")
+        .toLowerCase()
+      const matchesSearch = !query || haystack.includes(query)
+      const matchesFilter =
+        activeFilter === "all" || project.type === activeFilter
+
+      return matchesSearch && matchesFilter
+    })
+  }, [activeFilter, projects, searchTerm])
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-      <div className="my-8 sm:my-12 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <div className="relative w-full sm:w-2/3 md:w-1/2">
-          <input type="text" placeholder="Search projects..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="w-full pl-10 pr-4 py-2.5 bg-white text-neutral-800 border border-neutral-200 rounded-md focus:ring-2 focus:ring-neutral-400 focus:border-neutral-400 outline-none transition-colors text-sm" />
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg className="w-4 h-4 text-neutral-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd"></path></svg></div>
+    <div className="mx-auto w-full max-w-[var(--container)] px-[var(--page-pad)] pb-[var(--s-10)] pt-[var(--s-8)]">
+      <section className="pb-[var(--s-9)]">
+        <p className="mb-5 font-mono text-[12px] text-[var(--fg-3)]">
+          2026 · {String(projects.length).padStart(2, "0")} works
+        </p>
+        <h1 className="max-w-[920px] text-[var(--t-display)] font-light leading-none text-[var(--fg-1)]">
+          작은 실험들
+          <span className="block text-[var(--fg-3)]">small experiments</span>
+        </h1>
+        <p className="mt-6 max-w-[540px] text-[var(--fg-2)]">
+          웹 도구, 게임, 모션 작업처럼 가볍게 만들고 다듬은 개인 프로젝트를
+          모아두었습니다.
+        </p>
+      </section>
+
+      <section aria-labelledby="recent-work">
+        <div className="mb-8 flex flex-col gap-5 border-t border-[var(--border)] pt-6 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <h2
+              id="recent-work"
+              className="font-mono text-[12px] text-[var(--fg-3)]"
+            >
+              recent / 최근
+            </h2>
+            <p className="mt-1 text-sm text-[var(--fg-2)]">
+              {filteredProjects.length} / {projects.length}
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <label className="relative block w-full sm:w-[320px]">
+              <span className="sr-only">search projects</span>
+              <input
+                type="search"
+                placeholder="search"
+                value={searchTerm}
+                onChange={e => setSearchTerm(e.target.value)}
+                className="h-10 w-full rounded-[var(--r-1)] border border-[var(--border)] bg-transparent px-4 pr-10 font-mono text-[12px] text-[var(--fg-1)] outline-none transition-colors duration-[var(--dur-fast)] placeholder:text-[var(--fg-4)] focus:border-[var(--fg-1)]"
+              />
+              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 font-mono text-[12px] text-[var(--fg-3)]">
+                /
+              </span>
+            </label>
+
+            <div
+              className="flex flex-wrap gap-2"
+              role="list"
+              aria-label="project filters"
+            >
+              {filters.map(filter => (
+                <button
+                  key={filter.key}
+                  type="button"
+                  onClick={() => setActiveFilter(filter.key)}
+                  className={`rounded-[var(--r-pill)] border px-3 py-1 font-mono text-[11px] transition-colors duration-[var(--dur-fast)] ${
+                    activeFilter === filter.key
+                      ? "border-[var(--fg-1)] bg-[var(--fg-1)] text-[var(--fg-inv)]"
+                      : "border-[var(--border)] bg-transparent text-[var(--fg-2)] hover:border-[var(--fg-1)]"
+                  }`}
+                >
+                  {filter.label}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="flex space-x-1 p-1 bg-neutral-100 rounded-md">
-          {['all', 'games', 'apps', 'motion'].map(filter => (
-            <button key={filter} onClick={() => setActiveFilter(filter)} className={`px-3 py-1.5 rounded text-sm font-medium transition-colors duration-200 capitalize ${activeFilter === filter ? 'bg-neutral-900 text-white' : 'text-neutral-500 hover:text-neutral-800'}`}>{filter}</button>))
-          }
-        </div>
-      </div>
-      {filteredProjects.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
-          {filteredProjects.map(project => (<ProjectCard key={project.id} project={project} />))}
-        </div>
-      ) : (<p className="text-center text-gray-600 text-xl py-10">No projects found matching your criteria. Try adjusting your search or filter.</p>)}
+
+        {filteredProjects.length > 0 ? (
+          <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 xl:grid-cols-3">
+            {filteredProjects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} />
+            ))}
+          </div>
+        ) : (
+          <p className="border-t border-[var(--border)] py-10 font-mono text-[12px] text-[var(--fg-3)]">
+            아직 없음.
+          </p>
+        )}
+      </section>
     </div>
-  );
-};
+  )
+}
 
 export default ProjectList

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Accent in use</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { background: var(--bg-1); }
+  .demo { margin-top: 16px; padding: 24px; background: var(--bg-1); display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+  .link {
+    font-size: 18px; color: var(--fg-1); position: relative; padding-bottom: 2px;
+  }
+  .link::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: #FF5B2E; }
+  .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #FF5B2E; margin-right: 8px; vertical-align: middle; }
+  .nav { display: inline-flex; gap: 24px; font-size: 14px; }
+  .nav .current { color: #FF5B2E; }
+  .btn { padding: 10px 20px; border: 1px solid var(--fg-1); background: #FF5B2E; color: #0E0E0C; font-size: 14px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="label">accent — used sparingly</div>
+  <div class="demo">
+    <a class="link">hover state</a>
+    <div class="nav">
+      <span><span class="dot"></span>works</span>
+      <span style="color: var(--fg-3);">about</span>
+      <span style="color: var(--fg-3);">index</span>
+    </div>
+    <button class="btn">say hi →</button>
+  </div>
+  <div class="label" style="margin-top: 8px; color: var(--fg-3); text-transform: none;">
+    one accent per screen. never as a background fill.
+  </div>
+</div>
+</body>
+</html>

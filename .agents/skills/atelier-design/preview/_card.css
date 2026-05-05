@@ -1,0 +1,31 @@
+/* Shared card frame styles for the design system preview cards.
+   Each card targets ~700px wide and varies in height. */
+
+@import url("../colors_and_type.css");
+
+html, body {
+  background: var(--bg-1);
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  width: 700px;
+  background: var(--bg-1);
+  color: var(--fg-1);
+  padding: 28px;
+  box-sizing: border-box;
+}
+
+.card.compact { padding: 20px 28px; }
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+.row { display: flex; gap: 16px; align-items: stretch; }
+.col { display: flex; flex-direction: column; gap: 12px; }

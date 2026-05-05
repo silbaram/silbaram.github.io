@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Brand — wordmark</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .stage { margin-top: 14px; padding: 32px 28px; border: 1px solid var(--border); background: var(--bg-1); display: flex; align-items: center; gap: 24px; }
+  .stage.dark { background: #0E0E0C; border-color: transparent; }
+  .stage img { height: 44px; }
+  .nm { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); }
+  .row3 { display: flex; gap: 14px; margin-top: 14px; }
+  .row3 > * { flex: 1; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="label">wordmark · light + dark</div>
+  <div class="row3">
+    <div class="stage"><img src="../assets/logo.svg" alt="atelier"></div>
+    <div class="stage dark"><img src="../assets/logo-mark-inverse.svg" alt="" style="height: 36px;">
+      <span style="color: #F6F4EE; font-size: 26px; font-weight: 300; letter-spacing: -0.01em;">atelier</span>
+    </div>
+  </div>
+  <div class="nm" style="margin-top: 10px;">monochrome only · scales 24–96px height</div>
+</div>
+</body>
+</html>

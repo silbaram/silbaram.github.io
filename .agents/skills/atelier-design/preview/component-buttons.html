@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Buttons</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row3 { display: flex; gap: 14px; margin-top: 16px; align-items: center; flex-wrap: wrap; }
+  .btn { padding: 10px 18px; font-size: 14px; font-weight: 700; border: 1px solid var(--fg-1); cursor: pointer; transition: background 120ms, color 120ms; }
+  .btn-primary { background: #FF5B2E; color: #0E0E0C; border-color: transparent; }
+  .btn-ghost { background: transparent; color: var(--fg-1); }
+  .btn-text { padding: 10px 0; border: 0; background: transparent; color: var(--fg-1); }
+  .btn-text::after { content: " →"; }
+  .lab { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); margin-top: 6px; }
+  .grp { display: flex; flex-direction: column; gap: 0; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="label">buttons</div>
+  <div class="row3">
+    <div class="grp"><button class="btn btn-primary">say hi</button><div class="lab">primary · accent fill</div></div>
+    <div class="grp"><button class="btn btn-ghost">view all</button><div class="lab">ghost · 1px ink border</div></div>
+    <div class="grp"><button class="btn btn-text">read more</button><div class="lab">text · arrow only</div></div>
+    <div class="grp"><button class="btn btn-ghost" style="opacity: 0.4; cursor: not-allowed;">disabled</button><div class="lab">40% opacity</div></div>
+  </div>
+</div>
+</body>
+</html>

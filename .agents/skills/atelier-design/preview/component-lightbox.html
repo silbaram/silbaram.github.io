@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Lightbox</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .frame { margin-top: 16px; height: 240px; background: rgb(14 14 12 / 0.92); position: relative; overflow: hidden; }
+  .work { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 360px; height: 200px; background:
+    radial-gradient(circle at 30% 40%, #FF5B2E 0, transparent 40%),
+    radial-gradient(circle at 70% 70%, #F6F4EE 0, transparent 30%),
+    #1A1916;
+    box-shadow: 0 12px 32px -8px rgb(14 14 12 / 0.4);
+  }
+  .close { position: absolute; top: 14px; right: 16px; color: #F6F4EE; font-size: 18px; font-family: var(--font-mono); }
+  .cap { position: absolute; bottom: 14px; left: 18px; right: 18px; display: flex; justify-content: space-between; color: #B6B2A8; font-family: var(--font-mono); font-size: 11px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="label">lightbox — backdrop 92% ink · no blur</div>
+  <div class="frame">
+    <div class="work"></div>
+    <div class="close">×</div>
+    <div class="cap"><span>003 — wave field</span><span>← → · esc</span></div>
+  </div>
+</div>
+</body>
+</html>

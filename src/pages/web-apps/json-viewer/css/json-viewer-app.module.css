@@ -1,79 +1,73 @@
 .page {
   min-height: 100%;
-  background: radial-gradient(
-      circle at top left,
-      rgba(188, 155, 112, 0.28),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 88% 12%,
-      rgba(86, 117, 126, 0.14),
-      transparent 22%
-    ),
-    linear-gradient(140deg, #f6f0e8 0%, #ece3d5 48%, #e3d7c6 100%);
+  background: var(--bg-1);
 }
 
 .app {
   min-height: 100%;
   display: flex;
   justify-content: center;
-  padding: 88px 24px 40px;
+  padding: 80px var(--page-pad) 48px;
 }
 
 .viewerShell {
-  width: min(1440px, 100%);
+  width: min(var(--container), 100%);
   display: grid;
-  gap: 24px;
+  gap: var(--s-6);
 }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 420px);
-  gap: 22px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+  gap: var(--s-6);
   align-items: end;
+  padding-bottom: var(--s-5);
+  border-bottom: 1px solid var(--border);
 }
 
 .eyebrow,
 .panelEyebrow,
 .treeCanvasEyebrow,
-.inspectorEyebrow {
-  margin: 0 0 8px;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.eyebrow {
-  color: rgba(88, 67, 43, 0.7);
+.inspectorEyebrow,
+.metricLabel,
+.searchLabel,
+.footerStatus,
+.snapshotMetricLabel,
+.overviewBlockLabel {
+  margin: 0;
+  color: var(--fg-3);
+  font-family: var(--font-mono);
+  font-size: var(--t-mono-s);
+  letter-spacing: 0;
+  text-transform: lowercase;
 }
 
 .title,
 .panelTitle,
 .stateTitle,
-.inspectorTitle {
+.inspectorTitle,
+.treeCanvasTitle,
+.findingTitle {
   margin: 0;
-  font-family: "Avenir Next", "Pretendard Variable", "SUIT Variable",
-    "Noto Sans KR", sans-serif;
-  letter-spacing: -0.045em;
+  color: var(--fg-1);
+  font-family: var(--font-sans);
+  letter-spacing: 0;
 }
 
 .title {
-  font-size: clamp(34px, 5vw, 54px);
-  line-height: 0.98;
-  color: #241a12;
+  margin-top: var(--s-3);
+  max-width: 860px;
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: var(--w-light);
+  line-height: var(--lh-tight);
 }
 
 .subtitle,
 .stateCopy,
 .errorMessage,
-.metricLabel,
 .metricValue,
 .footerMeta,
-.footerStatus,
-.panelEyebrow,
-.searchLabel,
 .searchStatus,
-.treeCanvasTitle,
 .inspectorPath,
 .inspectorMetaText,
 .inspectorNote,
@@ -81,193 +75,138 @@
 .findingCopy,
 .breakdownLabel,
 .breakdownValue,
-.snapshotMetricLabel,
 .snapshotMetricValue,
 .overviewBlockLabel {
-  font-family: "Pretendard Variable", "SUIT Variable", "Noto Sans KR",
-    sans-serif;
+  font-family: var(--font-sans);
 }
 
 .subtitle {
-  max-width: 42ch;
-  margin: 12px 0 0;
-  color: rgba(70, 52, 33, 0.76);
+  max-width: 56ch;
+  margin: var(--s-4) 0 0;
+  color: var(--fg-2);
   font-size: 15px;
-  line-height: 1.65;
+  line-height: var(--lh-base);
 }
 
 .metricGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: var(--s-3);
+}
+
+.metricCard,
+.panel,
+.viewerSurface,
+.inspectorCard,
+.snapshotMetric,
+.inspectorPath,
+.inspectorPreview,
+.inspectorChip,
+.inspectorChipMuted,
+.findingCard,
+.breakdownItem,
+.errorMessage {
+  border: 1px solid var(--border);
+  border-radius: var(--r-1);
+  background: var(--bg-2);
 }
 
 .metricCard {
-  padding: 16px 18px;
-  border-radius: 22px;
-  border: 1px solid rgba(255, 255, 255, 0.45);
-  background: rgba(255, 251, 246, 0.62);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6),
-    0 24px 32px -28px rgba(62, 42, 16, 0.34);
-  backdrop-filter: blur(18px);
-}
-
-.metricLabel {
-  display: block;
-  color: rgba(100, 78, 53, 0.68);
-  font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  padding: var(--s-4);
 }
 
 .metricValue {
   display: block;
-  margin-top: 8px;
-  color: #251b13;
-  font-size: 20px;
-  font-weight: 600;
+  margin-top: var(--s-2);
+  color: var(--fg-1);
+  font-size: 22px;
+  line-height: 1;
 }
 
 .metricValid {
-  color: #21543d;
+  color: #28724a;
 }
 
 .metricInvalid {
-  color: #8c2e2a;
+  color: #9a332c;
 }
 
 .metricMuted {
-  color: rgba(81, 63, 43, 0.62);
+  color: var(--fg-3);
 }
 
 .workspace {
   display: grid;
-  grid-template-columns: minmax(320px, 0.78fr) minmax(720px, 1.22fr);
-  gap: 24px;
-  align-items: stretch;
+  grid-template-columns: minmax(320px, 0.82fr) minmax(680px, 1.18fr);
+  gap: var(--s-5);
+  align-items: start;
 }
 
 .panel {
-  position: relative;
   overflow: hidden;
-  border-radius: 30px;
-  box-shadow: 0 30px 90px -54px rgba(33, 23, 13, 0.45),
-    0 24px 36px -34px rgba(33, 23, 13, 0.24);
-  animation: panelReveal 0.55s ease both;
+  padding: var(--s-5);
+  animation: panelReveal var(--dur-base) var(--ease-out) both;
 }
 
-.panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.editorPanel {
-  padding: 26px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: radial-gradient(
-      circle at top right,
-      rgba(242, 214, 171, 0.14),
-      transparent 26%
-    ),
-    linear-gradient(160deg, #16202d 0%, #1d2936 48%, #111821 100%);
-  color: #f5efe6;
-}
-
-.editorPanel::before {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.08),
-    transparent 24%
-  );
-}
-
+.editorPanel,
 .viewerPanel {
-  padding: 26px;
-  border: 1px solid rgba(255, 255, 255, 0.36);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 252, 247, 0.9) 0%,
-    rgba(247, 241, 232, 0.96) 100%
-  );
-  color: #231a12;
-  animation-delay: 0.06s;
-}
-
-.viewerPanel::before {
-  background: linear-gradient(
-      90deg,
-      rgba(147, 119, 83, 0.06) 1px,
-      transparent 1px
-    ),
-    linear-gradient(rgba(147, 119, 83, 0.06) 1px, transparent 1px);
-  background-size: 28px 28px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.22), transparent 55%);
+  color: var(--fg-1);
 }
 
 .panelHeader {
-  position: relative;
-  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 18px;
-  margin-bottom: 18px;
-}
-
-.panelEyebrow {
-  color: rgba(160, 141, 116, 0.72);
-}
-
-.viewerPanel .panelEyebrow {
-  color: rgba(100, 78, 53, 0.68);
+  gap: var(--s-4);
+  margin-bottom: var(--s-4);
 }
 
 .panelTitle {
-  font-size: clamp(26px, 3vw, 34px);
-  line-height: 1.02;
+  margin-top: var(--s-2);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: var(--w-light);
+  line-height: var(--lh-snug);
 }
 
 .validationBadge {
   flex-shrink: 0;
-  padding: 10px 14px;
-  border-radius: 999px;
+  min-height: 30px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 var(--s-3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  background: transparent;
+  color: var(--fg-3);
+  font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: lowercase;
 }
 
 .validationValid {
-  border: 1px solid rgba(97, 203, 150, 0.18);
-  background: rgba(70, 127, 97, 0.18);
-  color: #b9f0d3;
+  border-color: rgba(40, 114, 74, 0.28);
+  color: #28724a;
 }
 
 .validationInvalid {
-  border: 1px solid rgba(234, 122, 111, 0.18);
-  background: rgba(165, 59, 52, 0.18);
-  color: #ffc7c0;
+  border-color: rgba(154, 51, 44, 0.28);
+  color: #9a332c;
 }
 
 .validationIdle {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(236, 224, 208, 0.82);
+  color: var(--fg-3);
 }
 
 .actionRow,
 .viewerActionGroup {
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: var(--s-2);
 }
 
 .actionRow {
-  margin-bottom: 16px;
+  margin-bottom: var(--s-4);
 }
 
 .primaryAction,
@@ -276,30 +215,33 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 42px;
-  border-radius: 999px;
-  padding: 0 16px;
-  border: 0;
-  font-family: "Avenir Next", "Pretendard Variable", "SUIT Variable",
-    "Noto Sans KR", sans-serif;
+  min-height: 38px;
+  border-radius: var(--r-1);
+  padding: 0 var(--s-4);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--fg-1);
+  font-family: var(--font-sans);
   font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  font-weight: var(--w-bold);
+  letter-spacing: 0;
   cursor: pointer;
-  transition: transform 0.18s ease, opacity 0.18s ease, box-shadow 0.18s ease,
-    background 0.18s ease;
+  transition: background var(--dur-fast) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out), transform 80ms ease;
 }
 
 .primaryAction:hover,
 .secondaryAction:hover,
 .ghostAction:hover {
-  transform: translateY(-1px);
+  border-color: var(--fg-1);
+  background: rgb(14 14 12 / 0.04);
 }
 
 .primaryAction:active,
 .secondaryAction:active,
 .ghostAction:active {
-  transform: translateY(1px);
+  transform: scale(0.98);
 }
 
 .primaryAction:disabled,
@@ -311,218 +253,155 @@
 }
 
 .primaryAction {
-  background: linear-gradient(135deg, #efd3a3 0%, #c79c61 100%);
-  color: #20140a;
-  box-shadow: 0 18px 24px -18px rgba(182, 127, 58, 0.72);
+  border-color: var(--fg-1);
+  background: var(--fg-1);
+  color: var(--fg-inv);
 }
 
-.secondaryAction {
-  background: rgba(255, 255, 255, 0.08);
-  color: #f7f1e7;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
+.secondaryAction,
 .ghostAction {
-  background: transparent;
-  color: rgba(238, 228, 214, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--fg-2);
 }
 
-.viewerActionGroup .secondaryAction {
-  background: rgba(92, 71, 47, 0.08);
-  color: #43311f;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42);
+.textarea,
+.searchInput,
+.viewerSurface {
+  border: 1px solid var(--border);
+  border-radius: var(--r-1);
+  background: var(--paper-pure);
+  color: var(--fg-1);
 }
 
 .textarea {
-  position: relative;
-  z-index: 1;
   width: 100%;
   min-height: 560px;
   resize: vertical;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 24px;
-  padding: 20px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.06),
-    rgba(255, 255, 255, 0.03)
-  );
-  color: #f7f3ec;
-  font-family: "SFMono-Regular", "IBM Plex Mono", "Roboto Mono", monospace;
-  font-size: 14px;
+  padding: var(--s-4);
+  font-family: var(--font-mono);
+  font-size: 13px;
   line-height: 1.65;
   tab-size: 2;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    0 24px 34px -28px rgba(0, 0, 0, 0.62);
 }
 
-.textarea::placeholder {
-  color: rgba(218, 204, 184, 0.42);
+.textarea::placeholder,
+.searchInput::placeholder {
+  color: var(--fg-4);
 }
 
-.textarea:focus-visible {
+.textarea:focus-visible,
+.searchInput:focus-visible {
   outline: none;
-  border-color: rgba(226, 188, 136, 0.46);
-  box-shadow: 0 0 0 4px rgba(226, 188, 136, 0.14),
-    0 24px 34px -28px rgba(0, 0, 0, 0.62);
+  border-color: var(--fg-1);
 }
 
 .editorFooter {
-  position: relative;
-  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
-  margin-top: 14px;
+  gap: var(--s-4);
+  margin-top: var(--s-3);
 }
 
 .footerMeta {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  color: rgba(220, 209, 194, 0.72);
+  gap: var(--s-3);
+  color: var(--fg-3);
   font-size: 12px;
 }
 
 .footerStatus {
-  color: #efd6b2;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  color: var(--fg-3);
 }
 
 .reviewToolbar {
-  position: relative;
-  z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 12px;
-  margin-bottom: 14px;
+  gap: var(--s-3);
+  margin-bottom: var(--s-4);
 }
 
 .searchField {
   display: grid;
-  gap: 8px;
-}
-
-.searchLabel {
-  color: rgba(96, 74, 49, 0.74);
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  gap: var(--s-2);
 }
 
 .searchInput {
   width: 100%;
-  min-height: 46px;
-  border-radius: 16px;
-  border: 1px solid rgba(126, 101, 68, 0.14);
-  background: rgba(255, 255, 255, 0.62);
-  color: #251b13;
-  padding: 0 16px;
+  min-height: 42px;
+  padding: 0 var(--s-3);
   font-size: 14px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82),
-    0 18px 26px -24px rgba(79, 60, 35, 0.3);
-}
-
-.searchInput::placeholder {
-  color: rgba(111, 90, 66, 0.56);
-}
-
-.searchInput:focus-visible {
-  outline: none;
-  border-color: rgba(188, 145, 84, 0.38);
-  box-shadow: 0 0 0 4px rgba(188, 145, 84, 0.12),
-    0 18px 26px -24px rgba(79, 60, 35, 0.3);
 }
 
 .searchStatus {
   align-self: end;
-  min-height: 46px;
-  padding: 0 14px;
+  min-height: 42px;
   display: inline-flex;
   align-items: center;
-  border-radius: 16px;
-  background: rgba(96, 71, 46, 0.08);
-  color: rgba(68, 50, 31, 0.82);
+  padding: 0 var(--s-3);
+  border: 1px solid var(--border);
+  border-radius: var(--r-1);
+  color: var(--fg-3);
   font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .reviewWorkbench {
-  position: relative;
-  z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1.45fr) minmax(280px, 320px);
-  gap: 20px;
+  gap: var(--s-4);
   align-items: start;
 }
 
-.treeCanvas {
+.treeCanvas,
+.inspectorRail,
+.inspectorContent,
+.overviewBlock,
+.findingList,
+.breakdownList,
+.inspectorChipGroup {
   display: grid;
-  gap: 10px;
+  gap: var(--s-3);
   min-width: 0;
 }
 
 .treeCanvasHeader {
   display: grid;
-  gap: 6px;
-}
-
-.treeCanvasEyebrow,
-.inspectorEyebrow {
-  color: rgba(96, 74, 49, 0.66);
+  gap: var(--s-2);
 }
 
 .treeCanvasTitle {
-  margin: 0;
-  color: rgba(58, 43, 28, 0.78);
+  color: var(--fg-2);
   font-size: 14px;
-  line-height: 1.55;
+  font-weight: var(--w-regular);
+  line-height: var(--lh-base);
 }
 
 .viewerSurface {
-  position: relative;
   min-height: 680px;
   overflow: hidden;
-  border-radius: 26px;
-  border: 1px solid rgba(126, 101, 68, 0.14);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.72),
-    rgba(252, 249, 244, 0.72)
-  );
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.74),
-    0 28px 42px -34px rgba(79, 60, 35, 0.24);
 }
 
 .treeViewport,
 .emptyState,
 .errorState {
   min-height: 100%;
-  padding: 22px;
+  padding: var(--s-4);
 }
 
 .treeViewport {
   overflow: auto;
-  font-family: "SFMono-Regular", "IBM Plex Mono", "Roboto Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 13px;
   line-height: 1.7;
-  --branch-line-color: rgba(126, 101, 68, 0.16);
+  --branch-line-color: var(--border);
   --branch-line-width: 1px;
 }
 
 .treeNode + .treeNode {
-  margin-top: 2px;
+  margin-top: 1px;
 }
 
-.treeNodeExpandable {
-  position: relative;
-}
-
+.treeNodeExpandable,
 .nodeChildren {
   position: relative;
 }
@@ -535,7 +414,6 @@
   bottom: 0;
   width: var(--branch-line-width);
   background: var(--branch-line-color);
-  transition: background 0.16s ease, width 0.16s ease;
 }
 
 .nodeRow {
@@ -544,40 +422,34 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--s-2);
   width: 100%;
+  min-height: 34px;
   box-sizing: border-box;
-  min-height: 36px;
-  border-radius: 14px;
-  padding-right: 14px;
-  color: #2d2319;
+  border-radius: var(--r-1);
+  padding-right: var(--s-3);
+  color: var(--fg-1);
   cursor: pointer;
-  transition: background 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
+  transition: background var(--dur-fast) var(--ease-out),
+    color var(--dur-fast) var(--ease-out);
 }
 
 .nodeRow:hover,
 .nodeRow:focus-visible {
-  background: rgba(188, 145, 84, 0.08);
-  box-shadow: inset 0 0 0 1px rgba(188, 145, 84, 0.18);
-  z-index: 3;
+  background: rgb(14 14 12 / 0.04);
 }
 
 .nodeRow:focus-visible {
   outline: none;
 }
 
-.nodeRowSelected {
-  background: rgba(188, 145, 84, 0.12);
-  box-shadow: inset 0 0 0 1px rgba(188, 145, 84, 0.34),
-    0 10px 16px -16px rgba(112, 78, 39, 0.42);
-}
-
+.nodeRowSelected,
 .nodeRowMatch {
-  box-shadow: inset 0 0 0 1px rgba(188, 145, 84, 0.22);
+  background: rgb(255 91 46 / 0.08);
 }
 
 .rootNodeRow {
-  margin-bottom: 4px;
+  margin-bottom: var(--s-1);
 }
 
 .toggleButton,
@@ -591,24 +463,24 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
-  border: 1px solid rgba(137, 108, 73, 0.14);
-  background: rgba(255, 255, 255, 0.72);
-  color: #684a2d;
+  border-radius: var(--r-1);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--fg-2);
   font-family: inherit;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: var(--w-bold);
   cursor: pointer;
 }
 
 .toggleButton:hover {
-  background: rgba(255, 255, 255, 0.92);
+  border-color: var(--fg-1);
 }
 
 .nodeKey,
 .rootLabel {
-  color: #4d3723;
-  font-weight: 600;
+  color: var(--fg-1);
+  font-weight: var(--w-bold);
 }
 
 .nodeKey {
@@ -616,278 +488,171 @@
 }
 
 .rootLabel {
-  padding: 4px 8px;
-  border-radius: 999px;
-  background: rgba(104, 74, 45, 0.08);
+  padding: 2px var(--s-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  background: transparent;
   font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: lowercase;
 }
 
 .nodeColon,
-.nodeBracket {
-  color: rgba(93, 69, 44, 0.66);
+.nodeBracket,
+.nodeSummary {
+  color: var(--fg-3);
   white-space: nowrap;
 }
 
 .nodeSummary {
-  color: rgba(104, 74, 45, 0.78);
   font-size: 12px;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
 }
 
 .valueString {
-  color: #8c4d2b;
+  color: #8a3b1f;
   overflow-wrap: anywhere;
 }
 
 .valueNumber {
-  color: #27605a;
+  color: #23685e;
   white-space: nowrap;
 }
 
 .valueBoolean {
-  color: #6a3f8f;
+  color: #6a3a8d;
   white-space: nowrap;
 }
 
 .valueNull {
-  color: #8a5d2c;
+  color: var(--fg-3);
   white-space: nowrap;
 }
 
-.inspectorRail {
-  display: grid;
-  gap: 10px;
-  min-width: 0;
-  position: relative;
-  z-index: 1;
-}
-
 .inspectorCard {
-  padding: 16px;
+  padding: var(--s-4);
   overflow: hidden;
-  border-radius: 22px;
-  border: 1px solid rgba(126, 101, 68, 0.12);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 252, 248, 0.96),
-    rgba(248, 242, 234, 0.98)
-  );
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.84),
-    0 24px 32px -28px rgba(79, 60, 35, 0.26);
 }
 
 .inspectorHeader {
-  margin-bottom: 12px;
+  margin-bottom: var(--s-3);
 }
 
 .inspectorTitle {
-  font-size: 24px;
-  line-height: 1.02;
-  color: #241a12;
-}
-
-.inspectorContent {
-  display: grid;
-  gap: 12px;
+  margin-top: var(--s-2);
+  font-size: 22px;
+  font-weight: var(--w-light);
+  line-height: var(--lh-snug);
 }
 
 .snapshotGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
+  gap: var(--s-2);
 }
 
 .snapshotMetric {
-  padding: 12px 14px;
-  border-radius: 16px;
-  background: rgba(96, 71, 46, 0.05);
-  border: 1px solid rgba(126, 101, 68, 0.08);
-}
-
-.snapshotMetricLabel {
-  display: block;
-  color: rgba(96, 74, 49, 0.66);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  padding: var(--s-3);
 }
 
 .snapshotMetricValue {
   display: block;
-  margin-top: 6px;
-  color: #281d13;
+  margin-top: var(--s-2);
+  color: var(--fg-1);
   font-size: 22px;
   line-height: 1;
 }
 
-.overviewBlock {
-  display: grid;
-  gap: 8px;
-}
-
-.overviewBlockLabel {
-  color: rgba(96, 74, 49, 0.66);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.inspectorPath {
-  padding: 10px 12px;
-  border-radius: 14px;
-  background: rgba(96, 71, 46, 0.08);
-  color: #4b3520;
+.inspectorPath,
+.inspectorPreview {
+  padding: var(--s-3);
+  color: var(--fg-2);
+  font-family: var(--font-mono);
   font-size: 13px;
-  line-height: 1.5;
+  line-height: 1.55;
   overflow-wrap: anywhere;
 }
 
 .inspectorMetaRow {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--s-2);
   align-items: center;
 }
 
 .inspectorTypeBadge {
   display: inline-flex;
   align-items: center;
-  min-height: 28px;
-  padding: 0 10px;
-  border-radius: 999px;
-  background: rgba(188, 145, 84, 0.12);
-  color: #5b3e1e;
+  min-height: 26px;
+  padding: 0 var(--s-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  background: transparent;
+  color: var(--fg-2);
+  font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: var(--w-regular);
+  letter-spacing: 0;
+  text-transform: lowercase;
 }
 
 .inspectorMetaText,
 .inspectorNote,
 .inspectorPlaceholder {
-  color: rgba(74, 56, 36, 0.78);
+  margin: 0;
+  color: var(--fg-2);
   font-size: 14px;
-  line-height: 1.6;
-}
-
-.inspectorPlaceholder {
-  margin: 0;
-}
-
-.inspectorPreview {
-  display: block;
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 16px;
-  background: rgba(43, 32, 21, 0.06);
-  color: #5e3f20;
-  font-size: 13px;
-  line-height: 1.6;
-  overflow-wrap: anywhere;
-}
-
-.inspectorNote {
-  margin: 0;
-}
-
-.inspectorChipGroup {
-  display: grid;
-  gap: 8px;
+  line-height: var(--lh-base);
 }
 
 .inspectorChip,
-.inspectorChipMuted {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 10px 12px;
-  border-radius: 14px;
-  background: rgba(96, 71, 46, 0.06);
-}
-
-.inspectorChipLabel {
-  color: #38281b;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.inspectorChipMeta {
-  color: rgba(96, 74, 49, 0.74);
-  font-size: 12px;
-}
-
-.inspectorChipMuted {
-  color: rgba(96, 74, 49, 0.74);
-  font-size: 12px;
-}
-
-.findingList {
-  display: grid;
-  gap: 10px;
-}
-
-.findingCard {
-  padding: 14px;
-  border-radius: 16px;
-  border: 1px solid transparent;
-}
-
-.findingGood {
-  background: rgba(74, 127, 97, 0.08);
-  border-color: rgba(74, 127, 97, 0.12);
-}
-
-.findingCaution {
-  background: rgba(188, 145, 84, 0.12);
-  border-color: rgba(188, 145, 84, 0.18);
-}
-
-.findingNeutral {
-  background: rgba(96, 71, 46, 0.06);
-  border-color: rgba(96, 71, 46, 0.08);
-}
-
-.findingTitle {
-  margin: 0;
-  color: #342619;
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.findingCopy {
-  margin: 6px 0 0;
-  color: rgba(74, 56, 36, 0.76);
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.breakdownList {
-  display: grid;
-  gap: 10px;
-}
-
+.inspectorChipMuted,
 .breakdownItem {
   display: flex;
   justify-content: space-between;
-  gap: 12px;
-  padding: 10px 12px;
-  border-radius: 14px;
-  background: rgba(96, 71, 46, 0.05);
+  gap: var(--s-3);
+  padding: var(--s-3);
 }
 
+.inspectorChipLabel,
 .breakdownLabel {
-  color: #38281b;
+  color: var(--fg-1);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: var(--w-bold);
 }
 
-.breakdownValue {
-  color: rgba(96, 74, 49, 0.78);
+.inspectorChipMeta,
+.breakdownValue,
+.inspectorChipMuted {
+  color: var(--fg-3);
   font-size: 12px;
+}
+
+.findingCard {
+  padding: var(--s-3);
+}
+
+.findingGood {
+  border-color: rgba(40, 114, 74, 0.2);
+}
+
+.findingCaution {
+  border-color: rgb(255 91 46 / 0.28);
+}
+
+.findingNeutral {
+  border-color: var(--border);
+}
+
+.findingTitle {
+  font-size: 15px;
+  font-weight: var(--w-bold);
+}
+
+.findingCopy {
+  margin: var(--s-2) 0 0;
+  color: var(--fg-2);
+  font-size: 13px;
+  line-height: var(--lh-base);
 }
 
 .emptyState,
@@ -895,39 +660,37 @@
   display: grid;
   align-content: center;
   justify-items: start;
-  gap: 10px;
+  gap: var(--s-3);
 }
 
 .stateTitle {
-  color: #241a12;
-  font-size: 28px;
-  line-height: 1.06;
+  font-size: 26px;
+  font-weight: var(--w-light);
+  line-height: var(--lh-snug);
 }
 
 .stateCopy {
   max-width: 34ch;
   margin: 0;
-  color: rgba(74, 56, 36, 0.72);
+  color: var(--fg-2);
   font-size: 15px;
-  line-height: 1.65;
+  line-height: var(--lh-base);
 }
 
 .errorMessage {
   display: block;
   width: 100%;
-  padding: 14px 16px;
-  border-radius: 18px;
-  background: rgba(169, 65, 57, 0.08);
-  color: #8a312c;
+  padding: var(--s-3);
+  color: #9a332c;
   font-size: 13px;
-  line-height: 1.6;
+  line-height: var(--lh-base);
   overflow-wrap: anywhere;
 }
 
 @keyframes panelReveal {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(12px);
   }
 
   to {
@@ -950,17 +713,15 @@
 
 @media (max-width: 820px) {
   .app {
-    padding: 76px 16px 28px;
+    padding: 72px var(--s-4) 32px;
   }
 
   .metricGrid {
     grid-template-columns: 1fr 1fr;
   }
 
-  .editorPanel,
-  .viewerPanel {
-    padding: 20px;
-    border-radius: 24px;
+  .panel {
+    padding: var(--s-4);
   }
 
   .panelHeader,
@@ -980,7 +741,6 @@
 
   .textarea {
     min-height: 420px;
-    padding: 18px;
   }
 
   .viewerSurface {
@@ -990,7 +750,7 @@
 
 @media (max-width: 560px) {
   .title {
-    font-size: 36px;
+    font-size: 38px;
   }
 
   .metricGrid,
@@ -1006,7 +766,7 @@
   .primaryAction,
   .secondaryAction,
   .ghostAction {
-    flex: 1 1 calc(50% - 10px);
+    flex: 1 1 calc(50% - var(--s-2));
   }
 
   .stateTitle {
@@ -1016,10 +776,6 @@
   .treeViewport,
   .emptyState,
   .errorState {
-    padding: 18px;
-  }
-
-  .inspectorCard {
-    padding: 16px;
+    padding: var(--s-3);
   }
 }

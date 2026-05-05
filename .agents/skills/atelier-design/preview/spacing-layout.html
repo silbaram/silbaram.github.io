@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Layout</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .frame { margin-top: 16px; border: 1px solid var(--border); height: 200px; position: relative; background: var(--bg-1); overflow: hidden; }
+  .topbar { position: absolute; top: 0; left: 0; right: 0; height: 28px; border-bottom: 1px solid var(--border); display: flex; align-items: center; padding: 0 14px; font-family: var(--font-mono); font-size: 9px; color: var(--fg-3); justify-content: space-between; }
+  .gutter { position: absolute; top: 28px; bottom: 0; width: 96px; background: repeating-linear-gradient(135deg, rgba(255,91,46,0.08), rgba(255,91,46,0.08) 4px, transparent 4px, transparent 8px); }
+  .gl { left: 0; }
+  .gr { right: 0; }
+  .reading { position: absolute; left: 96px; right: 96px; top: 44px; bottom: 12px; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--border); }
+  .lab { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="label">layout — page padding 96 · reading 720 · topbar 56</div>
+  <div class="frame">
+    <div class="topbar"><span>topbar 56h</span><span>nav · works · about</span></div>
+    <div class="gutter gl"></div>
+    <div class="gutter gr"></div>
+    <div class="reading"><span class="lab">reading column · max 720</span></div>
+  </div>
+</div>
+</body>
+</html>

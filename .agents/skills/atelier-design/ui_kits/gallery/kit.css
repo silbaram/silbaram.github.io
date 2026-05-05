@@ -1,0 +1,285 @@
+/* Atelier gallery UI kit styles */
+
+.ds-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Header ---------- */
+.ds-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--topbar-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--page-pad);
+  background: var(--bg-1);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--dur-base) var(--ease-out);
+}
+.ds-header.is-scrolled { border-bottom-color: var(--border); }
+
+.ds-brand {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 18px; font-weight: 300; letter-spacing: -0.01em;
+  cursor: pointer;
+}
+.ds-brand img { width: 26px; height: 26px; }
+
+.ds-nav { display: flex; gap: 28px; font-size: 14px; }
+.ds-nav-item {
+  color: var(--fg-3);
+  cursor: pointer;
+  position: relative;
+  background: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.ds-nav-item:hover { color: var(--fg-1); background: none; }
+.ds-nav-item.is-current { color: var(--fg-1); }
+.ds-nav-item.is-current::before {
+  content: ""; position: absolute; left: -12px; top: 50%;
+  transform: translateY(-50%); width: 5px; height: 5px;
+  border-radius: 50%; background: var(--accent);
+}
+
+.ds-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-3);
+}
+
+/* ---------- Main / Hero ---------- */
+.ds-main {
+  flex: 1;
+  padding: var(--s-9) var(--page-pad) var(--s-10);
+  max-width: var(--container);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.ds-hero {
+  padding: var(--s-7) 0 var(--s-9);
+}
+.ds-hero-line {
+  font-size: var(--t-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  font-weight: var(--w-light);
+}
+.ds-hero-line.muted { color: var(--fg-3); }
+.ds-hero-sub {
+  margin-top: var(--s-5);
+  max-width: 520px;
+  color: var(--fg-2);
+}
+
+/* ---------- Section head + filters ---------- */
+.ds-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding-top: var(--s-5);
+  margin-bottom: var(--s-6);
+  gap: var(--s-5);
+  flex-wrap: wrap;
+}
+.ds-section-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-3);
+  text-transform: lowercase;
+}
+
+.ds-filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.ds-tag {
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-2);
+  background: transparent;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+.ds-tag:hover { color: var(--fg-1); border-color: var(--fg-1); background: none; }
+.ds-tag.is-on { background: var(--ink); color: var(--paper); border-color: transparent; }
+
+/* ---------- Grid + cards ---------- */
+.ds-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-7) var(--s-6);
+}
+
+.ds-card {
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: ds-enter var(--dur-base) var(--ease-out) forwards;
+}
+@keyframes ds-enter { to { opacity: 1; transform: translateY(0); } }
+
+.ds-card-thumb {
+  aspect-ratio: 4 / 3;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow var(--dur-base) var(--ease-out);
+}
+.ds-card:hover .ds-card-thumb { box-shadow: var(--shadow-1); }
+.ds-card:active .ds-card-thumb { transform: scale(0.99); transition: transform 80ms; }
+
+.ds-scene {
+  position: absolute; inset: 0;
+  transition: transform var(--dur-base) var(--ease-out);
+}
+.ds-card:hover .ds-scene { transform: scale(1.02); }
+
+.scene-wave {
+  background:
+    radial-gradient(ellipse at 30% 60%, rgba(255,91,46,0.7) 0, transparent 45%),
+    radial-gradient(ellipse at 70% 30%, rgba(246,244,238,0.4) 0, transparent 35%),
+    var(--ink);
+}
+.scene-grid {
+  background:
+    repeating-linear-gradient(0deg, rgba(246,244,238,0.18) 0 1px, transparent 1px 28px),
+    repeating-linear-gradient(90deg, rgba(246,244,238,0.18) 0 1px, transparent 1px 28px),
+    var(--ink);
+}
+.scene-type {
+  background: var(--ink);
+  position: relative;
+}
+.scene-type::after {
+  content: "Aa";
+  position: absolute;
+  inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 200px; font-weight: 100; color: var(--paper);
+  letter-spacing: -0.05em;
+}
+.scene-noise {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(246,244,238,0.18) 0, transparent 8%),
+    radial-gradient(circle at 60% 50%, rgba(246,244,238,0.14) 0, transparent 10%),
+    radial-gradient(circle at 80% 80%, rgba(255,91,46,0.5) 0, transparent 12%),
+    radial-gradient(circle at 40% 70%, rgba(246,244,238,0.1) 0, transparent 6%),
+    var(--ink);
+}
+.scene-lines {
+  background:
+    repeating-linear-gradient(120deg, rgba(246,244,238,0.6) 0 1px, transparent 1px 8px),
+    var(--ink);
+}
+.scene-ember {
+  background:
+    radial-gradient(circle at 50% 100%, rgba(255,91,46,0.9) 0, transparent 40%),
+    radial-gradient(circle at 30% 80%, rgba(255,91,46,0.4) 0, transparent 30%),
+    var(--ink);
+}
+
+.ds-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: var(--s-3);
+  gap: var(--s-3);
+}
+.ds-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.ds-card:hover .ds-card-title { color: var(--accent); }
+.ds-card-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-3);
+}
+.ds-card-cap {
+  font-size: 13px;
+  color: var(--fg-3);
+  margin-top: 2px;
+}
+
+/* ---------- Lightbox ---------- */
+.ds-lightbox {
+  position: fixed; inset: 0;
+  background: rgb(14 14 12 / 0.92);
+  z-index: 100;
+  display: flex; flex-direction: column;
+  padding: var(--s-7) var(--s-7) var(--s-5);
+  animation: ds-fade var(--dur-base) var(--ease-out);
+}
+@keyframes ds-fade { from { opacity: 0; } to { opacity: 1; } }
+.ds-lightbox-close {
+  position: absolute; top: 20px; right: 28px;
+  font-family: var(--font-mono); font-size: 22px;
+  color: var(--paper);
+  cursor: pointer;
+  width: 32px; height: 32px;
+}
+.ds-lightbox-stage {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+  margin-bottom: var(--s-5);
+}
+.ds-lightbox-stage .ds-scene {
+  position: relative;
+  width: min(80vw, 1100px);
+  height: min(70vh, 700px);
+  box-shadow: var(--shadow-2);
+}
+.ds-lightbox-cap {
+  display: flex; justify-content: space-between; align-items: baseline;
+  color: var(--mute-2);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 0 4px;
+}
+.ds-lightbox-title { color: var(--paper); font-family: var(--font-sans); font-size: 18px; font-weight: 700; }
+.ds-lightbox-sub { color: var(--mute); font-family: var(--font-mono); font-size: 12px; margin-top: 2px; }
+
+/* ---------- About / Index pages ---------- */
+.ds-about { max-width: var(--reading); padding-top: var(--s-7); }
+.ds-about h1 { font-weight: 300; margin-bottom: var(--s-6); }
+.ds-about p { margin-bottom: var(--s-5); color: var(--fg-2); }
+
+.ds-index { padding-top: var(--s-7); }
+.ds-index h1 { font-weight: 300; margin-bottom: var(--s-6); }
+.ds-index-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--border); }
+.ds-index-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 24px;
+  gap: var(--s-4);
+  align-items: baseline;
+  padding: var(--s-4) 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: padding-left var(--dur-fast) var(--ease-out);
+}
+.ds-index-row:hover { padding-left: 8px; }
+.ds-index-row:hover .ds-index-arrow { color: var(--accent); }
+.ds-index-num { font-family: var(--font-mono); font-size: 12px; color: var(--fg-3); }
+.ds-index-title { font-size: 18px; font-weight: 700; }
+.ds-index-meta { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); }
+.ds-index-arrow { font-family: var(--font-mono); color: var(--fg-3); transition: color var(--dur-fast); }
+
+/* ---------- Footer ---------- */
+.ds-footer {
+  border-top: 1px solid var(--border);
+  padding: var(--s-5) var(--page-pad);
+  display: flex; justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--fg-3);
+}
+.ds-footer-right { display: flex; gap: 18px; }
+.ds-footer a { color: var(--fg-2); cursor: pointer; }

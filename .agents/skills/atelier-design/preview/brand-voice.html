@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Voice</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 14px; border: 1px solid var(--border); }
+  .cell { padding: 14px 16px; }
+  .cell + .cell { border-left: 1px solid var(--border); }
+  .row { border-bottom: 1px solid var(--border); display: contents; }
+  .row > .cell { border-bottom: 1px solid var(--border); }
+  .row:last-child > .cell { border-bottom: 0; }
+  .h { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+  .bad { color: var(--fg-3); text-decoration: line-through; }
+  .good { color: var(--fg-1); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="label">voice — quiet, present-tense, ko/en mixed</div>
+  <div class="grid">
+    <div class="row">
+      <div class="cell"><div class="h">don't</div><div class="bad">Welcome to my amazing portfolio! 🎨✨</div></div>
+      <div class="cell"><div class="h">do</div><div class="good">작업들. 대부분 움직임에 관한 것.</div></div>
+    </div>
+    <div class="row">
+      <div class="cell"><div class="bad">Click here to explore my projects</div></div>
+      <div class="cell"><div class="good">보기 →</div></div>
+    </div>
+    <div class="row">
+      <div class="cell"><div class="bad">Crafted with passion and code</div></div>
+      <div class="cell"><div class="good">made in seoul, mostly at night</div></div>
+    </div>
+    <div class="row">
+      <div class="cell"><div class="bad">Get in touch with me today!</div></div>
+      <div class="cell"><div class="good">say hi — hello@…</div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

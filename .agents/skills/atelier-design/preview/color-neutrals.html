@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Neutral scale</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .scale { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0; margin-top: 16px; border: 1px solid var(--border); }
+  .step { aspect-ratio: 1 / 1; padding: 8px; display: flex; flex-direction: column; justify-content: space-between; }
+  .step .n { font-family: var(--font-mono); font-size: 10px; }
+  .step .h { font-family: var(--font-mono); font-size: 9px; opacity: 0.7; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="label">neutral scale — paper to ink</div>
+  <div class="scale">
+    <div class="step" style="background: #FCFBF7; color: #0E0E0C;"><span class="n">00</span><span class="h">FCFBF7</span></div>
+    <div class="step" style="background: #F6F4EE; color: #0E0E0C;"><span class="n">10</span><span class="h">F6F4EE</span></div>
+    <div class="step" style="background: #E4E0D6; color: #0E0E0C;"><span class="n">20</span><span class="h">E4E0D6</span></div>
+    <div class="step" style="background: #B6B2A8; color: #0E0E0C;"><span class="n">40</span><span class="h">B6B2A8</span></div>
+    <div class="step" style="background: #8A8780; color: #F6F4EE;"><span class="n">60</span><span class="h">8A8780</span></div>
+    <div class="step" style="background: #25241F; color: #F6F4EE;"><span class="n">85</span><span class="h">25241F</span></div>
+    <div class="step" style="background: #0E0E0C; color: #F6F4EE;"><span class="n">95</span><span class="h">0E0E0C</span></div>
+  </div>
+</div>
+</body>
+</html>

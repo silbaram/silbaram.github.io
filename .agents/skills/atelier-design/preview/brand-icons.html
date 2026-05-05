@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Iconography</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .row3 { display: flex; gap: 28px; margin-top: 16px; flex-wrap: wrap; }
+  .it { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .it .gly { font-family: var(--font-mono); font-size: 22px; }
+  .it .nm { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); }
+  svg.ic { width: 22px; height: 22px; stroke: #0E0E0C; fill: none; stroke-width: 1.5; stroke-linecap: square; stroke-linejoin: miter; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="label">icons — unicode + lucide (1.5 stroke, square cap)</div>
+  <div class="row3">
+    <div class="it"><span class="gly">→</span><span class="nm">next</span></div>
+    <div class="it"><span class="gly">↗</span><span class="nm">external</span></div>
+    <div class="it"><span class="gly">×</span><span class="nm">close</span></div>
+    <div class="it"><span class="gly">·</span><span class="nm">separator</span></div>
+    <div class="it"><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span class="nm">search</span></div>
+    <div class="it"><svg class="ic" viewBox="0 0 24 24"><path d="M6 5l13 7-13 7z"/></svg><span class="nm">play</span></div>
+    <div class="it"><svg class="ic" viewBox="0 0 24 24"><path d="M7 5v14M17 5v14"/></svg><span class="nm">pause</span></div>
+    <div class="it"><svg class="ic" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span class="nm">arrow</span></div>
+  </div>
+  <div class="label" style="margin-top: 14px; text-transform: none; color: var(--fg-3);">no emoji · no decorative icons · prefer text labels</div>
+</div>
+</body>
+</html>

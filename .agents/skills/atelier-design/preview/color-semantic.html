@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Semantic tokens</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .tok { padding: 12px 14px; border: 1px solid var(--border); display: flex; align-items: center; gap: 12px; }
+  .chip { width: 24px; height: 24px; border: 1px solid rgba(0,0,0,0.08); flex-shrink: 0; }
+  .meta { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); }
+  .name { font-size: 13px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="label">semantic tokens — for components</div>
+  <div class="grid">
+    <div class="tok"><div class="chip" style="background: #F6F4EE;"></div><div><div class="name">--bg-1</div><div class="meta">page bg</div></div></div>
+    <div class="tok"><div class="chip" style="background: #FCFBF7;"></div><div><div class="name">--bg-2</div><div class="meta">lifted card</div></div></div>
+    <div class="tok"><div class="chip" style="background: #0E0E0C;"></div><div><div class="name">--fg-1</div><div class="meta">primary text</div></div></div>
+    <div class="tok"><div class="chip" style="background: #25241F;"></div><div><div class="name">--fg-2</div><div class="meta">secondary text</div></div></div>
+    <div class="tok"><div class="chip" style="background: #8A8780;"></div><div><div class="name">--fg-3</div><div class="meta">meta · captions</div></div></div>
+    <div class="tok"><div class="chip" style="background: #E4E0D6;"></div><div><div class="name">--border</div><div class="meta">hairlines</div></div></div>
+    <div class="tok"><div class="chip" style="background: #FF5B2E;"></div><div><div class="name">--accent</div><div class="meta">hover · current</div></div></div>
+    <div class="tok"><div class="chip" style="background: #FF5B2E;"></div><div><div class="name">--focus</div><div class="meta">2px outline</div></div></div>
+  </div>
+</div>
+</body>
+</html>
